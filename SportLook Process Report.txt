@@ -1,0 +1,14 @@
+Bachelor Process Report
+
+1. Project Plan
+	1.1 Aim
+	1.2 Objectives
+2. Time Estimates
+3. Group Members
+4. SWOT Analysis
+5. Group Policy
+6. Implementation Phase
+	6.1 Version Control
+	6.2 Time Management
+7. Personal Reflections
+8. Literature

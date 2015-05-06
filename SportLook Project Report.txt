@@ -19,11 +19,17 @@ Table of Content
 		- AWS
 5. Implementation
 	5.1 iOS
+		5.1.1 Supporting different OS Versions
+		5.1.2 Supporting different iPhone screen sizes
 	5.2 WebServer
 6. Test
 	6.1 iOS
 	6.2 WebServer
-7. Discussion
-8. Conclusion
-9. References
-10. Appendixes
+7. Distribution
+	7.1 Apple Member Center
+	7.2 Update
+	7.3 Sales & Trends
+8. Discussion
+9. Conclusion
+10. References
+11. Appendixes
