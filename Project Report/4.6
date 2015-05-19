@@ -1,0 +1,48 @@
+Backend(design)
+
+The application, which is built for the project, requires extensive sharing of data between the server
+and the client application. To provide the means of communication a set of common standards and
+protocols must be established between the client and the server. Since client and server sides are
+written in different programing languages the selection of standards and protocols are playing a
+crucial role and influences the architecture of the system. To make the right choice and accomplish
+the desired outcome the system must comply to following requirements:
+
+	Decoupling the functionality from the presentation of the application
+	Web server must be operating system independent
+	Developers should have extensive knowledge of the programming language in which the
+	web server is implemented
+	Ease of manipulation and storage of the data in database
+
+To fulfill the requirements a selection of frameworks, protocols and standards were considered and
+summarized in the following paragraph.
+To satisfy the first requirement a web server must be selected. A web server is a computer system
+that process requests over Hypertext Transfer Protocol and the selection process is quite
+challenging. In almost every programming language a web server has been already developed and a
+skilled person can also develop one from scratch, therefore to evaluate the selection of available
+web servers and frameworks the criteria for the selection for the project purpose are as follow:
+
+	It’s efficient - fast performance and data processing
+	Resists failures
+	It does what the client expects and is reliable
+	Relatively simple process of scaling and load balancing
+	Accessibility of different vendor databases - simultaneously
+	Only secure and trusted client access to web server
+
+From the requirements above we chose Node.js as our web server framework. For the project specifications
+the main purpose of the web server is to provide interface to the server database and respond to the
+basic Create, Read, Update and Delete (CRUD) functions for user data, so the data can be
+accessible from any device and will be synchronized across the client devices. The user data
+mainly consists of simple data types - strings, integers, longs, arrays, booleans and date times, the
+data is sanitized, validated and parsed to the PostgreSQL database.
+
+To persist our application data we had to use a database. The biggest choice we faced was using a traditional relational database such as MySQL or PostgreSQL or an object database (noSQL) such as MongoDB. After analyzing our data model and seeing relational relationships pop up again and again we decided to go with a relational database.
+Some other important requirements for our database were:
+	
+	It's easy to set up with Node.js
+	It is open source and free to use
+	It has good community behind it to help us solve any issues we run into
+	It is supported by Heroku
+
+We seriously considered MySQL and PostgreSQL. Both of them fulfilled requirements 1-3 but in the end we had to choose PostgreSQL because of its support by Heroku.
+
+
