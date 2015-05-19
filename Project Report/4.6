@@ -35,6 +35,17 @@ accessible from any device and will be synchronized across the client devices. T
 mainly consists of simple data types - strings, integers, longs, arrays, booleans and date times, the
 data is sanitized, validated and save to the database.
 
+
+In the heart of Node.js is an asynchronous event driven JavaScript framework where no function is directly performing I/O operations, therefore there are no worries of deadlocking processes and many connections can be handled concurrently, thus developers can easily develop scalable
+solutions. To go even one step further and bring structure to the Node.js web server a framework called Sails.js can be utilized which emulates real time Model View Controller (MVC) design pattern for Node.js and adds a bucket of useful features. Sails.js allows developers to utilize 
+powerful data access layer with Object Relation Mapping (ORM) called Waterline which works with any database and can even combine multiple databases. 
+To use Waterline properly we define a model and database-adapter for it to use such as:
+
+	***code sample e.g. Event.js**
+
+Waterline then exposes an object that we can call basic methods on such as create, update, destroy and it uses the database adapter to call the corresponding commands on the database.
+
+
 To deploy our webserver on a public URL we chose to use Heroku. It is a plattform as a service that supports code written in Node.js among other languages. It allows us to deploy our webserver incredibly easily by simply pushing our source source code through Git source control such as:
 	
 	git push heroku master
