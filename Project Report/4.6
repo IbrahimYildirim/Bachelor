@@ -33,16 +33,27 @@ the main purpose of the web server is to provide interface to the server databas
 basic Create, Read, Update and Delete (CRUD) functions for user data, so the data can be
 accessible from any device and will be synchronized across the client devices. The user data
 mainly consists of simple data types - strings, integers, longs, arrays, booleans and date times, the
-data is sanitized, validated and parsed to the PostgreSQL database.
+data is sanitized, validated and save to the database.
+
+To deploy our webserver on a public URL we chose to use Heroku. It is a plattform as a service that supports code written in Node.js among other languages. It allows us to deploy our webserver incredibly easily by simply pushing our source source code through Git source control such as:
+	
+	git push heroku master
+
+Heroku then locates the dependency file package.json which is part of every Node.js application, install the dependencies using Node Package Manager (npm). The only separate instruction we need to provide to heroku is file named Procfile which specifies how to run our application.
+This is how our Procfile looks. 
+
+   web: sails lift
+
+Heroku now handles compiling and building our source code, installing the dependencies, choosing the hardware to run it on, starting the application, exposing it publicly. It also makes it easy to scale our application up in the case we start to get too many requests or using too much RAM etc. All we need to focus on is the application logic. The downside is that as our application grows we will have to pay a monthly fee for using Heroku. We consulted this with our client and he deemed that acceptable, opting to focus our time on application logic not deployment infrastructure.
+
 
 To persist our application data we had to use a database. The biggest choice we faced was using a traditional relational database such as MySQL or PostgreSQL or an object database (noSQL) such as MongoDB. After analyzing our data model and seeing relational relationships pop up again and again we decided to go with a relational database.
 Some other important requirements for our database were:
 	
-	It's easy to set up with Node.js
+	It is easy to set up with Node.js
 	It is open source and free to use
 	It has good community behind it to help us solve any issues we run into
 	It is supported by Heroku
 
-We seriously considered MySQL and PostgreSQL. Both of them fulfilled requirements 1-3 but in the end we had to choose PostgreSQL because of its support by Heroku.
-
+We seriously considered MySQL and PostgreSQL. Both of them fulfilled requirements 1-3 but in the end we had to choose PostgreSQL because of it is supported by Heroku.
 
