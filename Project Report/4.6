@@ -1,4 +1,44 @@
-Backend(design)
+4.3 Web Service design
+
+4.3.1 Messaging protocol
+
+The application requires sharing of data between the server and the client application. Additionally the server has to support both  iOs and Android. The communication between the server and the client application has to be agnostic.
+
+The standard way to acomplish that is to create SOAP or REST api.
+
+SOAP (Simple object access protocol) is XML based protocol consisting of three parts:
+	an envelope, which defines the message structure and how to process it
+	a set of encoding rules for expressing instances of application-defined datatypes
+	a convention for representing procedure calls and responses
+
+REST (Representational state transfer) Web Services are defined with the following aspects:
+	base URI, such as http://ourapp.com/api/
+	an Internet media type for the data exchanged. This is usually JSON
+	standard HTTP methods (GET, PUT, POST, or DELETE)
+
+It was decided to go with REST because it is more lightweight, more suited for the basic create, reade, update, delete (CRUD) use case that is necessary for this Web Service. 
+
+4.3.3 Framework 
+
+The Web Service is implemented in Sails.js framework running on top of Node.js plattform.
+
+We chose Node.js for the following reasons:
+	Fast performance and data processing
+	Relatively easy to set up load balancing, clusters and scale up if the need arises
+	Open source and a heatlhy ecosystem of open source packages
+	Developers were already familiar with it
+
+Sails.js makes it easy to build custom, enterprise-grade Node.js apps. It is designed to emulate the familiar MVC pattern of frameworks like Ruby on Rails, but with support for the requirements of modern apps: data-driven APIs with a scalable, service-oriented architecture.
+
+The decision to use Sails.js was made to abstract away most of the boiler-plate code that would otherwise be required. It also has a very steep learning curve.
+
+4.3.4 Database
+
+Sails.js allows developers to utilize powerful data access layer with Object Relation Mapping (ORM) called Waterline which works with any database and can even combine multiple databases. To use Waterline properly we define a model and database-adapter for it to use such as:
+
+[code sample 1]
+	
+
 
 The application, which is built for the project, requires extensive sharing of data between the server
 and the client application. To provide the means of communication a set of common standards and
@@ -21,7 +61,6 @@ challenging. In almost every programming language a web server has been already 
 skilled person can also develop one from scratch, therefore to evaluate the selection of available
 web servers and frameworks the criteria for the selection for the project purpose are as follow:
 
-	It’s efficient - fast performance and data processing
 	Resists failures
 	It does what the client expects and is reliable
 	Relatively simple process of scaling and load balancing
