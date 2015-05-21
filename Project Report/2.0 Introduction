@@ -1,0 +1,17 @@
+2.0 Introduction
+
+This project is going to cover the development of the SportLook application for iPhone. It is a renewed version of the already existing application in App Store - MoveBizz. Movebizz is a application that provides users the opportunity to meet other people who shares same sport interests through sport events. Or at least tries too. Unfortunately it is a very buggy app, and it doesnt provide good user experience. The concept behind the app is that users can create sport events and other people can see theese events, and all related information to the events such as name, date, location, participants etc.
+
+ 
+The objective of this project is to build an iPhone Application, which can share data between users. It builds on the concepts of MoveBizz, but it will have some more functionality which will be covered in the report.
+
+2.1 Project Environment
+
+The outcome of this project will be an iPhone application, which is a requirement from the company Move Sport (further addressed the client). The client originally had the idea of this concept, and outsourced the development of the first version - MoveBizz - in India. But the application was not stabile, and it required big amount of luck to finish a flow without the app not crashing. 
+
+The application will present users with sport events in their area, and then give them the opportunity to join the event and chat with the other participants etc. One of the requirements from the client is that the server can connect to different mobile operative systems. The reason for that is because the client have hired another company (AppUdvikleren.dk) to build the android version of this application. During the development of SportLook we had to coordinate with them in order to make the app look and work the same way as the iOS version. 
+
+
+//=====
+The segment of users of this app are both genders in the age group of 12 to 65 and have a active lifestyle or want to socialize through a game of football, chess or some different activity. A common person want to meet other people that shares the same sport interest as themselves.
+//=====
