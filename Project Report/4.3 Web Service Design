@@ -29,7 +29,7 @@ This is how the Procfile looks. It specifies to run the command "sails lift" to 
 
    web: sails lift
 
-Heroku thus handles compiling and building the source code, installing the dependencies, choosing the hardware to run it on, starting the application, exposing it publicly. It also makes it easy to scale the application up in the case it starts to get too many requests or using too many resources. All the developers need to focus on is the application logic.
+Heroku thus handles compiling and building the source code, installing the dependencies, choosing the hardware to run it on, starting the application, exposing it publicly and restarts it if it crashes. It also makes it easy to scale the application up in the case it starts to get too many requests or using too many resources. All the developers need to focus on is the application logic.
 
 The downside is that as the application grows it will be required to pay a monthly fee for using Heroku. It was consulted this with the client and was deemed acceptable, opting to focus developers' time on application logic not deployment infrastructure.
 Another downside is that Heroku does not allow storing files directly on their file system, which are not part of the git repository. The Web Service however required an image uploading functionality. We decided to use a third party service for that (More in 4.4)
@@ -52,7 +52,15 @@ The decision to use Sails.js was made to abstract away most of the boiler-plate 
 
 Sails.js allows developers to utilize powerful data access layer with Object Relation Mapping (ORM) called Waterline which works with multiple databases. To use Waterline properly we define model entities together with relationships and database-adapter for it to use such as in [code sample 1]. Waterline constructs the underlying table/document structure from the model in case it doesn't exist yet.
 
-[code sample 1]
+Event model
+[4.3-Code-sample-Event.js]
+
+User model
+[4.3-Code-sample-User.js]
+
+The ER diagram for our database looks like the following:
+
+[4.3 ER diagram]
 
 Waterline allows to specify which database to use simply by specifying a database adapter. The ORM interface stays the same regardless of the chosen database. 
 
