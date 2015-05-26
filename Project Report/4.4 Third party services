@@ -1,0 +1,18 @@
+4.4 Third party services
+
+As any software developer knows, it is not worth the time to reinvent the wheel. If there is an acceptable out of the box solution for a problem then it should be at least seriously considered.
+
+Two such problems were encountered:
+
+	The need for push notifications
+	Image uploading
+
+Push notifications - Parse
+The system has to be able to send push notifications to the mobile applications in the event a user is invited to an event or receives a chat message. There are many services that provide this functionality so there is no need to implement it all over again. 
+Parse was chosen because it has Node.JS, iOs and Android APIs as well as offering a freemium model. It also allows to store chat messages directly in Parse eliminating the need to store chat messages in the Web Service database.
+
+The decision to go with Parse was also business decision as the pricing and freemium model were suitable for the client.  
+
+Image uplading - Amazon S3
+As mentioned earlier Heroku does not allow to write to the file system directly as it flushes the file system with each new build. [Reference: https://devcenter.heroku.com/articles/read-only-filesystem]
+Enter Amazon Simple Storage Service (S3). Instead of storing images in the Heroku filesystem we store them in the Amazon S3. This is hidden from the client and image uploads are simply piped to S3 and downloads are piped from S3 to the client's response socket. From the client side there is no difference.
