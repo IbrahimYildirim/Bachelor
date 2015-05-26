@@ -1,0 +1,20 @@
+6.2 Test Webserver
+
+The full functionality of the system relies on data transmission between the clients and the Web Service. The HTTP requests have to be tested. The tests should prove that the Web Service is implemented correctly. 
+To test the HTTP requests a tool called POSTMAN is employed. POSTMAN is designed to create custom HTTP requests and see the HTTP responses. The testing has to be done during the Implementation phase and must be performed manually to verify that the WebService is sending back the responses
+as expected.
+
+Below you can see all the POSTMAN requests names and a sample request screenshot
+
+[6.2-POSTMAN]
+[6.2-POSTMAN-2]
+[6.2-POSTMAN-sample-request]
+
+A big part of fully functioning system architecture relies on data transmission between the iOS
+application and the Web Server, therefore the HTTP requests must be tested. The tests should prove
+that the implementation of the web server controllers are correct and reliable and they can be
+accessed from the iOS application.
+To test the HTTP requests a tool called POSTMAN[22] is used. POSTMAN is designed to create
+and send custom HTTP requests to web servers and it displays the response in the user interface.
+The tests are performed during the implementation process and they must be performed manually to
+verify that the controllers are sending back the expected response. To verify if the controllers on the
