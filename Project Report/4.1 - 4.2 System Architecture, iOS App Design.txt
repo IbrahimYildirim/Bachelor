@@ -1,0 +1,37 @@
+4. Design
+
+4.1. System architecture
+
+ The system developed makes use of a client-server architecture, in which the presentation, application processing and data storage functions are separated. 
+ More specifically, a three-tier architecture is used, which is composed of a presentation tier, an application logic tier and a data storage tier. This approach allows for a flexible and reusable system.
+ The presentation tier is the topmost level of the system and it's reponsible for displaying information to end-users.
+ The application logic tier is responsible for performing processing and enforcing business logic rules.
+ The data storage tier is responsible for storing and retrieval of persistent data.
+ The following is a diagram which ilustrates this concept.
+ [INSERT DIAGRAM 4.1. Three tier architecture - Fig 1 HERE]
+
+ A full system architecture overview can be seen below, complemented with a short description of each of the system's components.
+ [INSERT DIAGRAM 4.1. System architecture overview - Fig. 2 HERE]
+ {Bullet points list}
+ - iOS mobile app. Developed using the Swift programming language and the iOS SDK.
+ - Android mobile app. In the diagram above, this component is greyed out because it was not developed by the current development team. It's mentioned because it has a significant importance in the development of the server and choice of the 3rd party services used. Those must be usable by both the Android and iOS apps. 
+ - Server. The server's components are the Web Service and the database. The Web Service is written in Node.js while using the Sails.js framework. The database is PostgreSQL and the Web Service incorporates a database adapter for storing and retrieving data from the database. Also, the Web Service communicates with a RESTful API over HTTPS with the iOS and Android apps. Heroku (a Platform as a Service) is used for hosting the server.
+ - Amazon S3. Amazon S3 is a Infrastructure as a Service (IaaS) solution. Amazon's Simple Storage Service is used for object storage. It communicates with the server via Amazon Web Service's Javascript SDK. 
+ - Parse. Parse is a Backend as a Service (BaaS) solution, which is used for data storage and it's push notification services. It communicates with the server via Parse's Javascript SDK. Additionally, it also communicates with the iOS mobile app via Parse's iOS SDK and with the Android mobile app via the Parse's Android SDK.
+ - Git. Git is a distributed Version Control System used for code collaboration and code version control. Although not directly a component of the system, it's mentioned due to its heavy use.
+ - GitHub. Github is a web-based Git repository hosting service used for code hosting. Although not directly a component of the system, it's mentioned due to its heavy use.
+
+
+4.2. iOS app design
+
+
+
+4.2.1. Programming language 
+
+4.2.2. Design patterns
+
+4.2.3. Persistent data
+
+4.2.4. UI
+
+4.2.4.1. Storyboards and views and code
