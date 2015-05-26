@@ -1,7 +1,37 @@
 5.1 Implementation iOS
 The implementation of the application have been made in Xcode which is a developer tool from Apple to create applications for Mac OS/iOS. This section will not cover the entire implementation of the app, but the parts that would require some specialized knowledge. It has been a priotity to keep the code clean and easy to read, modularized, reusable and above all efficient.
 
-5.1.1 MapKit & CoreLocation
+5.1.1 BaseViewController & Supporting different OS Versions
+In the contract that was made with the client it was agreed that the app should work on iOS 7+. 80% of iPhone users have iOS 8 installed already, and the client wanted the other 17% to be able to get the app aswell.
+
+In order to not rewrite the same code over and over, there was deviced that every ViewController that was used in the app should inherit `BaseViewController`. In this class there would be controls that automaticly handles the OS Version handling. 
+
+An example is the loading screen that looks different in iOS 7 & iOS 8. The component used for the loading screen uses a blur effect that was introduced with iOS 8. The `BaseViewController` would have a method called showLoading(message:, delay:), and then in the view controllers the method could simply be called.
+
+[Fig 1 - BaseViewController]
+
+Below is a example of how this is used in the ProfileViewController. The self.showSpinner method is called if the user us not loaded, it only takes a single line to show/hide loading.
+
+[Fig 2 - Use of BaseViewController methods]
+
+5.1.2 Supporting different iPhone Screen sizes
+In september 2014 Apple announced iPhone 6 & iPhone 6 Plus. For developers this meant that suddenly there was twice the ammount of screen sizes your app have to support. But at the same time they introduced Size Classes & autolayout. 
+
+Auto Layout is a system that lets you lay out your app’s user interface by creating a mathematical description of the relationships between the elements. You define these relationships in terms of constraints either on individual elements, or between sets of elements.
+
+Size classes are Apple's solution to the question "How can I easily work with so many different screen sizes and device orientations?" They also enable the condensing of universal apps into one storyboard file. Combined with the new adaptive view controllers, it's easier then ever to rely on interface builder, rather than fight with it, to simplify the creation of your app layouts.
+
+Every view controller in the app gets a trait collection object. This trait collection object has 2 size classes, a horizontal size class and a vertical size class. And each of these classes has 3 possible values: compact, regular, or any. These values can change based on the device and its orientation. The app will layout its interface for each view controller based on the current size classes. Apple uses a grid to let the user choose which configuration to work in, so here's that same grid but with each device+orientation highlighted in its corresponding size class combo
+
+[Fig 4 - Overview of sizeclasses]
+
+At the bottom of the Interface Builder window, there’s now a control that allows you to switch between each combination
+
+[Fig 3 - Example of size class]
+
+In the project the size class Compact Width X Any Height was used. This made sure that the design made in Interface Builder could be supported with all iPhones in Portrait mode - the client didn't want landscape mode support - as long as the views were made with constraints. 
+
+5.1.3 MapKit
 Apple provides a MapKit framework that lets developers embed a fully functional map interface in any app. To use it one would have to unterstand the map geometry, including how latitude and longitude works.
 
 The map was used in the "Search Events" tab, where it shows pins on locations where users have created events, and in "Select on Map" feature where you can select the location of the map in the map. In order to work with the MapKit, it is necessary to set the delegate of the mapview to self in the view controller where the map is used.
@@ -17,3 +47,30 @@ The following figure shows the example of use with mapView(: regionWillChangeAni
 [Fig 3 - mapview:regionWillChangeAnimated]
 
 This methods gets fired everyime the view region of the map changes. Wheather it is by the interaction of the user or when programmatically moving the region. In this case the code checks if the event info view is shown to the user. If it is, it will fade it away. This is made to provide a good UX and not keep showing event info (after you click on a pin) when the user moves the map. the `vwClusterInfo` is basicly the same, but is a view that gets shown instead of `vwEventInfo` when there's is more events at the same location (show a list of events instead of just one). 
+
+5.1.4 Reusable Views
+In order to provide a good UX it is a commom rule to make different views look the same. In this case the textfields for inputting information from the user was used multiple times in the project flow. A bad case would be to design all those textfields over and over again. A good practice would be to make a view component that is reusable. So in the future if the client would choose to change the design, it would be easier to change it only in one place instead of all the places the view was used.
+
+Xcode and iOS doesn't come with a out of the box way to make custom views. One way to is make the view programmatically, the other way is to create a view (.xib) file, and assosiate with a implementation file. It is then possible to add custom controls through the views implementation file.
+
+Below is a example of a screen where the same components was used multiple times.
+
+[Fig 4 - Create Event screenshot]
+
+The view consist of a textfield and a imageview. So when implementing this view, it had to be somehow generic.
+
+In the figure below you see the implementation file of `SLInputView`. It have 3 variables the view it self, a imageview and a textfield.
+
+[Fig 5 - SLInputView]
+
+In the init file it is seen that it loads a view from a .xib file named: SLInputView. Afterwards the methods awakeFromNib() is called, which setup the colors of the view.
+
+In the Interface Builder (IB) it is now possible to draw a UIView and set its class to `SLInputView`. When creating this instance of the view in the implementation (.swift) file, the method `setTextField(placeHolder:, keyboardType:, image:, returnKey:)` can be called and thereforecustomize the view according to the placeholder, image keyboardtype etc.
+
+[Fig 6 - Setting Custom class in Interface Builder]
+
+Not it is easy to setup the imageview and placeholder for each of the custom inputfields. In the `viewDidLoad()` method the setupLayout() function is called
+
+[Fig 7 - Example of setTextField used in addEventViewController]
+
+5.1.5 Open Source Components
