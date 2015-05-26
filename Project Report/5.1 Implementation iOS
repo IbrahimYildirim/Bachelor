@@ -1,0 +1,19 @@
+5.1 Implementation iOS
+The implementation of the application have been made in Xcode which is a developer tool from Apple to create applications for Mac OS/iOS. This section will not cover the entire implementation of the app, but the parts that would require some specialized knowledge. It has been a priotity to keep the code clean and easy to read, modularized, reusable and above all efficient.
+
+5.1.1 MapKit & CoreLocation
+Apple provides a MapKit framework that lets developers embed a fully functional map interface in any app. To use it one would have to unterstand the map geometry, including how latitude and longitude works.
+
+The map was used in the "Search Events" tab, where it shows pins on locations where users have created events, and in "Select on Map" feature where you can select the location of the map in the map. In order to work with the MapKit, it is necessary to set the delegate of the mapview to self in the view controller where the map is used.
+
+[Fig 1 - Example of MKMapView] 
+
+The following MKMapViewDelegate methods was used in "Search Events"
+
+[Fig 2 - MKMapViewDelegate Methods]
+
+The following figure shows the example of use with mapView(: regionWillChangeAnimated:).
+
+[Fig 3 - mapview:regionWillChangeAnimated]
+
+This methods gets fired everyime the view region of the map changes. Wheather it is by the interaction of the user or when programmatically moving the region. In this case the code checks if the event info view is shown to the user. If it is, it will fade it away. This is made to provide a good UX and not keep showing event info (after you click on a pin) when the user moves the map. the `vwClusterInfo` is basicly the same, but is a view that gets shown instead of `vwEventInfo` when there's is more events at the same location (show a list of events instead of just one). 
