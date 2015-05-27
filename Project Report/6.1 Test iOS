@@ -1,0 +1,16 @@
+6.1 Testing iOS
+
+Black-Box testing
+The main part of the testing of this happened as black box testing. This means that the tester is aware that a particular input returns a certain, invariable output but is not aware of how the software produces the output in the first place. In order to test this app there there was created test cases with specifications & procedures. And example of a test case is stated below (rest can be found in appendix)
+
+[Fig 1 - SportLook Test case 1]
+
+The purpose of theese test cases was mostly to provide a good UX, and make sure the app worked as expected for en end-user.
+
+White-Box Testing
+During development of the app white-box testing was used by testing the different methods.An example of is listed below in the DataProvider.swift file. To White-Box test the method was called when loading the app, and then by looking in the console it was possible to see what happened in the method.
+
+[Fig 2 - DataProvider.requestData method]
+
+Debugging
+The Xcode debugging tool was also widely used in order to test the app and make sure everything was working as it was expected during development. A good feature in the debugger in Xcode is that it's not necessary to run the app over in order to stop at a break point. Simple put a break-point somewhere in the code, and when the executer reaches the break-point it stops. Then it is possible to see the variables at the current state and go by the statements step-by-step. It is a feature that makes developping in Xcode a delight. 
