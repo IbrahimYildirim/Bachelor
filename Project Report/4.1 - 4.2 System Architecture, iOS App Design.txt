@@ -116,6 +116,14 @@ An example in the Login screen of the app is used to illustrate this pattern:
 [INSERT FIGURE 4.2.3. Target-action pattern - Fig.2]
 The user wants to login and taps the login button (created in the user interface). First, the action 'loginButtonTapped:' is implemented to perform the logic of logging in. Next, the button's Touch Inside event is registered to send the 'loginButtonTapped:' action message to the Login Controller that implements the method. Target-action is a powerful mechanism for defining interaction and sending information between different parts the app.
 
+Another important concept is that each Controller managing a View has lifecycle methods, which are called automatically at the appropiate times by the operating system when the Controller is loaded/shown/hidden. The following diagram illustrates what are those methods and when are they being called:
+[INSERT FIGURE 4.2.3. UIViewController Lifecycle - Fig 3]
+{BULLET POINTS LIST}
+- viewDidLoad - Called when the Controller's view is loaded from .xib (the user interface). Used for initial setup in all of the Controllers.
+- viewWillAppear - Called right before the view appears. Also, if another view is shown and then the user returns to this view, the method is called again, every time before it becomes visible. 
+- viewDidAppear - Used for customization after the view appeared, such as triggering animations.
+- viewWillDissapear - Called right before the view dissapears. Used when logic needs to be performed before switching to another view. 
+
 4.2.4. Persistent data
 
 It was defined in the project's limitations that there will be no persistent data saved in the app : 
@@ -129,6 +137,6 @@ Although this information is not exactly what the Keychain is designed to hold, 
 The following is an example of user information that is persistent in the iOS app, as a JSON model received from the server.
 [INSERT FIGURE 4.2.4. JSON user info - Fig. 1]
 
-4.2.5. UI
+4.2.5. Graphical User Interface
 
-4.2.5.1. Storyboards and views and code
+4.2.5.1. Storyboards, views and code
