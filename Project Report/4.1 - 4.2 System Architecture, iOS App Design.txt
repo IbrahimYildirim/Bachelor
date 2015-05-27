@@ -22,16 +22,113 @@
  - GitHub. Github is a web-based Git repository hosting service used for code hosting. Although not directly a component of the system, it's mentioned due to its heavy use.
 
 
-4.2. iOS app design
+4.2. Technology
 
+A major decision that needs to be taken at the start of developing an iOS mobile application is to decide which technology should be used.
+There are 4 ways that emerged for iOS mobile development, as explained below:
+1. Web Application
+	- Developed using Javascript, HTML & CSS. This approach makes use of web development skills. Esentially a mobile website.
+2. Hybrid application
+	- Developed using Javascript, HTML & CSS, but hosted inside a native application that utilizes the mobile platform's WebView. Esentially a chromeless browser window that's configured to run fullscreen. Can access device hardware. Most of the times also making use of a framework or platform such as Apache Cordova.
+3. Cross-platform application
+	- Developed using a platform (such as Xamarin) and the same codebase (written in either C# or Ruby). The code written is then compiled to native ARM assembly code, which can run on iOS devices.
+4. Native application
+	- Developed using programming languages, frameworks and tools provided by Apple. The code written in either Objective-C or Swift accesses Apple's native APIs.
 
+Each approach has its advantages and disadvantages. The following table addresses a few advantages and disadvantages:
+[INSERT TABLE 4.2. Mobile development approach table - Table 1.docx]
+
+After comparing the available options, the decision taken was to build a native iOS application. The decision was taken due to the following reasons:
+- Apple's iOS API is used by direct access. This minimizes possible bugs and eliminates the need of an extra layer between the code written and the access of Apple's iOS API. Also, it makes debugging more straight-forward.
+- Only the enrollment fee into the Apple Developer Program is a cost. Most of the cross-platform and hybrid application solutions are based on a subscription model. As one of the project's constraints is to keep the development cost low, the native approach is the logical choice.
+- Exposure into Apple's App Store is needed. Therefore the web application approach needs to be discarded, because it doesn't allow this exposure.
+- Same-day access to the newest Apple iOS APIs. New software is often shipped with an amount of bugs. Having an extra layer between accessing the newest native iOS APIs and the code written on a cross-platform solution can significantly increase the difficulty in debugging. Therefore the native approach would be a good decision, in order to avoid this problem.
+- High performance is needed. One of the project's non-functional requirements is that the application should have high performance. Unfortunately, this cannot be achieved with the web or hybrid application approach on an equal level with a native approach. Native applications communicate directly with the operating system, while the web or hybrid applications communicate with the browser, which communicates with the operating system. Therefore there is an extra layer that needs to be performed by those apps, making them slower. 
+- The development team doesn't have a strong background in web development. One of the main benefits of using a web or hybrid approach is the re-use of web development skills. Since this is not the case, this benefit does not apply.
+- The application is platform specific. One of the client's requirements was that the application should be iOS only, therefore the benefits of using a cross-platform approach with the same codebase across multiple platforms (Android, iOS, Windows Phone) do not apply.
+
+The development approach for mobile applications was always a big debate in the mobile community, but in the end the performance is always better while using the native approach. 
+[INSERT 4.2. Dilemma of mobile apps development - Fig 1.jpg]  
 
 4.2.1. Programming language 
 
-4.2.2. Design patterns
+There are 2 choices in the programming language to be used when developing native iOS apps: Objective-C and Swift. 
+Objective-C is Apple's initial programming language for the OS X and iOS operating systems, originally developed in the early 1980s.
+This is Apple's brief description of the language:
+	Objective-C is the primary programming language you use when writing software for OS X and iOS. It’s a superset of the C programming language and provides object-oriented capabilities and a dynamic runtime. Objective-C inherits the syntax, primitive types, and flow control statements of C and adds syntax for defining classes and methods. It also adds language-level support for object graph management and object literals while providing dynamic typing and binding, deferring many responsibilities until runtime.
+On the other hand, Swift is a new programming language released by Apple in June 2014. Swift is designed to work with Apple's Cocoa and Cocoa Touch frameworks and the existing Objective-C code written for Apple products.
+This is Apple's brief description of the language:
+	Swift is a new programming language for iOS and OS X apps that builds on the best of C and Objective-C, without the constraints of C compatibility. Swift adopts safe programming patterns and adds modern features to make programming easier, more flexible, and more fun. Swift’s clean slate, backed by the mature and much-loved Cocoa and Cocoa Touch frameworks, is an opportunity to reimagine how software development works.
+The decision to use Swift was taken due to several factors:
+- Swift performs faster than Objective-C in several benchmarks. Swift objects can call one another without needing to perform the message sending which is a bottleneck on Objective-C performance.
+- Swift is designed to provide seamless compatibility with Cocoa and Objective-C. The Objective-C APIs can be used in Swift and the same project can make use of both languages via a bridging header.
+- A Swift file has only one declaration, while an Objective-C file would have both a header and an implementation file. Having to read separate header files slows down compilation.
+- Swift makes use of modern programming language features such as optionals, control flow statements, type safety, tuples support, type inference, optional semicolons, dictionaries, closures, generics, string interpolation.
+- Apple focuses on Swift when developing their newest APIs and providing code snippets for it.
+- The Swift syntax is more concise and has improved readability compared to the Objective-C one.
+[INSERT FIGURE 4.2.1. Objective C comparison Figure 2]
+[INSERT FIGURE 4.2.1. Swift comparison Figure 3]
 
-4.2.3. Persistent data
+4.2.1.1. iOS SDK
 
-4.2.4. UI
+The development tool used is Apple's IDE, Xcode. The IDE has helpful features such as an interface builder, debugging and source editor. The iOS SDK is included in Xcode.
+At the highest level, iOS acts as an intermediary between the underlying hardware and the application created. The application does not talk to the underlying hardware directly. Instead, it communicates with the hardware through a set of well-defined system interfaces. These interfaces make it easy for the application to run consistently on devices having different hardware capabilities.
+[INSERT FIGURE 4.2.1.1. Layers of iOS - Figure 1]
+The use of higher-level frameworks over lower-level frameworks is prefered whenever possible. The higher-level frameworks provide object-oriented abstractions for lower-level constructs. 
+Elements from all 4 layers were used in the app development, as follows:
+- Cocoa Touch: multi-touch, core motion, view hierarchy, controls, alerts, map kit, image picker
+- Media: JPEG, PNG, core animation
+- Core Services: collections, networking, core location, preferences
+- Core OS: Keychain access
 
-4.2.4.1. Storyboards and views and code
+4.2.2. Application architecture
+
+The application makes use of the following architecture:
+[INSERT FIGURE 4.2.2. Application architecture - Fig. 1]
+{BULLET POINTS LIST}
+- The project file. Contains information about deployment, supported device orientation, assets, Apple framweworks and libraries used, capabilities, build settings etc.
+- AppDelegate. This is the entry point of the application containing methods that are called when the application opens in various situations: app is not running and is launched, app is launched from a push notification, app is running in the background etc. Global app customization takes place after the app is launched.
+- Controllers. An iOS application is a set of Controllers linked together. Each controller has it's own .xib file, which is the user interface for that controller.- ReusableViews. Those are user interface components that are used in more than one place. In order to keep the code clean and reusable, the use of such components is prefered whenever possible.
+- Providers. The providers communicate with the server and return the appropiate data, to be used in the appropiate screen. The HTTPS requests are asynchronous.
+- Services. The services perform operations in a non-object oriented manner, operations that need to be performed more than once and can be isolated from the Controllers. 
+- Models. All the data returned from the server is mapped to a model. 
+- Components. Contains app constants, a bridge header and user interface components. 
+- Extensions. Contains new functionality added to Apple frameworks (such as UIKit). 
+- Supporting files. Contains a preference list with information about the application.
+- Resources. Contains assets as images, icons and fonts.
+- Frameworks. Contains Apple frameworks and open source frameworks used for development.
+- Pods. Contains open source libraries used for development. 
+
+4.2.3. Design patterns
+
+The Model-View-Controller (MVC) pattern is the skeleton of every iOS app. MVC categorizes the objects of an app in one of the 3 roles: model, view or controller. The models keep track of the app's data, views display the user interface and make up the content of an app, and controller manage the views. By responding to user actions and populating views with content from the data model, controllers serve as a gateway for communication between the model and views.
+[INSERT FIGURE 4.2.3. MVC pattern - Fig 0]
+
+Apple uses a slightly more complex version of the MVC pattern, as the following diagram shows:
+[INSERT FIGURE 4.2.3. MVC pattern - Fig.1]
+{BULLET POINTS LIST}
+- The Controller can communicate with its Model and View.
+- The Model and View cannot communicate.
+- The View can communicate with its Controller via the target-action design pattern, which is explained next.
+
+The Target-action pattern is a simple design in which one object sends a message to another object when a specific event occurs. The action message is a selector defined in source code and the target (the object that receives the message) is an object capable of performing the action, typically a Controller. The object that sends the action message is usually a UI control (such as a button or switch) that can trigger an event in response to user interaction suchs as tap or value change.
+An example in the Login screen of the app is used to illustrate this pattern:
+[INSERT FIGURE 4.2.3. Target-action pattern - Fig.2]
+The user wants to login and taps the login button (created in the user interface). First, the action 'loginButtonTapped:' is implemented to perform the logic of logging in. Next, the button's Touch Inside event is registered to send the 'loginButtonTapped:' action message to the Login Controller that implements the method. Target-action is a powerful mechanism for defining interaction and sending information between different parts the app.
+
+4.2.4. Persistent data
+
+It was defined in the project's limitations that there will be no persistent data saved in the app : 
+{italic} There will be no cache support in the mobile app, the app relying on an internet connection for being functional.
+Therefore, in order to acquire data for the view that needs to be displayed, each Controller will request the data from the server at the apropiate time. 
+However, a minimum amount of information is stored in the app, which is necessary for the app's functionality. The data stored is the current logged user information: the user name, id and token. 
+The user id and the user name need to be persistent in the app, due to their use for the Chat functionality (discussed in the Implementation section). 
+The user token needs to be persistent due to the necessity of sending it as a parameter to every HTTPS request when communicating with the server. This happens after the login or sign up requests.
+Those 3 pieces of information are saved in Apple's Keychain when the user logins or signups. Keychain is a password management system available on iOS devices. 
+Although this information is not exactly what the Keychain is designed to hold, it is stored in the Keychain due to being user sensitive data. 
+The following is an example of user information that is persistent in the iOS app, as a JSON model received from the server.
+[INSERT FIGURE 4.2.4. JSON user info - Fig. 1]
+
+4.2.5. UI
+
+4.2.5.1. Storyboards and views and code
