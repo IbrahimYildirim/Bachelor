@@ -74,3 +74,36 @@ Not it is easy to setup the imageview and placeholder for each of the custom inp
 [Fig 7 - Example of setTextField used in addEventViewController]
 
 5.1.5 Open Source Components
+A lot of open source components was used in SportLook. Here is a complete list of all the open source components used
+
+	- pop
+		Pop is an extensible animation engine for iOS and OS X. In addition to basic static animations, it supports spring and decay dynamic animations, making it useful for building realistic, physics-based interactions. Pop is build in Objective-C, so in order to use it in swift, it had to be included in the Bridge.h file
+	- IQKeyboardManager
+		Often in iOS when you have UITextField's the keyboard goes over the textfield if it's not high enough in the view. IQKeybordManager prevents this by moving the view up, so the textfield is still visible.
+	- MRProgress
+		The loadingscreen that was used for iOS 7
+	- SwiftSpinner
+		The loadingscreen that was used for iOS 8
+	- kingpin
+		Clustering engine for MKAnnotation in MapKit. When zooming out in the mapview kingpin clusters the pins. By overwriting the delegate methods of kingpin it was possible to show insert different images for the pins depending on how many pins the cluster had included. 
+	- HUMSlider
+		The slider used in the discovery page when the user selects the radius of discover. Provides a nice animation when sliding the slider.
+	- SDWebImage
+		Open source library to load images from url links asyncroniously, and cache then if it's set to. In cases where there is list it's a good practice to cache the images because the cell gets destryed everytime it leaves the screen and gets recreated when it enters. By caching the images it wont have to load it again.
+	- JSQMessagesViewController
+		An open source ViewController to create a nice message layout. Was used in the chat function in the event. 
+	- Bolts
+		Bolts is a collection of low-level libraries designed to make developing mobile apps easier. Bolts was designed by Parse and Facebook for our own internal use, and we have decided to open source these libraries to make them available to others.
+	- Facebook-iOS-SDK
+		Facebook's SDK to integrate "Login with facebook" feature. In order to use this open component, it is required to have a facebook developer account, and create a app in facebook that it can communicate with. In this case the app in facebook is named SportLook. In the developer panel it is possible to see who's logged in using their facebook account.
+	- SwiftyJSON
+		SwiftyJSON makes it easy to deal with JSON data in Swift. It becomes really handy when parsing json data to swift objects.
+	- KeychainAccess
+		KeychainAccess is a simple Swift wrapper for Keychain that works on iOS and OS. Makes using Keychain APIs exremely easy and much more palatable to use in Swift. The access token for the user is saved in the phones keychain, making sure that the token is not easily accessable for everyone.
+	- Alamofire
+		Alamofire is an HTTP networking library written in Swift. 
+	- SCLAlertView
+		Animated Alert View written in Swift. Used instead of the default UIAlertView. 
+	- Net
+		A HttpRequest wrapper written in Swift. Used to upload images to web-service.
+
