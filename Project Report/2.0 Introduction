@@ -1,7 +1,6 @@
 2.0 Introduction
 
-This project is going to cover the development of the SportLook application for iPhone. It is a renewed version of the already existing application in App Store - MoveBizz. Movebizz is a application that provides users the opportunity to meet other people who shares same sport interests through sport events. Or at least tries too. Unfortunately it is a very buggy app, and it doesnt provide good user experience. The concept behind the app is that users can create sport events and other people can see theese events, and all related information to the events such as name, date, location, participants etc.
-
+This project is going to cover the development of the SportLook application for iPhone. It is a renewed version of the already existing application in App Store - MoveBizz. Movebizz is a application that provides users the opportunity to meet other people who share same sport interests through sport events. Or at least tries to. Unfortunately it is a very buggy app, and it doesnt provide good user experience. The concept behind the app is that users can create sport events and other people can see theese events, and all related information to the events such as name, date, location, participants etc.
  
 The objective of this project is to build an iPhone Application, which can share data between users. It builds on the concepts of MoveBizz, but it will have some more functionality which will be covered in the report.
 
