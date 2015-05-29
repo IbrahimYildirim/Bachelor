@@ -139,4 +139,40 @@ The following is an example of user information that is persistent in the iOS ap
 
 4.2.5. Graphical User Interface
 
+The graphical user interface was built to support the following iOS devices: iPhone 4(640x960 px), iPhone 4S(640x960 px), iPhone 5(640×1136 px), iPhone 5S(640×1136 px), iPhone 6(750×1334 px), iPhone 6 Plus(1242×2208 px). There is no support for other iOS devices, as stated in the scope of the project. Also, only the portrait device orientation is supported. This minimizes the development work, due to removing the need to adapt the user interface for the landscape orientation.
+Another important issue is deciding which iOS versions to support, since the UI components (provided by the Cocoa Touch framework) can have design differences in different iOS versions. The following figure (statistics provided by Apple) shows that only 2% of the devices are running an iOS version lower than 7, therefore the minimum supported version is iOS 7.0 and the latest is 8.3. As there are no major differences between versions 7 and 8, it was decided to support version 7, even though only 16% of the devices are running it. 
+[INSERT FIGURE 4.2.5. iOS distribution - Fig 1]
+The user interface was designed according to Apple's guide called 'iOS Human Interface Guidelines'. Patterns, best practices are recommendations can be found in this guide, along with UI components provided by the Cocoa Touch framework. The anatomy of an iOS app is a gathering of UI components, as it can be seen in the following illustration:
+[INSERT FIGURE 4.2.5. iOS app anatomy - Fig.2]
+The basic UI component provided by the Cocoa Touch framework is 'UIView'. All other UI elements inherit from it and each controller manages a container view that holds all the views that need to be visible at a given time. The relationship between the views and the controllers can be observed in the following image:
+[INSERT FIGURE 4.2.5. Views relationship to Controllers - Fig.3]
+In order to support all the required screen sizes, the concept of 'Auto Layout' is used. Apple defines this concept as following:
+'Auto Layout is a system that lets you lay out your app’s user interface by creating a mathematical description of the relationships between the elements. You define these relationships in terms of constraints either on individual elements, or between sets of elements. Using Auto Layout, you can create a dynamic and versatile interface that responds appropriately to changes in screen size, device orientation, and localization.'
+Constraints are used as relationships between UI elements and they are enforced at run time, making the user interface adaptive to the screen size of the device.
+One of the main design decisions was to use a 'Tab Bar' (UI component provided by the Cocoa Touch framework). This component is used for the main navigation of the application. It's defined by Apple in the following way:
+'A tab bar gives people the ability to switch between different subtasks, views, or modes in an app. Use a tab bar to organize information at the app level. A tab bar is well suited for use in the main app view because it’s a good way to flatten your information hierarchy and provide access to several peer information categories or modes at one time.'
+The following is an illustration of the tab bar used. Each item lets the user access another navigation flow. 
+[INSERT FIGURE 4.2.5. Tab bar - Fig.4]
+All of the UI components used are components provided by the Cocoa Touch framework, with a layer of customization.
+[INSERT FIGURE 4.2.5. Example of UITextField customization - Fig.5]
+The design process of the user interface is composed of 3 steps: wireframes, digital design and implemented design. Those 3 steps were repeated for all of the screens of the UI.
+The wireframes are paper sketches used for defining navigation, arrange UI elements and defining content.
+The digital design was performed in Sketch (design tool similar to Photoshop) and its purpose is to create an interface that is consistent throught the application, without actually spending time implementing it. 
+The implementation of the design is the last step, performed by following the output of the step 2. The implemented UI is often identic with the digital design.
+The following is an example of the first 3 screen of the application, from the wireframes to the digital designs.
+[INSERT FIGURE 4.2.5. Wireframes UI - Fig. 6]
+[INSERT FIGURE 4.2.5. Digital design UI - Fig. 7]
+
 4.2.5.1. Storyboards, views and code
+
+A very important decision at the beginning of implementing an iOS application is how should the user interface be implemented. There are 3 ways of achieving this task:
+{BULLET POINTS LIST}
+- By using Storyboards. A storyboard is a visual tool for laying out multiple application views and the transitions between them. This is the newest way to implement an UI, but unfortunately it's not mature enough to be used in complex projects. Storyboards were created to help developers visualize the views and flow of an application.
+- By using .xib files. Each .xib file corresponds to a single view element (that can have subviews) and can be laid out in the Interface Builder, making it a visual tool. 
+- In code. Without using any GUI tool, handling all custom positioning, animations and constraints programatically. 
+Each approach has its pros and cons, but in this project the interface is built by using .xib files due to several reasons:
+{BULLET POINTS LIST}
+- Storyboards make working in a team harder. Even if source control software is used, 2 developers cannot work on the storyboard at the same time, since there will be almost unsolvable conficlts every time this happens.
+- Storyboards hinder code reuse. Setting values in a storyboard has to happen is all needed elements, therefore duplicating the setup. In case of change needed, all the occurences need to be modified. 
+- Reusable views cannot be used in storyboards. If there is one UI component that needs to be used more than once, then this component needs to be created and customized each time where it is used.
+Building the UI in code would substantially increase the project time, since there would be no visual interface of the application, unless it's build and run.
