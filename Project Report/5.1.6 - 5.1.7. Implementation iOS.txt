@@ -18,3 +18,17 @@ A complete flow of sending push notifications is illustrated in the following se
 
 5.1.7. Push notifications implementation
 
+The push notifications are implemented using Parse, a high level cloud solution that provides abstraction for sending push notifications to iOS applications. 
+The base of the concept is the Apple Push Notification Service (APNs), which Apple defines as follows:
+'Apple Push Notification service transports and routes a remote notification from a given provider to a given device. A notification is a short message consisting of two major pieces of data: the device token and the payload. The device token is analogous to a phone number; it contains information that enables APNs to locate the device on which the client app is installed. APNs also uses it to authenticate the routing of a notification. The payload is a JSON-defined property list that specifies how the user of an app on a device is to be alerted.'
+In the following diagram, Parse is the provider, providing an out of the box setup.
+[INSERT FIGURE 5.1.7. APNs structure - Fig.1]
+Push notifications are used in 2 situations: for sending information to users attending an event that a new message was sent to the event chat and for sending an invitation to an event from a user to another user. 
+The event chat notification is sent from an iOS device to other iOS devices, by using the Parse iOS SDK as an intermediate layer, which handles all the low level communication. 
+The user invitation notification is sent from an iOS device to another iOS device, by using both the Web Service and the Parse layers. A HTTPS request is made to the Web Service, which then uses the Parse Javascript SDK for sending the notification to the corresponding iOS device. This flow can be observed in the following sequence diagram:
+[INSERT FIGURE 5.1.7. Push notification sequence diagram - Fig. 2]
+The opening of the push notification is handled in the iOS devices in 3 application states: application is running in background, application is running in foreground, application is not running. 
+The following handles the state where the app is not running and the user taps a received push notification:
+[INSERT FIGURE 5.1.7. Handling a received push notification - Fig.3]
+
+
