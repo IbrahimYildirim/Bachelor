@@ -28,3 +28,5 @@ https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/
 http://bohemiancoding.com/sketch/
 http://www.toptal.com/ios/ios-user-interfaces-storyboards-vs-nibs-vs-custom-code
 http://en.wikipedia.org/wiki/Website_wireframe
+https://github.com/jessesquires/JSQMessagesViewController
+

@@ -1,0 +1,20 @@
+5.1.6 - 5.1.7. Implementation iOS
+
+5.1.6. Chat implementation
+
+The UI implementation for the Chat feature can be seen in the following illustration:
+[INSERT FIGURE 5.1.6. Chat UI implementation - Fig.1]
+For this feature, 2 components were used: an open source UI library called 'JSQMessagesViewController' and Parse (BaaS) for storing the chat messages and sending push notifications.
+JSQMessagesViewController provides already customized UI components that can be combined together for building the interface. Further customization is also possible, the library offering flexibility. The base of JSQMessagesViewController is a 'UIViewController' (class provided by the Cocoa Touch framework) that manages a UICollectionView (also provided by the Cocoa Touch framework). Therefore, UICollectionViewDataSource protocol methods are used to customize the layout in addition to JSQMessagesViewController protocol methods. 
+The following is the basic layout customization, which takes place after a Chat controller is visible on the device screen:
+[INSERT FIGURE 5.1.6. Initial Chat UI setup - Fig.2]
+The second part is the implementation of the chat logic and communication between multiple iOS apps. Parse (BaaS) is used for this purpose, with its iOS SDK. Unfortunately, the chat is not real-time, but a simulation of this is achieved by using a timer, which loads the messages for a specific event chat every 5 seconds.This is performed only when a Chat controller is visible on the screen. 
+[INSERT FIGURE 5.1.6. Loading messages - Fig.3]
+In order to provide a good user experience, push notifications are used for the purpose of informing the users that are attending an event that there are new messages in the event chat. The Parse iOS SDK is used for sending the push notification to all other iOS apps, except the sending one. The receiving iOS apps can open the push notification, which triggers handling that opens the Chat controller for the specific event corresponding to the push notification received. 
+[INSERT FIGURE 5.1.6. Chat sending push notification - Fig.4]
+The handling of opening the push notification with the correct Chat screen is based on the receiving 'eventId', which is set by the push notification sender. 
+A complete flow of sending push notifications is illustrated in the following sequence diagram:
+[INSERT FIGURE 5.1.6. Chat sequence diagram - Fig.5]
+
+5.1.7. Push notifications implementation
+
