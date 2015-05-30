@@ -1,0 +1,8 @@
+8. Results
+
+The results of the project is a client-server system, which functions as expected. The system successfully represents a sport events social network. Multiple clients on multiple platforms can interact through a server and attend sport events.   
+All of the listed requirements were implemented and tested in various scenarios.
+The client (iOS application) behaves as expected in all of the targeted iOS devices and all of the iOS versions. 
+The server has a robust architecture, being able to scale up in case of need. The Web Service is able to communicate over HTTP(S) via a RESTful API, which can be called in the targeted platforms (Android and iOS) plus others if needed. The API defines functionalities that are independent of their according implementations. 
+The server also successfully communicates with the 3rd party services used, Parse and AWS S3. Data can be stored and retrieved from the AWS S3 and chat messages can be stored and retrieved from Parse, as well as sending and receiving push notifications. 
+Every component of the system is functional and the system as a whole behaves as expected. 
