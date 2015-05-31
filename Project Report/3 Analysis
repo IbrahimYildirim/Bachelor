@@ -20,6 +20,8 @@ Functional
 	The user must be able to find other users close to him with similar interests
 
 3.2 Domain model
+The Domain Model diagram is a first approximation of the model that will be used for the application. Each
+user will be able to attend multiple events that have a sport associated with them. The user also has a specified sport preference to personalize his experience. 
 [3-Domain-Model]
 
 3.3 Use cases
