@@ -1,0 +1,8 @@
+1. Abstract
+
+1. Abstract
+
+The objective of the project was to develop a client-server system, where users can interact through the client (iOS application) and socialize around the topic of sport events. 
+Each component of the system was chosen to support the mobile applications environment. The client was developed using the iOS SDK and user interface components provided by the Cocoa Touch framework. This allows for a high performance and a favorable user experience. 
+The outcome of the project is a fully functional system, which allows users to interact as expected. All of the system components have been deployed successfully and the client is available for download in Apple's AppStore (digital distribution platform for mobile applications).
+The result is a system that can support a moderate amount of users, further work being needed for a larger user base. The mobile application benefits from exposure to the public and it has the potential of becoming a popular and successful social application. 

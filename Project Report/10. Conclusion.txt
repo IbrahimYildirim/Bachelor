@@ -1,0 +1,9 @@
+10. Conclusion
+
+The objective of the project was achieved. A client-server system is fully functional, allowing users to interact through an iOS application via a Server. The system is deployed and available to the public. 
+The current version would support a roughly estimated amount of 1000 users, but scalability improvements are needed to support a larger user base.
+The client user interface was designed for improved usability and a rich user experience. 
+The technology chosen for implementing the iOS application clearly supports the needs of the project.
+All the problems defined in the beginning of the project were addressed to an acceptable extent, with positive outcomes. The delimitations set were useful due to offering control of the development time.
+The product is a medium size project, with roughly 14500 lines of code written just for the iOS application.
+The project is considered a success and a satisfactory result. 

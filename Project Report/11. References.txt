@@ -31,4 +31,8 @@ http://en.wikipedia.org/wiki/Website_wireframe
 https://github.com/jessesquires/JSQMessagesViewController
 https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html
 https://parse.com/docs/ios/guide#push-notifications
+https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/testing_with_xcode/Introduction/Introduction.html
+http://appium.io/
+http://en.wikipedia.org/wiki/Continuous_integration
+http://thinkapps.com/blog/post-launch/monetize-apps-paid-apps-vs-app-purchases-vs-freemium-vs-subscription/
 

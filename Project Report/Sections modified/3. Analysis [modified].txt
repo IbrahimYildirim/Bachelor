@@ -1,0 +1,41 @@
+3 Analysis
+
+3.1 Requirements
+
+Non-functional
+
+	Application must be an iOS application, optimized for iPhone devices.
+	Application must support iOS versions 7.1 - 8.3.
+	Application must support all iPhone screen sizes (iPhone 4, 4S, 5, 5S, 6 & 6 plus).
+
+Functional
+	
+	The user must be able to find sport events close to his location.
+	The user must be able to view details about any sport event.
+	The user must be able to create an event.
+	The user must be able to join / leave an event.
+	The user must be able to send chat messages to people that have joined the same event.
+	The user must be able to invite users to events.
+	The user must be able to change his profile information.
+	The user must be able to find other users with similar interests close to his location.
+
+3.2 Domain model
+[3-Domain-Model]
+
+3.3 Use cases
+3.3.1 Use case diagram
+[3-Use-Case]
+
+3.3.2 Actor descriptions
+Name : Guest
+Description: This actor represents a user that is not logged in the system. The only actions available to him are to enter the system either by logging in or registering
+
+Name: User
+Description: This actor represents a user that is logged in the system.
+
+3.3.3 Use case descriptions and Activity diagrams
+Use case description and activity diagrams were generated for every Use Case. One is presented in the report, while others can be found in the Appendices.
+[3 Use Case Descriptions.ods -- 1st one]
+
+[3-Activity-register.png]
+

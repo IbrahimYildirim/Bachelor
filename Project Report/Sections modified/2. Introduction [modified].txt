@@ -1,0 +1,11 @@
+
+The project will cover the development of the iOS application named SportLook, optimized for iPhone devices. The application is a renewed version of an already existing iOS application named Movebizz, which was available in Apple's AppStore. Movebizz provides its users with the opportunity to meet other people who share the same sport interests through sport events. Unfortunately, the application lacks good functionality and good user experience. The concept of the application is that its users can create sport events and other users can view these events and all related information to the events such as name, date, location, participants etc.
+The objective of this project is to build an iOS application, optimized for iPhone devices, that can share data between users. It builds on the concepts of MoveBizz, but will benefit from extra functionality which will be documented. 
+
+2.1 Project Environment
+
+The outcome of this project will be an iOS application, which is a requirement from the company Move Sport (further addressed as the client). The client originally had the idea of this concept and hired a development team to create the first version - MoveBizz. Unfortunately, the end product is not a stable system and it cannot be used properly for its purpose due to poor performance. 
+
+The application will present users with sport events in their area, and then give them the opportunity to join the event and interact with the other participants. One of the requirements from the client is that the server can communicate with different mobile operative systems. The reason for that is because the client hired another development team (AppUdvikleren.dk) to build the Android version of this application. During the development of SportLook we had to coordinate with them in order to make the application have a similar user interface and similar functionality, as present in the iOS application.  
+
+The segment of users of this application are both genders in the age group of 12 to 65 and have an active lifestyle or want to socialize through a game of football, chess or different activities. A common person wants to meet other people that share the same sport interests as themselves.
