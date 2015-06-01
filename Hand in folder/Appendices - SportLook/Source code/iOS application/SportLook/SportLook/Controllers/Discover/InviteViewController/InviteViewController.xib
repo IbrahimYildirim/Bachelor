@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InviteViewController" customModule="SportLook" customModuleProvider="target">
+            <connections>
+                <outlet property="lblNoEvents" destination="Kpe-NI-2IS" id="8m1-qh-nYT"/>
+                <outlet property="tblEvents" destination="lDb-AI-DV9" id="jzs-nv-p2H"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="vwNoEvents" destination="QUR-CM-D37" id="d0C-Ia-0wL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lDb-AI-DV9">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" red="0.85882352939999995" green="0.91372549020000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="k7T-y5-ckl"/>
+                        <outlet property="delegate" destination="-1" id="SFo-Ko-Ms4"/>
+                    </connections>
+                </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUR-CM-D37" userLabel="EmptyPlaceholderView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You didn't create or join any events yet! Create or join an event before inviting to sport." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-NI-2IS" userLabel="EmpyPlaceholderLabel">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Kpe-NI-2IS" firstAttribute="leading" secondItem="QUR-CM-D37" secondAttribute="leading" constant="179" id="1YH-cc-YdN">
+                            <variation key="widthClass=compact" constant="20"/>
+                        </constraint>
+                        <constraint firstAttribute="trailing" secondItem="Kpe-NI-2IS" secondAttribute="trailing" constant="179" id="Wp3-Kf-dvS">
+                            <variation key="widthClass=compact" constant="20"/>
+                        </constraint>
+                        <constraint firstAttribute="centerY" secondItem="Kpe-NI-2IS" secondAttribute="centerY" constant="-0.5" id="d21-8x-48g">
+                            <variation key="widthClass=compact" constant="0.0"/>
+                        </constraint>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="Kpe-NI-2IS"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="Wp3-Kf-dvS"/>
+                            <exclude reference="d21-8x-48g"/>
+                            <exclude reference="1YH-cc-YdN"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="Kpe-NI-2IS"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="Wp3-Kf-dvS"/>
+                            <include reference="d21-8x-48g"/>
+                            <include reference="1YH-cc-YdN"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="QUR-CM-D37" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7lB-FK-Z1R"/>
+                <constraint firstAttribute="bottom" secondItem="QUR-CM-D37" secondAttribute="bottom" id="BPG-7b-sKr"/>
+                <constraint firstAttribute="trailing" secondItem="QUR-CM-D37" secondAttribute="trailing" id="BwJ-9v-lSI"/>
+                <constraint firstAttribute="bottom" secondItem="lDb-AI-DV9" secondAttribute="bottom" id="WEj-MF-pZp"/>
+                <constraint firstItem="lDb-AI-DV9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WXf-6W-7cU"/>
+                <constraint firstItem="lDb-AI-DV9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YJ8-bg-roM"/>
+                <constraint firstItem="QUR-CM-D37" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tfa-3a-3Eq"/>
+                <constraint firstAttribute="trailing" secondItem="lDb-AI-DV9" secondAttribute="trailing" id="zhp-Xg-vX2"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="lDb-AI-DV9"/>
+                    <exclude reference="QUR-CM-D37"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="7lB-FK-Z1R"/>
+                    <exclude reference="BPG-7b-sKr"/>
+                    <exclude reference="BwJ-9v-lSI"/>
+                    <exclude reference="tfa-3a-3Eq"/>
+                    <exclude reference="WEj-MF-pZp"/>
+                    <exclude reference="WXf-6W-7cU"/>
+                    <exclude reference="YJ8-bg-roM"/>
+                    <exclude reference="zhp-Xg-vX2"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="lDb-AI-DV9"/>
+                    <include reference="QUR-CM-D37"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="7lB-FK-Z1R"/>
+                    <include reference="BPG-7b-sKr"/>
+                    <include reference="BwJ-9v-lSI"/>
+                    <include reference="tfa-3a-3Eq"/>
+                    <include reference="WEj-MF-pZp"/>
+                    <include reference="WXf-6W-7cU"/>
+                    <include reference="YJ8-bg-roM"/>
+                    <include reference="zhp-Xg-vX2"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

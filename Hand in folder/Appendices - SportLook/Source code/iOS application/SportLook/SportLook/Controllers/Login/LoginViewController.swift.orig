@@ -1,0 +1,188 @@
+//
+//  LoginViewController.swift
+//  SportLook
+//
+//  Created by Terminator on 01/03/15.
+//  Copyright (c) 2015 BachelorProject. All rights reserved.
+//
+
+import UIKit
+
+class LoginViewController: BaseViewController, FBLoginViewDelegate {
+    
+    @IBOutlet var fbLoginView : FBLoginView!
+    
+    @IBOutlet weak var emailTextFieldContentView: UIView!
+    @IBOutlet weak var passwordTextFieldContentView: UIView!
+    
+    @IBOutlet weak var orLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    var emailField:TextFieldView!
+    var passwordField:TextFieldView!
+    
+    override init() {
+        super.init(nibName: "LoginViewController", bundle: nil)
+        
+    }
+    
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+
+        addSubviews()
+        setLayout()
+        
+        self.fbLoginView.delegate = self
+        self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends", "user_location"]
+    }
+    
+    func addSubviews(){
+        
+        emailField = NSBundle.mainBundle().loadNibNamed("TextFieldView", owner: nil, options: nil)[0] as TextFieldView
+        emailTextFieldContentView.addSubview(emailField)
+        
+        passwordField = NSBundle.mainBundle().loadNibNamed("TextFieldView", owner: nil, options: nil)[0] as TextFieldView
+        passwordTextFieldContentView.addSubview(passwordField)
+    }
+    
+    func setLayout(){
+        
+        self.title = "Log In"
+        self.view.backgroundColor = UIColor.COLOR_VIEW_BACKGROUND
+        
+        orLabel.font = UIFont(name: UIFont.QUICKSAND_BOLD, size: 17)
+        orLabel.textColor = UIColor.COLOR_LOGIN_OR
+        
+        loginButton.setTitle("Log In", forState: UIControlState.Normal)
+        loginButton.tintColor = UIColor.COLOR_BUTTON_TEXT
+        loginButton.backgroundColor = UIColor.COLOR_BUTTON_BACKGROUND
+        loginButton.titleLabel?.font = UIFont(name: UIFont.QUICKSAND_BOLD, size: 18)
+
+        emailField.textField.placeholder = "Email"
+        emailField.textField.keyboardType = UIKeyboardType.EmailAddress
+        emailField.textField.returnKeyType = UIReturnKeyType.Done
+        emailField.icon.image = UIImage(named: "ic_email")
+        passwordField.textField.placeholder = "Password"
+        passwordField.textField.secureTextEntry = true
+        passwordField.textField.returnKeyType = UIReturnKeyType.Done
+        passwordField.icon.image = UIImage(named: "ic_password")
+    }
+    
+    //MARK: Button Events
+    @IBAction func loginButtonTapped(sender: UIButton) {
+        
+        let email : String = emailField.textField.text
+        let password : String = passwordField.textField.text
+<<<<<<< HEAD
+        // TODO: Real validation for fields here
+        
+        if(email.isEmpty || password.isEmpty){
+            
+            let alert = SCLAlertView()
+            alert.showError("Oups!", subTitle: "Email or password not valid!", closeButtonTitle: "Ok")
+            
+        } else{
+            
+            let loginProvider = LoginProvider()
+            loginProvider.login(email, password: password, success: { (response) -> Void in
+            
+                let controller = SportLookTabBarController()
+                self.navigationController?.setViewControllers([controller], animated: true)
+                }) { (error) -> Void in
+            
+                    let alert = SCLAlertView()
+                    alert.showError("Oups!", subTitle: "Something went wrong. Try again!", closeButtonTitle: "Ok")
+                    //Here will need to pass 'error' to an ErrorHandler
+            }
+        }
+=======
+        // TODO: Validate fields here
+        
+        let loginProvider = LoginProvider()
+        loginProvider.login(email, password: password)
+        //In the completion block, show tabBarController
+        //In the failure block, show error to user
+    }
+    
+    @IBAction func loginWithFacebookButtonTapped(sender: UIButton) {
+        
+        println("You logged in with Facebook.")
+>>>>>>> feature-my-events
+    }
+    
+    //MARK: FBDelegate Methods
+    func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
+        
+        //Should I do smth here?
+        println("You're logged in with FB!")
+        
+        let alert = SCLAlertView()
+        alert.showSuccess("Awesome!", subTitle: "Logged in with Facebook!", closeButtonTitle: "Ok")
+    }
+    
+    func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
+        
+        println(user)
+        
+        let fbToken = FBSession.activeSession().accessTokenData.accessToken
+//        println("Access Token: \(accessToken)")
+//        let avatarLocation = "https://graph.facebook.com/\(user.objectID)/picture?width=640&height=640"
+<<<<<<< HEAD
+//        let defaults = NSUserDefaults.standardUserDefaults()
+        // TODO: Add checks for all those keys
+//        defaults.setObject("fullName", forKey: user.name)
+//        defaults.setObject("imgLink", forKey: "https://graph.facebook.com/\(user.objectID)/picture?width=640&height=640")
+//        defaults.setObject("fbID", forKey: user.objectID)
+////        defaults.setObject("city", forKey: user.location.name)
+//        defaults.setObject("email", forKey: user.objectForKey("email") as String)
+        
+        //Backend integration
+        let email = user.objectForKey("email") as String
+        let facebookToken : String = fbToken
+        
+        let loginProvider = LoginProvider()
+        loginProvider.loginWithFacebook(email, facebookToken: facebookToken, success: { (response) -> Void in
+            
+            let controller = SportLookTabBarController()
+            self.navigationController?.setViewControllers([controller], animated: true)
+        }) { (error) -> Void in
+            
+            let alert = SCLAlertView()
+            alert.showError("Oups!", subTitle: "Login with Facebook failed. Try again!", closeButtonTitle: "Ok")
+            //Here will need to pass 'error' to an ErrorHandler
+        }
+=======
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        // TODO: Add checks for all those keys
+        defaults.setObject("fullName", forKey: user.name)
+        defaults.setObject("imgLink", forKey: "https://graph.facebook.com/\(user.objectID)/picture?width=640&height=640")
+        defaults.setObject("fbID", forKey: user.objectID)
+//        defaults.setObject("city", forKey: user.location.name)
+        defaults.setObject("email", forKey: user.objectForKey("email") as String)
+        
+        //Login with Facebook backend
+        let email = user.objectForKey("email") as String
+        let facebookToken = accessToken
+        
+        let loginProvider = LoginProvider()
+        loginProvider.loginWithFacebook(email, facebookToken: facebookToken)
+        //In the completion block, show tabBarController
+        //In the failure block, show error to user
+>>>>>>> feature-my-events
+    }
+    
+    func loginViewShowingLoggedOutUser(loginView: FBLoginView!) {
+        
+        println("You're NOT logged in with FB!")
+        
+    }
+    
+    func loginView(loginView: FBLoginView!, handleError error: NSError!) {
+        
+        println("Error @Facebook: \(error.localizedDescription)")
+        
+    }
+}

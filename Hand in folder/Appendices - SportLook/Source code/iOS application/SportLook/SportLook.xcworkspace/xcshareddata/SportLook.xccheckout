@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AB7B1A59-61B2-4A90-85DB-015EC2ACE035</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SportLook</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2AD0D965C480477D6DD9E9DEA204B9F419055EB2</key>
+		<string>https://github.com/alexcosmin/SportLook.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SportLook.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2AD0D965C480477D6DD9E9DEA204B9F419055EB2</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/alexcosmin/SportLook.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2AD0D965C480477D6DD9E9DEA204B9F419055EB2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2AD0D965C480477D6DD9E9DEA204B9F419055EB2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SportLook</string>
+		</dict>
+	</array>
+</dict>
+</plist>

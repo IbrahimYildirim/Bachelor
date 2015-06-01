@@ -1,0 +1,12 @@
+platform :ios, '7.1'
+
+pod 'pop', '~> 1.0'
+pod 'IQKeyboardManager'
+pod 'MRProgress'
+pod 'kingpin'
+pod 'HUMSlider'
+pod 'SDWebImage'
+pod 'JSQMessagesViewController'
+pod 'Bolts'
+pod 'Facebook-iOS-SDK', '3.23.1'
+

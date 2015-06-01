@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProfilePhotoView" customModule="SportLook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_profile_image" translatesAutoresizingMaskIntoConstraints="NO" id="nsZ-Ln-jdO">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="nsZ-Ln-jdO" secondAttribute="centerX" id="Cwp-Vz-P8w"/>
+                <constraint firstAttribute="bottom" secondItem="nsZ-Ln-jdO" secondAttribute="bottom" id="Cyd-pK-jU1"/>
+                <constraint firstItem="nsZ-Ln-jdO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YIS-nG-qbQ"/>
+                <constraint firstItem="nsZ-Ln-jdO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hEV-6Q-jW4"/>
+                <constraint firstAttribute="trailing" secondItem="nsZ-Ln-jdO" secondAttribute="trailing" id="kgk-1R-QrP"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="nsZ-Ln-jdO"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="Cwp-Vz-P8w"/>
+                    <exclude reference="Cyd-pK-jU1"/>
+                    <exclude reference="YIS-nG-qbQ"/>
+                    <exclude reference="hEV-6Q-jW4"/>
+                    <exclude reference="kgk-1R-QrP"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="nsZ-Ln-jdO"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="Cwp-Vz-P8w"/>
+                    <include reference="Cyd-pK-jU1"/>
+                    <include reference="YIS-nG-qbQ"/>
+                    <include reference="hEV-6Q-jW4"/>
+                    <include reference="kgk-1R-QrP"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="imgProfilePhoto" destination="nsZ-Ln-jdO" id="khp-TP-NMb"/>
+            </connections>
+            <point key="canvasLocation" x="145" y="174"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="placeholder_profile_image" width="205" height="205"/>
+    </resources>
+</document>

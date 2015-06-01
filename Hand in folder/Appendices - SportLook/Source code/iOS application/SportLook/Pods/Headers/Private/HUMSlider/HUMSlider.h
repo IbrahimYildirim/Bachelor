@@ -1,0 +1,1 @@
+../../../HUMSlider/Library/HUMSlider.h

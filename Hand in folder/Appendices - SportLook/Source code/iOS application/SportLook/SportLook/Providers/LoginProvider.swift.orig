@@ -1,0 +1,124 @@
+//
+//  LoginProvider.swift
+//  SportLook
+//
+//  Created by Terminator on 13/03/15.
+//  Copyright (c) 2015 BachelorProject. All rights reserved.
+//
+
+import Foundation
+
+class LoginProvider {
+
+    let loginPath = "/login"
+    let facebookLoginPath = "/facebooklogin"
+    let registerPath = "/register"
+    let registerWithFacebookPath = "/facebook"
+    
+<<<<<<< HEAD
+    func login(email: String, password: String, success: (response: LoginResponse) -> Void, failure: (error: Error) -> Void){
+        
+        let params = ["email": email, "password": password]
+        let dataProvider = DataProvider(method: .POST, path: loginPath, params: params)
+        dataProvider.requestData({ (response) -> Void in
+            
+            let loginResponse = LoginResponse(json: response)
+            println("Logged in! Token: " + loginResponse.accessToken!)
+            KeychainHandler.saveUserLoggedToken(loginResponse.accessToken!)
+            
+            success(response: loginResponse)
+            
+        }, failure: { (error) -> Void in
+            failure(error: error)
+        })
+    }
+    
+    func loginWithFacebook(email: String, facebookToken: String, success: (response: LoginResponse) -> Void, failure: (error: Error) -> Void){
+=======
+    func login(email: String, password: String){
+        
+        let params = ["email": email, "password": password]
+        let dataProvider = DataProvider(method: .POST, path: loginPath, params: params)
+        
+        //fix to be proper - return blocks
+        dataProvider.requestData()
+    }
+    
+    func loginWithFacebook(email: String, facebookToken: String){
+>>>>>>> feature-my-events
+        
+        let params = ["email": email, "facebook_token": facebookToken]
+        let dataProvider = DataProvider(method: .POST, path: facebookLoginPath, params: params)
+        
+<<<<<<< HEAD
+        dataProvider.requestData({ (response) -> Void in
+            
+            let loginResponse = LoginResponse(json: response)
+            println("Logged in! Token: " + loginResponse.accessToken!)
+            KeychainHandler.saveUserLoggedToken(loginResponse.accessToken!)
+            
+            success(response: loginResponse)
+            
+        }, failure: { (error) -> Void in
+            failure(error: error)
+        })
+    }
+    
+    func signup(email: String, password: String, name: String, address: String, success: (response: LoginResponse) -> Void, failure: (error: Error) -> Void){
+=======
+        //fix to be proper - return blocks
+        dataProvider.requestData()
+    }
+    
+    func signup(email: String, password: String, name: String, address: String){
+>>>>>>> feature-my-events
+        
+        let params = ["email": email, "password": password, "name": name, "address": address]
+        let dataProvider = DataProvider(method: .POST, path: registerPath, params: params)
+        
+<<<<<<< HEAD
+        dataProvider.requestData({ (response) -> Void in
+            
+            let loginResponse = LoginResponse(json: response)
+            println("Signed up! Token: " + loginResponse.accessToken!)
+            KeychainHandler.saveUserLoggedToken(loginResponse.accessToken!)
+            
+            success(response: loginResponse)
+            
+        }, failure: { (error) -> Void in
+            failure(error: error)
+        })
+    }
+    
+    func signupWithFacebook(email: String, name: String, address: String, facebookToken: String, success: (response: LoginResponse) -> Void, failure: (error: Error) -> Void){
+=======
+        //fix to be proper - return blocks
+        dataProvider.requestData()
+    }
+    
+    func signupWithFacebook(email: String, name: String, address: String, facebookToken: String){
+>>>>>>> feature-my-events
+        
+        let params = ["email": email, "name": name, "address": address, "facebook_token": facebookToken]
+        let dataProvider = DataProvider(method: .POST, path: registerWithFacebookPath, params: params)
+        
+<<<<<<< HEAD
+        dataProvider.requestData({ (response) -> Void in
+            
+            let loginResponse = LoginResponse(json: response)
+            println("Signed up! Token: " + loginResponse.accessToken!)
+            KeychainHandler.saveUserLoggedToken(loginResponse.accessToken!)
+            
+            success(response: loginResponse)
+            
+        }, failure: { (error) -> Void in
+            failure(error: error)
+        })
+    }
+=======
+        //fix to be proper - return blocks
+        dataProvider.requestData()
+    }
+    
+>>>>>>> feature-my-events
+}

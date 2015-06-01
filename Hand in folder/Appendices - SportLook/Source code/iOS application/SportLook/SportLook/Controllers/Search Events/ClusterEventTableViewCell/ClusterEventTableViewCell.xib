@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Quicksand-Bold.ttf">
+            <string>Quicksand-Bold</string>
+            <string>Quicksand-Bold</string>
+        </mutableArray>
+        <mutableArray key="Quicksand-Regular.ttf">
+            <string>Quicksand-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ClusterEventTableViewCell" customModule="SportLook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QO8-0z-yhv">
+                        <rect key="frame" x="8" y="8" width="304" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="GwH-x5-UA1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="17"/>
+                        <color key="textColor" red="0.30980392159999998" green="0.42745098040000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzv-AO-wBH">
+                        <rect key="frame" x="8" y="35" width="152" height="20"/>
+                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="17"/>
+                        <color key="textColor" red="0.30980392159999998" green="0.42745098040000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6v-Ji-Pdn">
+                        <rect key="frame" x="160" y="37" width="152" height="17.5"/>
+                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                        <color key="textColor" red="0.2901960784" green="0.43529411759999997" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0v-QN-Rqn" userLabel="Seperator">
+                        <rect key="frame" x="8" y="58.5" width="304" height="1"/>
+                        <color key="backgroundColor" red="0.75294117650000003" green="0.83921568629999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="K6C-U8-jKh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="QO8-0z-yhv" secondAttribute="trailing" id="3Lg-dT-REm"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="s6v-Ji-Pdn" secondAttribute="bottom" constant="-3" id="6qy-II-Mw7"/>
+                    <constraint firstAttribute="centerXWithinMargins" secondItem="s6v-Ji-Pdn" secondAttribute="leading" id="Kc9-HE-87z"/>
+                    <constraint firstItem="QO8-0z-yhv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="VcW-wr-WRH"/>
+                    <constraint firstItem="s6v-Ji-Pdn" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ZHc-rs-sir"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Z0v-QN-Rqn" secondAttribute="bottom" constant="-8" id="eh4-0l-I5b"/>
+                    <constraint firstItem="QO8-0z-yhv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="jjm-mF-892"/>
+                    <constraint firstItem="Tzv-AO-wBH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="mgH-Tv-bpn"/>
+                    <constraint firstItem="Z0v-QN-Rqn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="pel-H0-K6v"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Tzv-AO-wBH" secondAttribute="bottom" constant="-4" id="r0Z-9F-Eag"/>
+                    <constraint firstItem="Tzv-AO-wBH" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="centerXWithinMargins" id="sr3-h7-M5F"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Z0v-QN-Rqn" secondAttribute="trailing" id="wm5-EL-8K6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.85882352939999995" green="0.91372549020000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="lblCategory" destination="s6v-Ji-Pdn" id="G1g-Vy-7f4"/>
+                <outlet property="lblDate" destination="Tzv-AO-wBH" id="TIo-Ra-jjI"/>
+                <outlet property="lblName" destination="QO8-0z-yhv" id="LlY-10-38G"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

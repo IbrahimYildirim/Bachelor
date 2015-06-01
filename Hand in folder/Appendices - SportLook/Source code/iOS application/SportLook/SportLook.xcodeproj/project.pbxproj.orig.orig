@@ -1,0 +1,1039 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F00330B1AB19D12006BBCB2 /* EventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0033091AB19D12006BBCB2 /* EventsTableViewCell.swift */; };
+		0F00330C1AB19D12006BBCB2 /* EventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F00330A1AB19D12006BBCB2 /* EventsTableViewCell.xib */; };
+		0F0033151AB1C46E006BBCB2 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0033141AB1C46E006BBCB2 /* FontAwesome.swift */; };
+		0F0033191AB1C811006BBCB2 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0033171AB1C811006BBCB2 /* AddEventViewController.swift */; };
+		0F00331A1AB1C811006BBCB2 /* AddEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0033181AB1C811006BBCB2 /* AddEventViewController.xib */; };
+		0F00331C1AB76347006BBCB2 /* ProfileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F00331B1AB76347006BBCB2 /* ProfileProvider.swift */; };
+		0FEA3C0E1AA4CAA8009DB07B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FEA3C0D1AA4CAA8009DB07B /* FacebookSDK.framework */; };
+		0FEA3C121AA4D38D009DB07B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C101AA4D38D009DB07B /* ProfileViewController.swift */; };
+		0FEA3C131AA4D38D009DB07B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C111AA4D38D009DB07B /* ProfileViewController.xib */; };
+		0FEA3C171AA4D8E0009DB07B /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C151AA4D8E0009DB07B /* CategoryTableViewCell.swift */; };
+		0FEA3C181AA4D8E0009DB07B /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C161AA4D8E0009DB07B /* CategoryTableViewCell.xib */; };
+		0FEA3C1D1AA7799E009DB07B /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C191AA76E22009DB07B /* FontAwesome.otf */; };
+		0FEA3C511AA9CD69009DB07B /* SportLookTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C501AA9CD69009DB07B /* SportLookTabBarController.swift */; };
+		0FEA3C571AA9D2FE009DB07B /* SearchEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C551AA9D2FE009DB07B /* SearchEventsViewController.swift */; };
+		0FEA3C581AA9D2FE009DB07B /* SearchEventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C561AA9D2FE009DB07B /* SearchEventsViewController.xib */; };
+		0FEA3C5C1AA9D346009DB07B /* MyEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C5A1AA9D346009DB07B /* MyEventsViewController.swift */; };
+		0FEA3C5D1AA9D346009DB07B /* MyEventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C5B1AA9D346009DB07B /* MyEventsViewController.xib */; };
+		0FEA3C611AA9D3A4009DB07B /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C5F1AA9D3A4009DB07B /* DiscoverViewController.swift */; };
+		0FEA3C621AA9D3A4009DB07B /* DiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C601AA9D3A4009DB07B /* DiscoverViewController.xib */; };
+		0FEA3C681AADE2EF009DB07B /* AttendedEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C661AADE2EF009DB07B /* AttendedEventTableViewCell.swift */; };
+		0FEA3C691AADE2EF009DB07B /* AttendedEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C671AADE2EF009DB07B /* AttendedEventTableViewCell.xib */; };
+		0FEA3C6D1AAE06D8009DB07B /* FavSportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C6B1AAE06D8009DB07B /* FavSportsTableViewCell.swift */; };
+		0FEA3C6E1AAE06D8009DB07B /* FavSportsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C6C1AAE06D8009DB07B /* FavSportsTableViewCell.xib */; };
+		0FEA3C721AAE238A009DB07B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C701AAE238A009DB07B /* EditProfileViewController.swift */; };
+		0FEA3C731AAE238A009DB07B /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C711AAE238A009DB07B /* EditProfileViewController.xib */; };
+		0FEA3C7D1AAF182C009DB07B /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C7B1AAF182C009DB07B /* TextFieldView.swift */; };
+		0FEA3C7E1AAF182C009DB07B /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C7C1AAF182C009DB07B /* TextFieldView.xib */; };
+		0FEA3C811AAF1898009DB07B /* SLInputview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C801AAF1898009DB07B /* SLInputview.swift */; };
+		0FEA3C831AAF1A5E009DB07B /* SLInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C821AAF1A5E009DB07B /* SLInputView.xib */; };
+		0FEA3C871AAF3777009DB07B /* ChangeFavSportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA3C851AAF3777009DB07B /* ChangeFavSportsViewController.swift */; };
+		0FEA3C881AAF3777009DB07B /* ChangeFavSportsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA3C861AAF3777009DB07B /* ChangeFavSportsViewController.xib */; };
+		1C16547F1AA0C26500D96572 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C16547D1AA0C26500D96572 /* HomeViewController.swift */; };
+		1C1654801AA0C26500D96572 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C16547E1AA0C26500D96572 /* HomeViewController.xib */; };
+<<<<<<< HEAD
+		1C49E8121AB87C0200DE3602 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C49E8111AB87C0200DE3602 /* SCLAlertView.swift */; };
+=======
+>>>>>>> feature-my-events
+		1C8C44A31AB5FE7500D22775 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C44A21AB5FE7500D22775 /* SwiftyJSON.swift */; };
+		1C8C44A61AB63F5800D22775 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C44A51AB63F5800D22775 /* Keychain.swift */; };
+		1C8C44A81AB6461E00D22775 /* KeychainHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C44A71AB6461E00D22775 /* KeychainHandler.swift */; };
+		1C8C44AA1AB6BE8F00D22775 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C44A91AB6BE8F00D22775 /* ErrorHandler.swift */; };
+		1CBC28321AB1B93F008F353E /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC28311AB1B93F008F353E /* Alamofire.swift */; };
+		1CBC28361AB1BC7A008F353E /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBC28351AB1BC7A008F353E /* DataProvider.swift */; };
+		1CDDD4281AA1DF9000CEBF7D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDD4271AA1DF9000CEBF7D /* UIColorExtension.swift */; };
+		1CDDD42B1AA3436100CEBF7D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDD4291AA3436100CEBF7D /* LoginViewController.swift */; };
+		1CDDD42C1AA3436100CEBF7D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDDD42A1AA3436100CEBF7D /* LoginViewController.xib */; };
+		1CDDD4311AA3442A00CEBF7D /* SignupStepOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDD42F1AA3442A00CEBF7D /* SignupStepOneViewController.swift */; };
+		1CDDD4321AA3442A00CEBF7D /* SignupStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDDD4301AA3442A00CEBF7D /* SignupStepOneViewController.xib */; };
+		1CDDD4351AA3444900CEBF7D /* SignupStepTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDD4331AA3444900CEBF7D /* SignupStepTwoViewController.swift */; };
+		1CDDD4361AA3444900CEBF7D /* SignupStepTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CDDD4341AA3444900CEBF7D /* SignupStepTwoViewController.xib */; };
+		1CDDD43A1AA3665400CEBF7D /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDD4391AA3665400CEBF7D /* UIFontExtension.swift */; };
+		1CDDD43E1AA366BC00CEBF7D /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CDDD43B1AA366BC00CEBF7D /* Quicksand-Bold.ttf */; };
+		1CDDD43F1AA366BC00CEBF7D /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CDDD43C1AA366BC00CEBF7D /* Quicksand-Light.ttf */; };
+		1CDDD4401AA366BC00CEBF7D /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CDDD43D1AA366BC00CEBF7D /* Quicksand-Regular.ttf */; };
+		1CDDD4421AA3B0DF00CEBF7D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDDD4411AA3B0DF00CEBF7D /* UIViewControllerExtension.swift */; };
+		1CE5D5D61AA1C81400603805 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE5D5D51AA1C81400603805 /* BaseViewController.swift */; };
+		1CE66D311A9CA25500A6F078 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE66D301A9CA25500A6F078 /* AppDelegate.swift */; };
+		1CE66D381A9CA25500A6F078 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CE66D371A9CA25500A6F078 /* Images.xcassets */; };
+		1CE66D3B1A9CA25500A6F078 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CE66D391A9CA25500A6F078 /* LaunchScreen.xib */; };
+		1CE66D471A9CA25500A6F078 /* SportLookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE66D461A9CA25500A6F078 /* SportLookTests.swift */; };
+<<<<<<< HEAD
+		1CE7B0C81AB84EE0009F2413 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7B0C71AB84EE0009F2413 /* LoginResponse.swift */; };
+		1CE7B0CA1AB85056009F2413 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE7B0C91AB85056009F2413 /* Error.swift */; };
+		1CEBC0881AAE0F8600D6F319 /* Welcome_screen.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1CEBC0871AAE0F8600D6F319 /* Welcome_screen.gif */; };
+		1CFC00891AB32CA200FF9F90 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC00881AB32CA200FF9F90 /* LoginProvider.swift */; };
+		EE09E8B8CDB14A5AEC184F4B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D7EAFC62C4F1959F0BC8A25 /* libPods.a */; };
+=======
+		1CEBC0881AAE0F8600D6F319 /* Welcome_screen.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1CEBC0871AAE0F8600D6F319 /* Welcome_screen.gif */; };
+		1CFC00891AB32CA200FF9F90 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFC00881AB32CA200FF9F90 /* LoginProvider.swift */; };
+		F5B00EEEB2005878EA9AE9F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 829CC252C0BD6EAED08BAADC /* libPods.a */; };
+>>>>>>> feature-my-events
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1CE66D411A9CA25500A6F078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1CE66D231A9CA25500A6F078 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1CE66D2A1A9CA25500A6F078;
+			remoteInfo = SportLook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F0033091AB19D12006BBCB2 /* EventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewCell.swift; sourceTree = "<group>"; };
+		0F00330A1AB19D12006BBCB2 /* EventsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventsTableViewCell.xib; sourceTree = "<group>"; };
+		0F0033141AB1C46E006BBCB2 /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
+		0F0033171AB1C811006BBCB2 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		0F0033181AB1C811006BBCB2 /* AddEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEventViewController.xib; sourceTree = "<group>"; };
+		0F00331B1AB76347006BBCB2 /* ProfileProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileProvider.swift; sourceTree = "<group>"; };
+		0FEA3C0B1AA4CA38009DB07B /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
+		0FEA3C0D1AA4CAA8009DB07B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		0FEA3C101AA4D38D009DB07B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0FEA3C111AA4D38D009DB07B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		0FEA3C151AA4D8E0009DB07B /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		0FEA3C161AA4D8E0009DB07B /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		0FEA3C191AA76E22009DB07B /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		0FEA3C501AA9CD69009DB07B /* SportLookTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportLookTabBarController.swift; sourceTree = "<group>"; };
+		0FEA3C551AA9D2FE009DB07B /* SearchEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEventsViewController.swift; sourceTree = "<group>"; };
+		0FEA3C561AA9D2FE009DB07B /* SearchEventsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchEventsViewController.xib; sourceTree = "<group>"; };
+		0FEA3C5A1AA9D346009DB07B /* MyEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsViewController.swift; sourceTree = "<group>"; };
+		0FEA3C5B1AA9D346009DB07B /* MyEventsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyEventsViewController.xib; sourceTree = "<group>"; };
+		0FEA3C5F1AA9D3A4009DB07B /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		0FEA3C601AA9D3A4009DB07B /* DiscoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoverViewController.xib; sourceTree = "<group>"; };
+		0FEA3C661AADE2EF009DB07B /* AttendedEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendedEventTableViewCell.swift; sourceTree = "<group>"; };
+		0FEA3C671AADE2EF009DB07B /* AttendedEventTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttendedEventTableViewCell.xib; sourceTree = "<group>"; };
+		0FEA3C6B1AAE06D8009DB07B /* FavSportsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavSportsTableViewCell.swift; sourceTree = "<group>"; };
+		0FEA3C6C1AAE06D8009DB07B /* FavSportsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavSportsTableViewCell.xib; sourceTree = "<group>"; };
+		0FEA3C701AAE238A009DB07B /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		0FEA3C711AAE238A009DB07B /* EditProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
+		0FEA3C771AAF181E009DB07B /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		0FEA3C781AAF181E009DB07B /* ButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonView.xib; sourceTree = "<group>"; };
+		0FEA3C7B1AAF182C009DB07B /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		0FEA3C7C1AAF182C009DB07B /* TextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
+		0FEA3C801AAF1898009DB07B /* SLInputview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SLInputview.swift; sourceTree = "<group>"; };
+		0FEA3C821AAF1A5E009DB07B /* SLInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SLInputView.xib; sourceTree = "<group>"; };
+		0FEA3C851AAF3777009DB07B /* ChangeFavSportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeFavSportsViewController.swift; sourceTree = "<group>"; };
+		0FEA3C861AAF3777009DB07B /* ChangeFavSportsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeFavSportsViewController.xib; sourceTree = "<group>"; };
+		1C16547D1AA0C26500D96572 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Home/HomeViewController.swift; sourceTree = "<group>"; };
+		1C16547E1AA0C26500D96572 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Home/HomeViewController.xib; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		1C49E8111AB87C0200DE3602 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> feature-my-events
+		1C8C44A21AB5FE7500D22775 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		1C8C44A51AB63F5800D22775 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		1C8C44A71AB6461E00D22775 /* KeychainHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainHandler.swift; path = Services/KeychainHandler.swift; sourceTree = "<group>"; };
+		1C8C44A91AB6BE8F00D22775 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorHandler.swift; path = Services/ErrorHandler.swift; sourceTree = "<group>"; };
+		1CBC28311AB1B93F008F353E /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		1CBC28351AB1BC7A008F353E /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProvider.swift; path = Providers/DataProvider.swift; sourceTree = "<group>"; };
+		1CDDD4271AA1DF9000CEBF7D /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = Resources/UIColorExtension.swift; sourceTree = "<group>"; };
+		1CDDD4291AA3436100CEBF7D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/Login/LoginViewController.swift; sourceTree = "<group>"; };
+		1CDDD42A1AA3436100CEBF7D /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = Controllers/Login/LoginViewController.xib; sourceTree = "<group>"; };
+		1CDDD42F1AA3442A00CEBF7D /* SignupStepOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupStepOneViewController.swift; path = Controllers/Signup/SignupStepOneViewController.swift; sourceTree = "<group>"; };
+		1CDDD4301AA3442A00CEBF7D /* SignupStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignupStepOneViewController.xib; path = Controllers/Signup/SignupStepOneViewController.xib; sourceTree = "<group>"; };
+		1CDDD4331AA3444900CEBF7D /* SignupStepTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupStepTwoViewController.swift; path = Controllers/Signup/SignupStepTwoViewController.swift; sourceTree = "<group>"; };
+		1CDDD4341AA3444900CEBF7D /* SignupStepTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SignupStepTwoViewController.xib; path = Controllers/Signup/SignupStepTwoViewController.xib; sourceTree = "<group>"; };
+		1CDDD4391AA3665400CEBF7D /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIFontExtension.swift; path = Resources/Fonts/UIFontExtension.swift; sourceTree = "<group>"; };
+		1CDDD43B1AA366BC00CEBF7D /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		1CDDD43C1AA366BC00CEBF7D /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		1CDDD43D1AA366BC00CEBF7D /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		1CDDD4411AA3B0DF00CEBF7D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = Extensions/UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		1CE5D5D51AA1C81400603805 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Controllers/Base/BaseViewController.swift; sourceTree = "<group>"; };
+		1CE66D2B1A9CA25500A6F078 /* SportLook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportLook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CE66D2F1A9CA25500A6F078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CE66D301A9CA25500A6F078 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1CE66D371A9CA25500A6F078 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1CE66D3A1A9CA25500A6F078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1CE66D401A9CA25500A6F078 /* SportLookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportLookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CE66D451A9CA25500A6F078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CE66D461A9CA25500A6F078 /* SportLookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportLookTests.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		1CE7B0C71AB84EE0009F2413 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginResponse.swift; path = Models/LoginResponse.swift; sourceTree = "<group>"; };
+		1CE7B0C91AB85056009F2413 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Models/Error.swift; sourceTree = "<group>"; };
+		1CEBC0871AAE0F8600D6F319 /* Welcome_screen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Welcome_screen.gif; sourceTree = "<group>"; };
+		1CFC00881AB32CA200FF9F90 /* LoginProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginProvider.swift; path = Providers/LoginProvider.swift; sourceTree = "<group>"; };
+		1D7EAFC62C4F1959F0BC8A25 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+=======
+		1CEBC0871AAE0F8600D6F319 /* Welcome_screen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Welcome_screen.gif; sourceTree = "<group>"; };
+		1CFC00881AB32CA200FF9F90 /* LoginProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginProvider.swift; path = Providers/LoginProvider.swift; sourceTree = "<group>"; };
+>>>>>>> feature-my-events
+		6227C0D9A8D9D2FDB80205BF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		829CC252C0BD6EAED08BAADC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		908D0FC049F49CE2F8DBF4D9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1CE66D281A9CA25500A6F078 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FEA3C0E1AA4CAA8009DB07B /* FacebookSDK.framework in Frameworks */,
+<<<<<<< HEAD
+				EE09E8B8CDB14A5AEC184F4B /* libPods.a in Frameworks */,
+=======
+				F5B00EEEB2005878EA9AE9F4 /* libPods.a in Frameworks */,
+>>>>>>> feature-my-events
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CE66D3D1A9CA25500A6F078 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F0033081AB19CD2006BBCB2 /* EventsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F0033091AB19D12006BBCB2 /* EventsTableViewCell.swift */,
+				0F00330A1AB19D12006BBCB2 /* EventsTableViewCell.xib */,
+			);
+			path = EventsTableViewCell;
+			sourceTree = "<group>";
+		};
+		0F0033131AB1C450006BBCB2 /* FontAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				0F0033141AB1C46E006BBCB2 /* FontAwesome.swift */,
+			);
+			path = FontAwesome;
+			sourceTree = "<group>";
+		};
+		0F0033161AB1C7D1006BBCB2 /* AddEventViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F0033171AB1C811006BBCB2 /* AddEventViewController.swift */,
+				0F0033181AB1C811006BBCB2 /* AddEventViewController.xib */,
+			);
+			path = AddEventViewController;
+			sourceTree = "<group>";
+		};
+		0FEA3C0A1AA4CA13009DB07B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C0B1AA4CA38009DB07B /* Bridge-Header.h */,
+				0F0033131AB1C450006BBCB2 /* FontAwesome */,
+				0FEA3C4F1AA9CD17009DB07B /* SportLookTabBarController */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0FEA3C0C1AA4CA6A009DB07B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+<<<<<<< HEAD
+				1C49E8111AB87C0200DE3602 /* SCLAlertView.swift */,
+=======
+>>>>>>> feature-my-events
+				1C8C44A51AB63F5800D22775 /* Keychain.swift */,
+				1C8C44A21AB5FE7500D22775 /* SwiftyJSON.swift */,
+				1CBC28311AB1B93F008F353E /* Alamofire.swift */,
+				0FEA3C0D1AA4CAA8009DB07B /* FacebookSDK.framework */,
+<<<<<<< HEAD
+				1D7EAFC62C4F1959F0BC8A25 /* libPods.a */,
+=======
+				829CC252C0BD6EAED08BAADC /* libPods.a */,
+>>>>>>> feature-my-events
+			);
+			name = Frameworks;
+			path = SportLook/Frameworks;
+			sourceTree = "<group>";
+		};
+		0FEA3C0F1AA4D370009DB07B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C741AAE23A1009DB07B /* TableViewCells */,
+				0FEA3C6F1AAE2219009DB07B /* EditProfileViewController */,
+				0FEA3C101AA4D38D009DB07B /* ProfileViewController.swift */,
+				0FEA3C111AA4D38D009DB07B /* ProfileViewController.xib */,
+			);
+			name = Profile;
+			path = Controllers/Profile;
+			sourceTree = "<group>";
+		};
+		0FEA3C141AA4D894009DB07B /* CategoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C151AA4D8E0009DB07B /* CategoryTableViewCell.swift */,
+				0FEA3C161AA4D8E0009DB07B /* CategoryTableViewCell.xib */,
+			);
+			name = CategoryTableViewCell;
+			path = Controllers/Signup/CategoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		0FEA3C4F1AA9CD17009DB07B /* SportLookTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C501AA9CD69009DB07B /* SportLookTabBarController.swift */,
+			);
+			path = SportLookTabBarController;
+			sourceTree = "<group>";
+		};
+		0FEA3C521AA9D245009DB07B /* Search Event */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C551AA9D2FE009DB07B /* SearchEventsViewController.swift */,
+				0FEA3C561AA9D2FE009DB07B /* SearchEventsViewController.xib */,
+			);
+			name = "Search Event";
+			path = "Controllers/Search Events";
+			sourceTree = "<group>";
+		};
+		0FEA3C591AA9D31C009DB07B /* My Events */ = {
+			isa = PBXGroup;
+			children = (
+				0F0033161AB1C7D1006BBCB2 /* AddEventViewController */,
+				0F0033081AB19CD2006BBCB2 /* EventsTableViewCell */,
+				0FEA3C5A1AA9D346009DB07B /* MyEventsViewController.swift */,
+				0FEA3C5B1AA9D346009DB07B /* MyEventsViewController.xib */,
+			);
+			name = "My Events";
+			path = "Controllers/My Events";
+			sourceTree = "<group>";
+		};
+		0FEA3C5E1AA9D382009DB07B /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C5F1AA9D3A4009DB07B /* DiscoverViewController.swift */,
+				0FEA3C601AA9D3A4009DB07B /* DiscoverViewController.xib */,
+			);
+			name = Discover;
+			path = Controllers/Discover;
+			sourceTree = "<group>";
+		};
+		0FEA3C651AADE2C1009DB07B /* AttendedEventTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C661AADE2EF009DB07B /* AttendedEventTableViewCell.swift */,
+				0FEA3C671AADE2EF009DB07B /* AttendedEventTableViewCell.xib */,
+			);
+			path = AttendedEventTableViewCell;
+			sourceTree = "<group>";
+		};
+		0FEA3C6A1AAE0679009DB07B /* FavSportsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C6B1AAE06D8009DB07B /* FavSportsTableViewCell.swift */,
+				0FEA3C6C1AAE06D8009DB07B /* FavSportsTableViewCell.xib */,
+			);
+			path = FavSportsTableViewCell;
+			sourceTree = "<group>";
+		};
+		0FEA3C6F1AAE2219009DB07B /* EditProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C841AAF373A009DB07B /* ChangeFavSportsViewController */,
+				0FEA3C701AAE238A009DB07B /* EditProfileViewController.swift */,
+				0FEA3C711AAE238A009DB07B /* EditProfileViewController.xib */,
+			);
+			path = EditProfileViewController;
+			sourceTree = "<group>";
+		};
+		0FEA3C741AAE23A1009DB07B /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C6A1AAE0679009DB07B /* FavSportsTableViewCell */,
+				0FEA3C651AADE2C1009DB07B /* AttendedEventTableViewCell */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
+		0FEA3C751AAF17C2009DB07B /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C7B1AAF182C009DB07B /* TextFieldView.swift */,
+				0FEA3C7C1AAF182C009DB07B /* TextFieldView.xib */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		0FEA3C761AAF17CC009DB07B /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C771AAF181E009DB07B /* ButtonView.swift */,
+				0FEA3C781AAF181E009DB07B /* ButtonView.xib */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		0FEA3C7F1AAF186E009DB07B /* SLInputView */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C801AAF1898009DB07B /* SLInputview.swift */,
+				0FEA3C821AAF1A5E009DB07B /* SLInputView.xib */,
+			);
+			path = SLInputView;
+			sourceTree = "<group>";
+		};
+		0FEA3C841AAF373A009DB07B /* ChangeFavSportsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C851AAF3777009DB07B /* ChangeFavSportsViewController.swift */,
+				0FEA3C861AAF3777009DB07B /* ChangeFavSportsViewController.xib */,
+			);
+			path = ChangeFavSportsViewController;
+			sourceTree = "<group>";
+		};
+		1C1654771AA0C19400D96572 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1CE66D301A9CA25500A6F078 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		1C16547C1AA0C22E00D96572 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1C16547D1AA0C26500D96572 /* HomeViewController.swift */,
+				1C16547E1AA0C26500D96572 /* HomeViewController.xib */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		1C1654811AA0C37400D96572 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1CEBC0841AAE0D5500D6F319 /* LoginFlow */,
+				1CE5D5D01AA1C7A800603805 /* Base */,
+				1CEBC0841AAE0D5500D6F319 /* LoginFlow */,
+				0FEA3C521AA9D245009DB07B /* Search Event */,
+				0FEA3C591AA9D31C009DB07B /* My Events */,
+				0FEA3C5E1AA9D382009DB07B /* Discover */,
+				0FEA3C0F1AA4D370009DB07B /* Profile */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1CBC28331AB1BBB4008F353E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1C8C44A71AB6461E00D22775 /* KeychainHandler.swift */,
+				1C8C44A91AB6BE8F00D22775 /* ErrorHandler.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		1CBC28341AB1BBBA008F353E /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				1CBC28351AB1BC7A008F353E /* DataProvider.swift */,
+				1CFC00881AB32CA200FF9F90 /* LoginProvider.swift */,
+<<<<<<< HEAD
+=======
+				0F00331B1AB76347006BBCB2 /* ProfileProvider.swift */,
+>>>>>>> feature-my-events
+			);
+			name = Providers;
+			sourceTree = "<group>";
+		};
+		1CDDD4251AA1DABF00CEBF7D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1CEBC0861AAE0F5600D6F319 /* Images */,
+				1CDDD4381AA3662500CEBF7D /* Fonts */,
+				1CE66D391A9CA25500A6F078 /* LaunchScreen.xib */,
+				1CE66D371A9CA25500A6F078 /* Images.xcassets */,
+			);
+			name = Resources;
+			path = SportLook;
+			sourceTree = "<group>";
+		};
+		1CDDD42D1AA3436800CEBF7D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1CDDD4291AA3436100CEBF7D /* LoginViewController.swift */,
+				1CDDD42A1AA3436100CEBF7D /* LoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		1CDDD42E1AA343DB00CEBF7D /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C141AA4D894009DB07B /* CategoryTableViewCell */,
+				1CDDD42F1AA3442A00CEBF7D /* SignupStepOneViewController.swift */,
+				1CDDD4301AA3442A00CEBF7D /* SignupStepOneViewController.xib */,
+				1CDDD4331AA3444900CEBF7D /* SignupStepTwoViewController.swift */,
+				1CDDD4341AA3444900CEBF7D /* SignupStepTwoViewController.xib */,
+			);
+			name = Signup;
+			sourceTree = "<group>";
+		};
+		1CDDD4371AA35DC000CEBF7D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1CDDD4391AA3665400CEBF7D /* UIFontExtension.swift */,
+				1CDDD4271AA1DF9000CEBF7D /* UIColorExtension.swift */,
+				1CDDD4411AA3B0DF00CEBF7D /* UIViewControllerExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		1CDDD4381AA3662500CEBF7D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C191AA76E22009DB07B /* FontAwesome.otf */,
+				1CDDD43B1AA366BC00CEBF7D /* Quicksand-Bold.ttf */,
+				1CDDD43C1AA366BC00CEBF7D /* Quicksand-Light.ttf */,
+				1CDDD43D1AA366BC00CEBF7D /* Quicksand-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		1CDDD4431AA3D14200CEBF7D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA3C7F1AAF186E009DB07B /* SLInputView */,
+				0FEA3C761AAF17CC009DB07B /* Button */,
+				0FEA3C751AAF17C2009DB07B /* TextField */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1CE5D5D01AA1C7A800603805 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1CE5D5D51AA1C81400603805 /* BaseViewController.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		1CE66D221A9CA25500A6F078 = {
+			isa = PBXGroup;
+			children = (
+				1CE66D2D1A9CA25500A6F078 /* SportLook */,
+				1CDDD4251AA1DABF00CEBF7D /* Resources */,
+				0FEA3C0C1AA4CA6A009DB07B /* Frameworks */,
+				1CE66D431A9CA25500A6F078 /* SportLookTests */,
+				1CE66D2C1A9CA25500A6F078 /* Products */,
+				41CA24838E106F61E49D0FB8 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		1CE66D2C1A9CA25500A6F078 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CE66D2B1A9CA25500A6F078 /* SportLook.app */,
+				1CE66D401A9CA25500A6F078 /* SportLookTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1CE66D2D1A9CA25500A6F078 /* SportLook */ = {
+			isa = PBXGroup;
+			children = (
+<<<<<<< HEAD
+=======
+				1CBC28341AB1BBBA008F353E /* Providers */,
+				1CBC28331AB1BBB4008F353E /* Services */,
+				0FEA3C0A1AA4CA13009DB07B /* Components */,
+>>>>>>> feature-my-events
+				1C1654771AA0C19400D96572 /* AppDelegate */,
+				1CBC28341AB1BBBA008F353E /* Providers */,
+				1CBC28331AB1BBB4008F353E /* Services */,
+				1CE7B0C61AB84EC2009F2413 /* Models */,
+				0FEA3C0A1AA4CA13009DB07B /* Components */,
+				1CDDD4371AA35DC000CEBF7D /* Extensions */,
+				1CDDD4431AA3D14200CEBF7D /* Views */,
+				1C1654811AA0C37400D96572 /* Controllers */,
+				1CE66D2E1A9CA25500A6F078 /* Supporting Files */,
+			);
+			path = SportLook;
+			sourceTree = "<group>";
+		};
+		1CE66D2E1A9CA25500A6F078 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1CE66D2F1A9CA25500A6F078 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1CE66D431A9CA25500A6F078 /* SportLookTests */ = {
+			isa = PBXGroup;
+			children = (
+				1CE66D461A9CA25500A6F078 /* SportLookTests.swift */,
+				1CE66D441A9CA25500A6F078 /* Supporting Files */,
+			);
+			path = SportLookTests;
+			sourceTree = "<group>";
+		};
+		1CE66D441A9CA25500A6F078 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1CE66D451A9CA25500A6F078 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+<<<<<<< HEAD
+		1CE7B0C61AB84EC2009F2413 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1CE7B0C71AB84EE0009F2413 /* LoginResponse.swift */,
+				1CE7B0C91AB85056009F2413 /* Error.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+=======
+>>>>>>> feature-my-events
+		1CEBC0841AAE0D5500D6F319 /* LoginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				1C16547C1AA0C22E00D96572 /* Home */,
+				1CDDD42D1AA3436800CEBF7D /* Login */,
+				1CDDD42E1AA343DB00CEBF7D /* Signup */,
+			);
+			name = LoginFlow;
+			sourceTree = "<group>";
+		};
+		1CEBC0861AAE0F5600D6F319 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1CEBC0871AAE0F8600D6F319 /* Welcome_screen.gif */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		41CA24838E106F61E49D0FB8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6227C0D9A8D9D2FDB80205BF /* Pods.debug.xcconfig */,
+				908D0FC049F49CE2F8DBF4D9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1CE66D2A1A9CA25500A6F078 /* SportLook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CE66D4A1A9CA25500A6F078 /* Build configuration list for PBXNativeTarget "SportLook" */;
+			buildPhases = (
+				277F5ECA17D6B273CD16B53C /* Check Pods Manifest.lock */,
+				1CE66D271A9CA25500A6F078 /* Sources */,
+				1CE66D281A9CA25500A6F078 /* Frameworks */,
+				1CE66D291A9CA25500A6F078 /* Resources */,
+				3EEAE3A0233D326365202B6B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SportLook;
+			productName = SportLook;
+			productReference = 1CE66D2B1A9CA25500A6F078 /* SportLook.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1CE66D3F1A9CA25500A6F078 /* SportLookTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CE66D4D1A9CA25500A6F078 /* Build configuration list for PBXNativeTarget "SportLookTests" */;
+			buildPhases = (
+				1CE66D3C1A9CA25500A6F078 /* Sources */,
+				1CE66D3D1A9CA25500A6F078 /* Frameworks */,
+				1CE66D3E1A9CA25500A6F078 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1CE66D421A9CA25500A6F078 /* PBXTargetDependency */,
+			);
+			name = SportLookTests;
+			productName = SportLookTests;
+			productReference = 1CE66D401A9CA25500A6F078 /* SportLookTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1CE66D231A9CA25500A6F078 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = BachelorProject;
+				TargetAttributes = {
+					1CE66D2A1A9CA25500A6F078 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					1CE66D3F1A9CA25500A6F078 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 1CE66D2A1A9CA25500A6F078;
+					};
+				};
+			};
+			buildConfigurationList = 1CE66D261A9CA25500A6F078 /* Build configuration list for PBXProject "SportLook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1CE66D221A9CA25500A6F078;
+			productRefGroup = 1CE66D2C1A9CA25500A6F078 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1CE66D2A1A9CA25500A6F078 /* SportLook */,
+				1CE66D3F1A9CA25500A6F078 /* SportLookTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1CE66D291A9CA25500A6F078 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FEA3C1D1AA7799E009DB07B /* FontAwesome.otf in Resources */,
+				0FEA3C581AA9D2FE009DB07B /* SearchEventsViewController.xib in Resources */,
+				1CDDD43E1AA366BC00CEBF7D /* Quicksand-Bold.ttf in Resources */,
+				1CDDD42C1AA3436100CEBF7D /* LoginViewController.xib in Resources */,
+				1CE66D3B1A9CA25500A6F078 /* LaunchScreen.xib in Resources */,
+				0F00331A1AB1C811006BBCB2 /* AddEventViewController.xib in Resources */,
+				0FEA3C881AAF3777009DB07B /* ChangeFavSportsViewController.xib in Resources */,
+				0FEA3C691AADE2EF009DB07B /* AttendedEventTableViewCell.xib in Resources */,
+				0FEA3C5D1AA9D346009DB07B /* MyEventsViewController.xib in Resources */,
+				1CDDD4321AA3442A00CEBF7D /* SignupStepOneViewController.xib in Resources */,
+				0FEA3C831AAF1A5E009DB07B /* SLInputView.xib in Resources */,
+				1CDDD4361AA3444900CEBF7D /* SignupStepTwoViewController.xib in Resources */,
+				1CE66D381A9CA25500A6F078 /* Images.xcassets in Resources */,
+				0FEA3C131AA4D38D009DB07B /* ProfileViewController.xib in Resources */,
+				0FEA3C731AAE238A009DB07B /* EditProfileViewController.xib in Resources */,
+				0FEA3C181AA4D8E0009DB07B /* CategoryTableViewCell.xib in Resources */,
+				1CEBC0881AAE0F8600D6F319 /* Welcome_screen.gif in Resources */,
+				1C1654801AA0C26500D96572 /* HomeViewController.xib in Resources */,
+				1CDDD4401AA366BC00CEBF7D /* Quicksand-Regular.ttf in Resources */,
+				0FEA3C6E1AAE06D8009DB07B /* FavSportsTableViewCell.xib in Resources */,
+				0FEA3C7E1AAF182C009DB07B /* TextFieldView.xib in Resources */,
+				1CDDD43F1AA366BC00CEBF7D /* Quicksand-Light.ttf in Resources */,
+				0F00330C1AB19D12006BBCB2 /* EventsTableViewCell.xib in Resources */,
+				0FEA3C621AA9D3A4009DB07B /* DiscoverViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CE66D3E1A9CA25500A6F078 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		277F5ECA17D6B273CD16B53C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3EEAE3A0233D326365202B6B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CE66D271A9CA25500A6F078 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+<<<<<<< HEAD
+=======
+				0F0033151AB1C46E006BBCB2 /* FontAwesome.swift in Sources */,
+				0F0033191AB1C811006BBCB2 /* AddEventViewController.swift in Sources */,
+>>>>>>> feature-my-events
+				1CBC28321AB1B93F008F353E /* Alamofire.swift in Sources */,
+				1CE5D5D61AA1C81400603805 /* BaseViewController.swift in Sources */,
+				1C49E8121AB87C0200DE3602 /* SCLAlertView.swift in Sources */,
+				1CDDD4281AA1DF9000CEBF7D /* UIColorExtension.swift in Sources */,
+				0FEA3C6D1AAE06D8009DB07B /* FavSportsTableViewCell.swift in Sources */,
+				1CDDD4421AA3B0DF00CEBF7D /* UIViewControllerExtension.swift in Sources */,
+				0F00330B1AB19D12006BBCB2 /* EventsTableViewCell.swift in Sources */,
+				1CDDD43A1AA3665400CEBF7D /* UIFontExtension.swift in Sources */,
+				1CE66D311A9CA25500A6F078 /* AppDelegate.swift in Sources */,
+				1CDDD42B1AA3436100CEBF7D /* LoginViewController.swift in Sources */,
+				0FEA3C121AA4D38D009DB07B /* ProfileViewController.swift in Sources */,
+<<<<<<< HEAD
+				1C8C44A31AB5FE7500D22775 /* SwiftyJSON.swift in Sources */,
+				0FEA3C611AA9D3A4009DB07B /* DiscoverViewController.swift in Sources */,
+				1C8C44A61AB63F5800D22775 /* Keychain.swift in Sources */,
+				1CE7B0CA1AB85056009F2413 /* Error.swift in Sources */,
+				1CDDD4351AA3444900CEBF7D /* SignupStepTwoViewController.swift in Sources */,
+				1CFC00891AB32CA200FF9F90 /* LoginProvider.swift in Sources */,
+				1CE7B0C81AB84EE0009F2413 /* LoginResponse.swift in Sources */,
+=======
+				0F00331C1AB76347006BBCB2 /* ProfileProvider.swift in Sources */,
+				1C8C44A31AB5FE7500D22775 /* SwiftyJSON.swift in Sources */,
+				0FEA3C611AA9D3A4009DB07B /* DiscoverViewController.swift in Sources */,
+				1C8C44A61AB63F5800D22775 /* Keychain.swift in Sources */,
+				1CDDD4351AA3444900CEBF7D /* SignupStepTwoViewController.swift in Sources */,
+				1CFC00891AB32CA200FF9F90 /* LoginProvider.swift in Sources */,
+>>>>>>> feature-my-events
+				0FEA3C571AA9D2FE009DB07B /* SearchEventsViewController.swift in Sources */,
+				1C8C44A81AB6461E00D22775 /* KeychainHandler.swift in Sources */,
+				1C8C44AA1AB6BE8F00D22775 /* ErrorHandler.swift in Sources */,
+				1C16547F1AA0C26500D96572 /* HomeViewController.swift in Sources */,
+				0FEA3C7D1AAF182C009DB07B /* TextFieldView.swift in Sources */,
+				0FEA3C171AA4D8E0009DB07B /* CategoryTableViewCell.swift in Sources */,
+				0FEA3C511AA9CD69009DB07B /* SportLookTabBarController.swift in Sources */,
+				1CBC28361AB1BC7A008F353E /* DataProvider.swift in Sources */,
+				0FEA3C811AAF1898009DB07B /* SLInputview.swift in Sources */,
+				0FEA3C5C1AA9D346009DB07B /* MyEventsViewController.swift in Sources */,
+				0FEA3C681AADE2EF009DB07B /* AttendedEventTableViewCell.swift in Sources */,
+				1CDDD4311AA3442A00CEBF7D /* SignupStepOneViewController.swift in Sources */,
+				0FEA3C721AAE238A009DB07B /* EditProfileViewController.swift in Sources */,
+				0FEA3C871AAF3777009DB07B /* ChangeFavSportsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CE66D3C1A9CA25500A6F078 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CE66D471A9CA25500A6F078 /* SportLookTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1CE66D421A9CA25500A6F078 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1CE66D2A1A9CA25500A6F078 /* SportLook */;
+			targetProxy = 1CE66D411A9CA25500A6F078 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1CE66D391A9CA25500A6F078 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1CE66D3A1A9CA25500A6F078 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1CE66D481A9CA25500A6F078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1CE66D491A9CA25500A6F078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1CE66D4B1A9CA25500A6F078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6227C0D9A8D9D2FDB80205BF /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SportLook/Frameworks",
+				);
+				INFOPLIST_FILE = "SportLook/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SportLook/Components/Bridge-Header.h";
+			};
+			name = Debug;
+		};
+		1CE66D4C1A9CA25500A6F078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 908D0FC049F49CE2F8DBF4D9 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SportLook/Frameworks",
+				);
+				INFOPLIST_FILE = "SportLook/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SportLook/Components/Bridge-Header.h";
+			};
+			name = Release;
+		};
+		1CE66D4E1A9CA25500A6F078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SportLookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportLook.app/SportLook";
+			};
+			name = Debug;
+		};
+		1CE66D4F1A9CA25500A6F078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SportLookTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportLook.app/SportLook";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CE66D261A9CA25500A6F078 /* Build configuration list for PBXProject "SportLook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CE66D481A9CA25500A6F078 /* Debug */,
+				1CE66D491A9CA25500A6F078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CE66D4A1A9CA25500A6F078 /* Build configuration list for PBXNativeTarget "SportLook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CE66D4B1A9CA25500A6F078 /* Debug */,
+				1CE66D4C1A9CA25500A6F078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1CE66D4D1A9CA25500A6F078 /* Build configuration list for PBXNativeTarget "SportLookTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1CE66D4E1A9CA25500A6F078 /* Debug */,
+				1CE66D4F1A9CA25500A6F078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1CE66D231A9CA25500A6F078 /* Project object */;
+}

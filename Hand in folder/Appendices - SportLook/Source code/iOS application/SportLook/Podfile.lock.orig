@@ -1,0 +1,76 @@
+PODS:
+<<<<<<< HEAD
+  - Bolts (1.1.4)
+  - Facebook-iOS-SDK (3.23.1):
+    - Bolts (~> 1.0)
+=======
+  - HUMSlider (1.0.0)
+>>>>>>> developer
+  - IQKeyboardManager (3.2.1.1)
+  - JSQMessagesViewController (7.0.1):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+  - kingpin (0.2.4)
+  - MRProgress (0.8.1):
+    - MRProgress/ActivityIndicator (= 0.8.1)
+    - MRProgress/Blur (= 0.8.1)
+    - MRProgress/Circular (= 0.8.1)
+    - MRProgress/Icons (= 0.8.1)
+    - MRProgress/NavigationBarProgress (= 0.8.1)
+    - MRProgress/Overlay (= 0.8.1)
+  - MRProgress/ActivityIndicator (0.8.1):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.8.1):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.8.1):
+    - MRProgress/Helper
+    - MRProgress/ProgressBaseClass
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.8.1)
+  - MRProgress/Icons (0.8.1)
+  - MRProgress/NavigationBarProgress (0.8.1):
+    - MRProgress/ProgressBaseClass
+  - MRProgress/Overlay (0.8.1):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/ProgressBaseClass (0.8.1)
+  - MRProgress/Stopable (0.8.1):
+    - MRProgress/Helper
+  - pop (1.0.7)
+  - SDWebImage (3.7.2):
+    - SDWebImage/Core (= 3.7.2)
+  - SDWebImage/Core (3.7.2)
+
+DEPENDENCIES:
+<<<<<<< HEAD
+  - Bolts
+  - Facebook-iOS-SDK (= 3.23.1)
+=======
+  - HUMSlider
+>>>>>>> developer
+  - IQKeyboardManager
+  - JSQMessagesViewController
+  - kingpin
+  - MRProgress
+  - pop (~> 1.0)
+  - SDWebImage
+
+SPEC CHECKSUMS:
+<<<<<<< HEAD
+  Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
+  Facebook-iOS-SDK: d5a50d5ac6b1da948fd98c18dd8beeae854f2b3e
+=======
+  HUMSlider: a5460e57487c1f3c1ff986b5c26e7590787ac953
+>>>>>>> developer
+  IQKeyboardManager: 6aeae6a2014d66461c48f6753dd693e92eaf6524
+  JSQMessagesViewController: 03fba8a3021a3ddc1c91847f180ffe549f2e8cf2
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  kingpin: 776d0a0615cde79196e05ac5a9ecde07c0229603
+  MRProgress: 72653f3ffd13c7bbac8c9de1da9bf0249fc2717d
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
+
+COCOAPODS: 0.36.3

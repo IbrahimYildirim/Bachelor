@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Quicksand-Bold.ttf">
+            <string>Quicksand-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignupStepTwoViewController" customModule="SportLook" customModuleProvider="target">
+            <connections>
+                <outlet property="btnFinish" destination="4gP-fC-QXE" id="vxY-ph-1tZ"/>
+                <outlet property="tblCategories" destination="PEM-Cz-cfO" id="iSb-fE-nyK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PEM-Cz-cfO">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="AAP-uP-xDI"/>
+                        <outlet property="delegate" destination="-1" id="dgP-dQ-GLQ"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gP-fC-QXE" userLabel="FinishButton">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <color key="backgroundColor" red="0.81960791349999995" green="0.89411771299999998" blue="0.91764712329999998" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="j1g-cl-ASU">
+                            <variation key="widthClass=compact" constant="40"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="18"/>
+                    <state key="normal" title="Finish">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="j1g-cl-ASU"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="j1g-cl-ASU"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="btnFinishTapped:" destination="-1" eventType="touchUpInside" id="WlU-RN-TvY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="PEM-Cz-cfO" secondAttribute="bottom" id="1DW-Wd-YCn"/>
+                <constraint firstAttribute="bottom" secondItem="4gP-fC-QXE" secondAttribute="bottom" constant="8" id="5NQ-o4-GO6">
+                    <variation key="widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="PEM-Cz-cfO" secondAttribute="trailing" id="DLe-Ur-TWE"/>
+                <constraint firstAttribute="trailing" secondItem="4gP-fC-QXE" secondAttribute="trailing" constant="154" id="JIZ-vp-QX4">
+                    <variation key="widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="4gP-fC-QXE" firstAttribute="top" secondItem="PEM-Cz-cfO" secondAttribute="bottom" constant="24" id="Zk9-3J-499">
+                    <variation key="widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="PEM-Cz-cfO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fTO-AG-p9w"/>
+                <constraint firstItem="PEM-Cz-cfO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="i51-sK-0yg"/>
+                <constraint firstItem="4gP-fC-QXE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="200" id="mPd-zD-faK">
+                    <variation key="widthClass=compact" constant="0.0"/>
+                </constraint>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="PEM-Cz-cfO"/>
+                    <exclude reference="4gP-fC-QXE"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="5NQ-o4-GO6"/>
+                    <exclude reference="JIZ-vp-QX4"/>
+                    <exclude reference="Zk9-3J-499"/>
+                    <exclude reference="mPd-zD-faK"/>
+                    <exclude reference="1DW-Wd-YCn"/>
+                    <exclude reference="DLe-Ur-TWE"/>
+                    <exclude reference="fTO-AG-p9w"/>
+                    <exclude reference="i51-sK-0yg"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="PEM-Cz-cfO"/>
+                    <include reference="4gP-fC-QXE"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="5NQ-o4-GO6"/>
+                    <include reference="JIZ-vp-QX4"/>
+                    <include reference="Zk9-3J-499"/>
+                    <include reference="mPd-zD-faK"/>
+                    <exclude reference="1DW-Wd-YCn"/>
+                    <include reference="DLe-Ur-TWE"/>
+                    <include reference="fTO-AG-p9w"/>
+                    <include reference="i51-sK-0yg"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

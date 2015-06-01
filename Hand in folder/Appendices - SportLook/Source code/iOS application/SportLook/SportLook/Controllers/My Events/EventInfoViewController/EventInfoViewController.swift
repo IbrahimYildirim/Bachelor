@@ -1,0 +1,451 @@
+//
+//  EventInfoViewController.swift
+//  SportLook
+//
+//  Created by Terminator on 29/03/15.
+//  Copyright (c) 2015 BachelorProject. All rights reserved.
+//
+
+import UIKit
+
+struct StructEventInfo{
+    static var shouldPresentChat = false
+}
+
+class EventInfoViewController: BaseViewController {
+
+    @IBOutlet weak var imgEventPicture: UIImageView!
+    @IBOutlet weak var vwScrollView: UIScrollView!
+    @IBOutlet weak var vwContentView: UIView!
+    @IBOutlet var vwMainView: UIView!
+    @IBOutlet weak var lblSportCategory: UILabel!
+    @IBOutlet weak var lblEventName: UILabel!
+    @IBOutlet weak var lblEventHost: UILabel!
+    @IBOutlet weak var lblEventDateTime: UILabel!
+    @IBOutlet weak var lblEventLocation: UILabel!
+    @IBOutlet weak var lblEventParticipants: UILabel!
+    @IBOutlet weak var vwSeparatorLine: UIView!
+    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblDescriptionText: UILabel!
+    @IBOutlet weak var vwSeparatorLine2: UIView!
+    @IBOutlet weak var lblEventAction: UILabel!
+    @IBOutlet weak var lblChat: UILabel!
+    @IBOutlet weak var lblShare: UILabel!
+    @IBOutlet weak var btnEventAction: UIButton!
+    @IBOutlet weak var btnChat: UIButton!
+    @IBOutlet weak var btnShare: UIButton!
+    
+    @IBOutlet weak var constraintWidthLblChat: NSLayoutConstraint!
+    @IBOutlet weak var constraintWidthBtnChat: NSLayoutConstraint!
+    @IBOutlet weak var constraintSpacingBtnsChatShare: NSLayoutConstraint!
+    
+    var btnRightNavBar: UIBarButtonItem?
+    var eventId: Int?
+    var event: Event?
+    var eventAction: EventAction?
+    var currentParticipantsNumber: Int?
+    var shareController: UIActivityViewController?
+    var alreadyHidChat: Bool = false
+    let kLblChatShown: CGFloat = 35
+    let kBtnChatShown: CGFloat = 45
+    let kBtnsSpacingChatShare: CGFloat = 20
+    
+    enum EventAction {
+        case Join, Leave, Delete
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupLayout()
+        loadEvent()
+    }
+    
+    init() {
+        super.init(nibName: "EventInfoViewController", bundle: nil)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupLayout(){
+        
+        self.title = "Event Info"
+        imgEventPicture.backgroundColor = UIColor.COLOR_EVENT_PICTURE_BACKGROUND
+        vwScrollView.backgroundColor = UIColor.COLOR_EVENT_INFO_BACKGROUND
+        vwContentView.backgroundColor = UIColor.COLOR_EVENT_INFO_BACKGROUND
+        lblSportCategory.textColor = UIColor.COLOR_EVENT_INFO_LABEL_SECONDARY
+        lblEventName.textColor = UIColor.COLOR_EVENT_INFO_LABEL_PRIMARY
+        lblEventHost.textColor = UIColor.COLOR_EVENT_INFO_LABEL_SECONDARY
+        lblEventDateTime.textColor = UIColor.COLOR_EVENT_INFO_LABEL_PRIMARY
+        lblEventLocation.textColor = UIColor.COLOR_EVENT_INFO_LABEL_PRIMARY
+        lblEventParticipants.textColor = UIColor.COLOR_EVENT_INFO_LABEL_PRIMARY
+        vwSeparatorLine.backgroundColor = UIColor.COLOR_EVENT_INFO_SEPARATOR
+        vwSeparatorLine2.backgroundColor = UIColor.COLOR_EVENT_INFO_SEPARATOR
+        lblDescription.textColor = UIColor.COLOR_EVENT_INFO_LABEL_PRIMARY
+        lblDescriptionText.textColor = UIColor.COLOR_EVENT_INFO_LABEL_PRIMARY
+        lblEventAction.textColor = UIColor.COLOR_EVENT_INFO_BOTTOM_LABEL
+        lblChat.textColor = UIColor.COLOR_EVENT_INFO_BOTTOM_LABEL
+        lblShare.textColor = UIColor.COLOR_EVENT_INFO_BOTTOM_LABEL
+    }
+    
+    func initSharingController(event: Event){
+        
+        //FIXME: Figure out how to pass data properly
+        //Initialize the sharing controller
+        let textToShare = ""
+        let infoToShare = SharingInfoProvider(event: event)
+        let objectsToShare = [textToShare, infoToShare]
+        shareController = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        shareController!.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList, UIActivityTypeCopyToPasteboard, UIActivityTypeMessage, UIActivityTypePostToTwitter]
+    }
+    
+    //MARK: Load event
+    
+    func loadEvent(){
+        
+        self.showLoading("Loading event...", delay: 0)
+        EventProvider.getEvent(String(eventId!), success: { (response) -> Void in
+            
+            self.event = response
+            self.populateWithData(self.event)
+            self.initSharingController(self.event!)
+            self.showCompletedAndHideWithCompletion("Event loaded!", delay: 0, hideDelay: 1, completion: { () -> Void in
+                //Tapped on a Chat push notification
+                if StructEventInfo.shouldPresentChat {
+                    StructEventInfo.shouldPresentChat = false
+                    self.showChat()
+                }
+            })
+        }) { (error) -> Void in
+            
+            self.hideSpinner(0.5)
+            let alert = SCLAlertView()
+            alert.showError("Oups!", subTitle: error.message, closeButtonTitle: "Ok")
+            //Here will need to pass 'error' to an ErrorHandler
+        }
+    }
+    
+    //MARK: Populating with data
+
+    func populateWithData(event: Event?)
+    {
+        if(event != nil){
+
+            setEventImage(event?.image)
+            if event?.category?.name != nil {
+                lblSportCategory.text = Utils.formatSportCategory((event?.category?.name)!)
+            } else {
+                lblSportCategory.text = "#category"
+            }
+            
+            if event?.name != nil {
+                self.lblEventName.text = (event?.name)!
+            } else {
+                self.lblEventName.text = "Event Name"
+            }
+            
+            if event?.createdBy?.name != nil {
+                lblEventHost.text = "by " + (event?.createdBy?.name)!
+            } else {
+                lblEventHost.text = "host"
+            }
+            
+            if event?.startDate != nil {
+                lblEventDateTime.text = Utils.formatDate((event?.startDate)!)
+            } else {
+                lblEventDateTime.text = "Start date"
+            }
+            
+            if event?.address != nil {
+                lblEventLocation.text = event?.address
+            } else {
+                lblEventLocation.text = "Address"
+            }
+            
+            if event?.attending != nil {
+                setParticipantsInfo(event?.attending)
+            }
+            
+            if event?.description != nil {
+                lblDescriptionText.text = event?.description
+            } else {
+                lblDescriptionText.text = ""
+            }
+            
+            
+            setEventAction()
+        }
+    }
+    
+    func setParticipantsInfo(participants : [User]?){
+        
+        currentParticipantsNumber = participants?.count
+        if(participants != nil){
+            if(participants?.count > 1) {
+                lblEventParticipants.text = String((participants?.count)!) + " participants"
+            } else {
+                lblEventParticipants.text = String((participants?.count)!) + " participant"
+            }
+        }
+    }
+    
+    func setEventImage(image: String?){
+        
+        if(image != nil){
+                let fullUrl = DataProvider.getBaseUrl() + image!
+                let url = NSURL(string: fullUrl)
+                SDWebImageDownloader.sharedDownloader().downloadImageWithURL(url, options: nil, progress: nil, completed: {(image: UIImage?, data: NSData?, error: NSError?, finished: Bool) in
+                    if (image != nil && finished == true) {
+                        
+                        self.imgEventPicture.alpha = 0.0
+                        UIView.transitionWithView(self.imgEventPicture, duration: 0.3, options: .TransitionCrossDissolve, animations: { () -> Void in
+                            self.imgEventPicture.image = image
+                            self.imgEventPicture.alpha = 1
+                            }, completion: nil)
+                    }
+                })
+        }
+    }
+    
+    func setEventAction(){
+
+        //Join -> request, loading, sucess/failure message, if success modify
+        //participants label + 1, update button to 'Leave'
+        
+        //Leave -> request, loading, sucess/failure message, if success modify
+        //participants label - 1, update button to 'Join'
+        
+        //Delete -> request, loading, sucess/failure message, if success popViewController
+        
+        if(event?.createdByMe == true && event?.joinedByMe == true){
+            //Delete option
+            addNavBarEditButton()
+            setEventActionButton(EventAction.Delete)
+            showChatOption()
+        } else if(event?.createdByMe == false && event?.joinedByMe == true){
+            //Leave option
+            setEventActionButton(EventAction.Leave)
+            showChatOption()
+        } else if(event?.createdByMe == false && event?.joinedByMe == false) {
+            //Join option
+            setEventActionButton(EventAction.Join)
+            hideChatOption()
+        }
+    }
+    
+    func setEventActionButton(action: EventAction){
+        
+        var eventActionIcon : String
+        var eventActionLabel : String
+        eventAction = action
+        
+        switch action{
+            
+        case .Join:
+            eventActionIcon = "ic_event_join"
+            eventActionLabel = "Join"
+        case .Leave:
+            eventActionIcon = "ic_event_leave"
+            eventActionLabel = "Leave"
+        case .Delete:
+            eventActionIcon = "ic_event_delete"
+            eventActionLabel = "Delete"
+        }
+        
+        btnEventAction.setImage(UIImage(named: eventActionIcon), forState: UIControlState.Normal)
+        lblEventAction.text = eventActionLabel
+    }
+    
+    //MARK: Hide/show Chat option
+    
+    func hideChatOption(){
+    
+        constraintWidthLblChat.constant = 0
+        constraintWidthBtnChat.constant = 0
+        constraintSpacingBtnsChatShare.constant = 0
+        alreadyHidChat = true
+    }
+    
+    func showChatOption(){
+        
+        //Chat option shown by default
+        //No need to modify constraints if not previously hidden
+        if alreadyHidChat {
+            constraintWidthLblChat.constant = kLblChatShown
+            constraintWidthBtnChat.constant = kBtnChatShown
+            constraintSpacingBtnsChatShare.constant = kBtnsSpacingChatShare
+            alreadyHidChat = false
+        }
+    }
+    
+    //MARK: Setup navigation bar
+    
+    func addNavBarEditButton(){
+        
+        btnRightNavBar = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: Selector("rightNavBarButtonTapped"))
+        self.navigationItem.rightBarButtonItem = btnRightNavBar
+    }
+    
+    func hideRightNavBarButton(){
+        self.navigationItem.rightBarButtonItem = nil
+    }
+    
+    func rightNavBarButtonTapped(){
+        
+        let navController = UINavigationController(rootViewController: AddEventViewController())
+        AddEventViewController.Static.eventToEdit = self.event;
+        //pass some data to the controller
+        self.navigationController?.presentViewController(navController, animated: true, completion: nil)
+    }
+    
+    //MARK: Button actions
+    
+    @IBAction func eventActionButtonTapped(sender: UIButton) {
+        
+        switch eventAction!{
+            
+        case .Join:
+            performJoinEventRequest()
+        case .Leave:
+            performLeaveEventRequest()
+        case .Delete:
+            confirmDeleteEvent()
+        }
+    }
+    
+    @IBAction func chatButtonTapped(sender: UIButton) {
+        
+        showChat()
+    }
+    
+    func showChat(){
+        
+        //http://stackoverflow.com/questions/26818432/how-to-call-an-objective-c-class-method-in-swift
+        //DemoMessagesViewController *vc = [DemoMessagesViewController messagesViewController];
+        //Can't seem to be able to do the above in Swift
+        
+        let controller = ChatViewController()
+        controller.eventId = String((event?.id)!)
+        controller.eventName = event?.name
+        
+        let navCtrl = UINavigationController(rootViewController: controller)
+        self.navigationController?.presentViewController(navCtrl, animated: true, completion: nil)
+    }
+    
+    func confirmDeleteEvent(){
+        
+        let alert = SCLAlertView()
+        alert.addButton("Yes, delete it!", action: { () -> Void in
+            self.performDeleteEventRequest()
+        })
+        alert.showWarning("Careful!", subTitle: "Are you sure you want to delete this event? You cannot undo it!", closeButtonTitle: "No, keep it!")
+    }
+    
+    @IBAction func shareButtonTapped(sender: UIButton) {
+        self.presentViewController(shareController!, animated: true, completion: nil)
+    }
+    
+    //MARK: Performing requests
+    
+    func performDeleteEventRequest() {
+        
+        EventProvider.deleteEvent((event?.id)!, success: { (eventActionResponse) -> Void in
+            
+            let alert = SCLAlertView()
+            alert.showSuccess("Success!", subTitle: eventActionResponse.message!, closeButtonTitle: "Ok")
+            self.afterDeletingEventAction()
+            Constants.Load.setScreensToLoad()
+            self.navigationController?.popViewControllerAnimated(true)
+        }) { (error) -> Void in
+            
+            let alert = SCLAlertView()
+            alert.showError("Oups!", subTitle: error.message, closeButtonTitle: "Ok")
+        }
+    }
+    
+    func performLeaveEventRequest() {
+        
+        EventProvider.leaveEvent((event?.id)!, success: { (eventActionResponse) -> Void in
+            
+            let alert = SCLAlertView()
+            alert.showSuccess("Success!", subTitle: eventActionResponse.message!, closeButtonTitle: "Ok")
+            Constants.Load.setScreensToLoad()
+            self.afterLeavingEventAction()
+        }) { (error) -> Void in
+            
+            let alert = SCLAlertView()
+            alert.showError("Oups!", subTitle: error.message, closeButtonTitle: "Ok")
+        }
+    }
+    
+    func performJoinEventRequest() {
+        
+        EventProvider.joinEvent((event?.id)!, success: { (eventActionResponse) -> Void in
+            
+            let alert = SCLAlertView()
+            alert.showSuccess("Success!", subTitle: eventActionResponse.message!, closeButtonTitle: "Ok")
+            Constants.Load.setScreensToLoad()
+            self.afterJoiningEventAction()
+        }) { (error) -> Void in
+            
+            let alert = SCLAlertView()
+            alert.showError("Oups!", subTitle: error.message, closeButtonTitle: "Ok")
+        }
+    }
+    
+    //MARK: Helper methods
+    
+    func afterLeavingEventAction(){
+    
+        setEventActionButton(EventAction.Join)
+        hideChatOption()
+        
+        //participants label - 1
+        let updatedNumberOfParticipants = currentParticipantsNumber! - 1
+        currentParticipantsNumber = updatedNumberOfParticipants
+        if(updatedNumberOfParticipants > 1) {
+            lblEventParticipants.text = String(updatedNumberOfParticipants) + " participants"
+        } else {
+            lblEventParticipants.text = String(updatedNumberOfParticipants) + " participant"
+        }
+        
+        unsubscribeFromEventChannel()
+    }
+    
+    func afterJoiningEventAction(){
+        
+        setEventActionButton(EventAction.Leave)
+        showChatOption()
+        
+        //participants label + 1
+        let updatedNumberOfParticipants = currentParticipantsNumber! + 1
+        currentParticipantsNumber = updatedNumberOfParticipants
+        if(updatedNumberOfParticipants > 1) {
+            lblEventParticipants.text = String(updatedNumberOfParticipants) + " participants"
+        } else {
+            lblEventParticipants.text = String(updatedNumberOfParticipants) + " participant"
+        }
+        
+        subscribeToEventChannel()
+    }
+    
+    func afterDeletingEventAction(){
+        unsubscribeFromEventChannel()
+    }
+    
+    //MARK: Handling Parse channels
+    
+    func subscribeToEventChannel(){
+        //User subscribes to the event channel for Push notifications (for the Chat)
+        let eventId = Constants.Parse.CHANNEL_EVENT + String((event?.id)!)
+        ParseChannelsHandler.subscribeToEventChannel(eventId)
+    }
+    
+    func unsubscribeFromEventChannel(){
+        //User unsubscribes from the event channel for Push notifications (for the Chat)
+        let eventId = Constants.Parse.CHANNEL_EVENT + String((event?.id)!)
+        ParseChannelsHandler.unsubscribeFromEventChannel(eventId)
+    }
+}

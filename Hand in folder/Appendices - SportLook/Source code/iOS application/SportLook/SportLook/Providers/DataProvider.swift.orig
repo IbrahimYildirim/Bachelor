@@ -1,0 +1,289 @@
+//
+//  DataProvider.swift
+//  SportLook
+//
+//  Created by Terminator on 12/03/15.
+//  Copyright (c) 2015 BachelorProject. All rights reserved.
+//
+
+import Foundation
+
+public enum HttpMethod: String {
+    case GET = "GET"
+    case POST = "POST"
+    case PUT = "PUT"
+    case DELETE = "DELETE"
+}
+
+class DataProvider {
+    
+    let method: HttpMethod
+    let path: String
+    let params: [String : String]
+    
+    init(method: HttpMethod, path: String, params: [String : String]){
+        self.method = method
+        self.path = path
+        self.params = params
+    }
+    
+<<<<<<< HEAD
+//    func requestData(){
+//        
+//        Alamofire.manager.request(getMethod(), getBaseUrl() + path, parameters: params)
+//            .responseJSON {(_, response, JSON, error) in
+//                
+//                //move the following-----
+//                if(error != nil){
+//                    //Request didn't happen. Network down?
+//                    println("Request failed. To be implemented...")
+//                } else {
+//                    
+//                    if(JSON != nil){
+//                        
+//                        let json = JSONObj(JSON!)
+//                        if let serverError = json["error"].string {
+//                            //'error' key exists in the response - handle it
+//                            println("Server error:" + serverError)
+//                        } else {
+//                            //Actually got the response we want
+//                            println("Logged in!")
+//                            //Handling it
+//                            println(json)
+//                            let token = json["access_token"].stringValue
+//                            println("Token: " + token)
+//                            KeychainHandler.saveUserLoggedToken(token)
+//                        }
+//                    } else {
+//                        println("Something wrong happened somewhere. Try again")
+//                    }
+//                }
+//                //move the following-----
+//        }
+//    }
+    
+    func requestData(success: (response: JSONObj) -> Void, failure: (error: Error) -> Void){
+        
+        Alamofire.manager.request(getHttpMethod(), getBaseUrl() + path, parameters: params)
+            .responseJSON {(_, response, JSON, error) in
+                
+                if(error != nil){
+                    let error = Error(code: "To be set...", message: "Error from Alamofire")
+                    failure(error: error)
+=======
+//    func testFunc(){
+//        
+//        let padawans = ["Knox", "Avitla", "Mennaus"]
+//        padawans.map({
+//            (padawan: String) -> String in
+//            "\(padawan) has been trained!"
+//        })
+//        padawans.map({
+//            () -> String in
+//            println("cool")
+//        })
+//        
+////        Alamofire.manager.request(.POST, "whatev")
+////        .responseJSON(<#completionHandler: (NSURLRequest, NSHTTPURLResponse?, AnyObject?, NSError?) -> Void##(NSURLRequest, NSHTTPURLResponse?, AnyObject?, NSError?) -> Void#>)
+//    }
+    
+//    func testThis(apiEndPoint: String, completion: (jsonObj: JSONObj) -> ()) {
+//        
+////        let responsePackage = ResponsePackage()
+//        Alamofire.manager
+//            .request(.GET, apiEndPoint)
+//            .responseJSON {(request, response, JSON, error) in
+////                responsePackage.response = JSON
+////                responsePackage.success = true
+////                responsePackage.error = error
+//                
+//                let json = JSONObj(JSON!)
+//                completion(jsonObj: json)
+//        }
+//    }
+    
+    func testThis(apiEndPoint: String, completion: (jsonObj: JSONObj) -> ()) {
+        
+        //        let responsePackage = ResponsePackage()
+        Alamofire.manager
+            .request(.GET, apiEndPoint)
+            .responseJSON {(request, response, JSON, error) in
+                //                responsePackage.response = JSON
+                //                responsePackage.success = true
+                //                responsePackage.error = error
+                
+                let json = JSONObj(JSON!)
+                completion(jsonObj : json)
+        }
+        
+    }
+    
+    func testThisToo(){
+    
+    }
+    
+//    func testClosure(completionHandler: (JSONObj) -> Void) {
+//        return testClosure(completionHandler)
+//    }
+    
+    func testClosure(completionHandler: (JSONObj) -> Void, failure: (NSError?) -> Void) {
+        return testClosure(completionHandler, failure: failure)
+    }
+    
+    func letsAccessIt(){
+        
+        let json = JSONObj("cool")
+        testClosure({(json: JSONObj) in
+        
+            }, failure: {(error: NSError?) in
+        })
+    }
+    
+//    public func responseJSON(completionHandler: (NSURLRequest, NSHTTPURLResponse?, AnyObject?, NSError?) -> Void) -> Self {
+//        return responseJSON(completionHandler: completionHandler)
+//    }
+
+    
+    func requestData(){
+        
+        Alamofire.manager.request(getMethod(), getBaseUrl() + path, parameters: params)
+            .responseJSON {(_, response, JSON, error) in
+                
+                //move the following-----
+                if(error != nil){
+                    //Request didn't happen. Network down?
+                    println("Request failed. To be implemented...")
+>>>>>>> feature-my-events
+                } else {
+                    
+                    if(JSON != nil){
+                        
+                        let json = JSONObj(JSON!)
+                        if let serverError = json["error"].string {
+<<<<<<< HEAD
+                            let error = Error(code: "To be set...", message: "Server error:" + serverError)
+                            failure(error: error)
+                        } else {
+                            //Actually got the response we want
+                            success(response: json)
+                        }
+                    } else {
+                        let error = Error(code: "To be set...", message: "Something wrong happened in requestData()")
+                        failure(error: error)
+                    }
+                }
+        }
+    }
+    
+    private func getHttpMethod() -> Method{
+=======
+                            //'error' key exists in the response - handle it
+                            println("Server error:" + serverError)
+                        } else {
+                            //Actually got the response we want
+                            println("Logged in!")
+                            //Handling it
+                            
+                            let token = json["token"].stringValue
+                            println("Token: " + token)
+                            KeychainHandler.saveUserLoggedToken(token)
+                        }
+                    } else {
+                        println("Something wrong happened somewhere. Try again")
+                    }
+                }
+                //move the following-----
+        }
+    }
+    
+    func requestDataNew(completion: (JSONObj) -> Void, failure: (NSError?) -> Void){
+        
+        Alamofire.manager.request(getMethod(), getBaseUrl() + path, parameters: params)
+            .responseJSON {(_, response, JSON, error) in
+                
+                if(error != nil){
+                    self.requestDataNew(completion, failure: failure)
+                } else {
+                    
+                    if(JSON != nil){
+                        
+                        let json = JSONObj(JSON!)
+                        self.requestDataNew(completion, failure: failure)
+                    }
+                }
+        }
+    }
+    
+    private func getMethod() -> Method{
+>>>>>>> feature-my-events
+        
+        switch method {
+            
+        case .GET : return Method.GET
+        case .POST: return Method.POST
+        case .PUT: return Method.PUT
+        case .DELETE: return Method.DELETE
+        default : return Method.GET //not sure if best idea
+        }
+    }
+<<<<<<< HEAD
+
+=======
+    
+//    class func login(email: String, password: String){
+//        
+////        let myParameters = ["email": "demo@test.com", "password": "12345678"]
+//        let myParameters = ["email": email, "password": password]
+//        
+//        Alamofire.manager.request(.POST, getBaseUrl2() + getLoginUrl(), parameters: myParameters)
+//            .responseJSON {(_, response, JSON, error) in
+//                
+//                if(error != nil){
+//                    //Request didn't happen. Network down?
+//                    println("Request failed. To be implemented...")
+//                } else {
+//                    
+//                    if(JSON != nil){
+//                        
+//                        let json = JSONObj(JSON!)
+//                        if let serverError = json["error"].string {
+//                            //'error' key exists in the response - handle it
+//                            println("Server error:" + serverError)
+//                        } else {
+//                            //Actually got the response we want
+//                            println("Logged in!")
+//                            //Handling it
+//                            
+//                            let token = json["token"].stringValue
+//                            println("Token: " + token)
+//                            KeychainHandler.saveUserLoggedToken(token)
+//                        }
+//                    } else {
+//                        println("Something wrong happened somewhere. Try again")
+//                    }
+//                    
+//                }
+>>>>>>> feature-my-events
+//                
+//        //                if(JSON != nil){
+//        //                    var jsonObj = JSONObj(JSON!)
+//        //                    let token = jsonObj["token"].stringValue
+//        //                    let error2 = jsonObj["error"].stringValue
+//        //                    println("Error: " + error2)
+//        ////                    println(jsonObj) //prints directly the JSON obj
+//        //                    println("Token: " + token)
+//        //                } else {
+//        //                    println(error?.description)
+//        //                    println("Your login request fucked up")
+//        //                }
+//        //
+//        //                let statusCode = String((response?.statusCode)!)
+//        //                println("Status code: " + statusCode)
+//        }
+//    }
+    
+    
+    private func getBaseUrl() -> String {
+        return "http://sheltered-thicket-5729.herokuapp.com"
+    }
+}

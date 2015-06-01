@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="SportLook" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextFieldContentView" destination="rba-3K-dtR" id="6if-gf-ppc"/>
+                <outlet property="fbLoginView" destination="F4k-WA-ZUu" id="M2U-VU-H2v"/>
+                <outlet property="loginButton" destination="pMV-DA-c8M" id="dJz-bd-aLd"/>
+                <outlet property="orLabel" destination="ilU-21-d88" id="b9p-LZ-TCP"/>
+                <outlet property="passwordTextFieldContentView" destination="OUA-II-fUW" id="lWR-w0-S7U"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rba-3K-dtR" userLabel="Email text field">
+                    <rect key="frame" x="0.0" y="25" width="600" height="40"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="xCz-tC-7T0"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUA-II-fUW" userLabel="Password text field">
+                    <rect key="frame" x="0.0" y="66" width="600" height="40"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="TCK-Xi-z9L"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMV-DA-c8M" userLabel="Login button">
+                    <rect key="frame" x="0.0" y="131" width="600" height="40"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Hjf-Fz-Sai"/>
+                    </constraints>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="Duf-63-g0O"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilU-21-d88" userLabel="or Label">
+                    <rect key="frame" x="292" y="173" width="16" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4k-WA-ZUu" customClass="FBLoginView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="4bP-Aa-muY"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="4bP-Aa-muY"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="4bP-Aa-muY"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="OUA-II-fUW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4lr-RM-M9V"/>
+                <constraint firstItem="F4k-WA-ZUu" firstAttribute="top" secondItem="ilU-21-d88" secondAttribute="bottom" constant="7.5" id="6YI-53-EsV"/>
+                <constraint firstItem="pMV-DA-c8M" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gn0-rO-Rhz"/>
+                <constraint firstItem="pMV-DA-c8M" firstAttribute="top" secondItem="OUA-II-fUW" secondAttribute="bottom" constant="25" id="Hen-jR-fwP"/>
+                <constraint firstAttribute="trailing" secondItem="OUA-II-fUW" secondAttribute="trailing" id="MuA-4u-bAv"/>
+                <constraint firstAttribute="centerX" secondItem="ilU-21-d88" secondAttribute="centerX" id="QoK-ys-Rxu"/>
+                <constraint firstAttribute="trailing" secondItem="pMV-DA-c8M" secondAttribute="trailing" id="SY8-ZW-D11"/>
+                <constraint firstAttribute="trailing" secondItem="F4k-WA-ZUu" secondAttribute="trailing" constant="100" id="dDu-cf-mO5">
+                    <variation key="widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="rba-3K-dtR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="eK7-Ql-ssE"/>
+                <constraint firstAttribute="trailing" secondItem="rba-3K-dtR" secondAttribute="trailing" id="f6D-S1-FDW"/>
+                <constraint firstItem="F4k-WA-ZUu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="100" id="kwG-Xc-VMf">
+                    <variation key="widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="OUA-II-fUW" firstAttribute="top" secondItem="rba-3K-dtR" secondAttribute="bottom" constant="1" id="lV4-YC-fvy"/>
+                <constraint firstItem="ilU-21-d88" firstAttribute="top" secondItem="pMV-DA-c8M" secondAttribute="bottom" constant="2" id="miL-FW-LX2"/>
+                <constraint firstItem="rba-3K-dtR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vxx-qX-ZGm"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="F4k-WA-ZUu"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="6YI-53-EsV"/>
+                    <exclude reference="dDu-cf-mO5"/>
+                    <exclude reference="kwG-Xc-VMf"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="subviews">
+                    <include reference="F4k-WA-ZUu"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="6YI-53-EsV"/>
+                    <include reference="dDu-cf-mO5"/>
+                    <include reference="kwG-Xc-VMf"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="196" y="150"/>
+        </view>
+    </objects>
+</document>

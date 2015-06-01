@@ -1,0 +1,17 @@
+platform :ios, '7.1'
+#use_frameworks!
+
+pod 'pop', '~> 1.0'
+pod 'IQKeyboardManager'
+pod 'MRProgress'
+pod 'kingpin'
+<<<<<<< HEAD
+pod 'JSQMessagesViewController'
+# pod 'SCLAlertView'
+pod 'Bolts'
+pod 'Facebook-iOS-SDK', '3.23.1'
+=======
+pod 'HUMSlider'
+pod 'SDWebImage'
+>>>>>>> developer
+

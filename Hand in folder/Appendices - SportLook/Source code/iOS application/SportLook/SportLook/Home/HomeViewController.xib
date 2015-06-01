@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="SportLook" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundWebView" destination="0zV-yH-Ubd" id="Dfg-DB-Wl9"/>
+                <outlet property="loginButton" destination="hiQ-Xj-SKN" id="nu6-pg-CAs"/>
+                <outlet property="logoLabel" destination="bOm-zg-J7S" id="x5Z-ht-BVC"/>
+                <outlet property="signupButton" destination="ZhT-QF-jrV" id="LMg-sb-ech"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <userGuides>
+                <userLayoutGuide location="536" affinity="minY"/>
+                <userLayoutGuide location="535" affinity="minY"/>
+            </userGuides>
+            <subviews>
+                <webView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zV-yH-Ubd">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </webView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="3DE-Ml-2cF">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ney-BS-ZLR" userLabel="Logo image">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="167" id="3Vw-LT-sWr">
+                            <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="167" id="tjP-ik-fmH">
+                            <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                        </constraint>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="3Vw-LT-sWr"/>
+                            <exclude reference="tjP-ik-fmH"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="3Vw-LT-sWr"/>
+                            <include reference="tjP-ik-fmH"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOm-zg-J7S" userLabel="Logo label">
+                    <rect key="frame" x="256" y="290" width="89" height="21"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Sport">
+                            <attributes>
+                                <color key="NSColor" red="0.364705890417099" green="0.50196081399917603" blue="0.54901963472366333" alpha="1" colorSpace="deviceRGB"/>
+                                <font key="NSFont" size="24" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Look">
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" size="24" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiQ-Xj-SKN">
+                    <rect key="frame" x="166" y="520" width="43" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="JlU-Ht-Nu8">
+                            <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                        </constraint>
+                    </constraints>
+                    <state key="normal" title="Log In">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="JlU-Ht-Nu8"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="JlU-Ht-Nu8"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="loginTapped:" destination="-1" eventType="touchUpInside" id="NNo-mp-wHM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhT-QF-jrV">
+                    <rect key="frame" x="374" y="520" width="53" height="30"/>
+                    <state key="normal" title="Sign Up">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="signupTapped:" destination="-1" eventType="touchUpInside" id="jpZ-ji-CuZ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.85882352939999995" green="0.91372549020000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="bOm-zg-J7S" firstAttribute="top" secondItem="Ney-BS-ZLR" secondAttribute="bottom" constant="86" id="2bj-X0-tNh">
+                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstItem="Ney-BS-ZLR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="118" id="42J-jI-HfG">
+                    <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                </constraint>
+                <constraint firstItem="3DE-Ml-2cF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="Dtf-TJ-MDV">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="ZhT-QF-jrV" firstAttribute="height" secondItem="hiQ-Xj-SKN" secondAttribute="height" id="Ekc-Y1-QGu"/>
+                <constraint firstAttribute="bottom" secondItem="3DE-Ml-2cF" secondAttribute="bottom" constant="336" id="HL7-F4-keS">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="0zV-yH-Ubd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="336" id="HNG-iW-0me">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="ZhT-QF-jrV" secondAttribute="trailing" constant="73" id="MyB-Pr-XEK">
+                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstItem="ZhT-QF-jrV" firstAttribute="baseline" secondItem="hiQ-Xj-SKN" secondAttribute="baseline" constant="-30" id="XPJ-Mn-I8s">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="0zV-yH-Ubd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="YVx-o7-Wh4">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstAttribute="centerX" secondItem="bOm-zg-J7S" secondAttribute="centerX" id="YwM-Ew-iHy"/>
+                <constraint firstItem="3DE-Ml-2cF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="336" id="hN5-Cu-Rgl">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="hiQ-Xj-SKN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="72" id="hQv-Qx-LdW">
+                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="3DE-Ml-2cF" secondAttribute="trailing" constant="80" id="moZ-o6-rKF">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="ZhT-QF-jrV" firstAttribute="width" secondItem="hiQ-Xj-SKN" secondAttribute="width" id="oHa-wK-tuq"/>
+                <constraint firstAttribute="bottom" secondItem="hiQ-Xj-SKN" secondAttribute="bottom" constant="50" id="pge-wx-ZYa">
+                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                </constraint>
+                <constraint firstAttribute="centerX" secondItem="Ney-BS-ZLR" secondAttribute="centerX" id="rY8-dD-PUX"/>
+                <constraint firstItem="ZhT-QF-jrV" firstAttribute="leading" secondItem="hiQ-Xj-SKN" secondAttribute="trailing" constant="272" id="tSk-Fk-C4v">
+                    <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstAttribute="bottom" secondItem="0zV-yH-Ubd" secondAttribute="bottom" constant="336" id="wO9-M5-Zph">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="0zV-yH-Ubd" secondAttribute="trailing" constant="80" id="zZP-Xq-bOV">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="0zV-yH-Ubd"/>
+                    <exclude reference="3DE-Ml-2cF"/>
+                    <exclude reference="Ney-BS-ZLR"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="HNG-iW-0me"/>
+                    <exclude reference="YVx-o7-Wh4"/>
+                    <exclude reference="wO9-M5-Zph"/>
+                    <exclude reference="zZP-Xq-bOV"/>
+                    <exclude reference="Dtf-TJ-MDV"/>
+                    <exclude reference="HL7-F4-keS"/>
+                    <exclude reference="hN5-Cu-Rgl"/>
+                    <exclude reference="moZ-o6-rKF"/>
+                    <exclude reference="42J-jI-HfG"/>
+                    <exclude reference="rY8-dD-PUX"/>
+                    <exclude reference="2bj-X0-tNh"/>
+                    <exclude reference="hQv-Qx-LdW"/>
+                    <exclude reference="Ekc-Y1-QGu"/>
+                    <exclude reference="MyB-Pr-XEK"/>
+                    <exclude reference="XPJ-Mn-I8s"/>
+                    <exclude reference="oHa-wK-tuq"/>
+                    <exclude reference="tSk-Fk-C4v"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="0zV-yH-Ubd"/>
+                    <include reference="3DE-Ml-2cF"/>
+                    <include reference="Ney-BS-ZLR"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="HNG-iW-0me"/>
+                    <include reference="YVx-o7-Wh4"/>
+                    <include reference="wO9-M5-Zph"/>
+                    <include reference="zZP-Xq-bOV"/>
+                    <include reference="Dtf-TJ-MDV"/>
+                    <include reference="HL7-F4-keS"/>
+                    <include reference="hN5-Cu-Rgl"/>
+                    <include reference="moZ-o6-rKF"/>
+                    <include reference="42J-jI-HfG"/>
+                    <include reference="rY8-dD-PUX"/>
+                    <include reference="2bj-X0-tNh"/>
+                    <include reference="hQv-Qx-LdW"/>
+                    <include reference="Ekc-Y1-QGu"/>
+                    <include reference="MyB-Pr-XEK"/>
+                    <include reference="XPJ-Mn-I8s"/>
+                    <include reference="oHa-wK-tuq"/>
+                    <include reference="tSk-Fk-C4v"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="LoginBackground" width="320" height="569"/>
+        <image name="logo" width="167" height="167"/>
+    </resources>
+</document>
