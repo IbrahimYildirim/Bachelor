@@ -16,25 +16,25 @@ Scalability and low cost
 	The following diagram illustrates the cost of scaling up from 30 requests per second to 50 requests per second, in Parse. 200$ per month may not correspond to the project's objective of keeping a low cost. 
 	[INSERT FIGURE 9. Scaling with Parse - Fig.1]
 Multiple types of testing
-	User interface testing, manual functional testing, usability testing and offline navigation testing were performed on the system. In order to ensure high performance and stability, more types of testing should be performed. A testing framework such as XCTest (embedded in the Xcode IDE) could be used for assertion tests or unit tests. Test automation frameworks such as Appium could used for speeding up the testing. Also, a tool such as Travis Continuous Integration could be added to the development work flow, which would run automated unit tests to each new commit.
-	The system could also benefit from further usability testing, where a user would be given a certain task to perform and the results would be observed, respectively how fast and easily can the user achieve the task.
+User interface testing, manual functional testing, usability testing and offline navigation testing were performed on the system. In order to ensure high performance and stability, more types of testing should be performed. A testing framework such as XCTest (embedded in the Xcode IDE) could be used for assertion tests or unit tests. Test automation frameworks such as Appium could used for speeding up the testing. Also, a tool such as Travis Continuous Integration could be added to the development work flow, which would run automated unit tests to each new commit.
+The system could also benefit from further usability testing, where a user would be given a certain task to perform and the results would be observed, respectively how fast and easily can the user achieve the task.
 Complete testing on device and OS version
-	The iOS application was fully manual functional tested on a limited number of iOS devices and iOS versions, since it is a time consuming task. Also, the development team only had 2 physical devices for testing: iPhone 5 (running iOS 7.1) and iPhone 5S (running iOS 8.3). The rest of the testing was performed with the iOS simulator.
+The iOS application was fully manual functional tested on a limited number of iOS devices and iOS versions, since it is a time consuming task. Also, the development team only had 2 physical devices for testing: iPhone 5 (running iOS 7.1) and iPhone 5S (running iOS 8.3). The rest of the testing was performed with the iOS simulator.
 Facebook SDK integration
-	Basic testing was performed for the integration of the Facebook iOS SDK. However, the iOS application could benefit from further testing of the situation when the requested Facebook permissions are not granted by the user. 
+Basic testing was performed for the integration of the Facebook iOS SDK. However, the iOS application could benefit from further testing of the situation when the requested Facebook permissions are not granted by the user. 
 Offline support
-	Currently, the client (iOS application) does not store persistent data when it communicates with the Web Service. A cache system could be implemented with custom business logic, making the application usable even when there is no network connectivity. 
+Currently, the client (iOS application) does not store persistent data when it communicates with the Web Service. A cache system could be implemented with custom business logic, making the application usable even when there is no network connectivity. 
 HTTP request time-out
-	The open source library used for performing HTTPS requests from the iOS application has a default time-out of 60 seconds. The time-out period could be reduced to 20-30 seconds for a better user experience.
+The open source library used for performing HTTPS requests from the iOS application has a default time-out of 60 seconds. The time-out period could be reduced to 20-30 seconds for a better user experience.
 Improved security
-	The system accounts for security through using HTTPS requests (instead of HTTP) for client-server communication and storing sensitive user information in the iOS application in Keychain Access (encrypted storage). This does not mean that the system is safe from attacks which could compromise user data. The security enforced should be tested, for example through attacks simulations. 
+The system accounts for security through using HTTPS requests (instead of HTTP) for client-server communication and storing sensitive user information in the iOS application in Keychain Access (encrypted storage). This does not mean that the system is safe from attacks which could compromise user data. The security enforced should be tested, for example through attacks simulations. 
 
 9.2. Unexpected situations
 
 Swift 1.2
-	During the development of the iOS application, Apple released a new version of the Swift syntax, Swift 1.2. The new syntax was embedded in the Xcode 6.3 IDE version. The problem was that testing the application on the iOS 8.3 version was not possible, unless the new Swift syntax was used. The upgrade produced more than 60 compilation errors in the project. Extra-work was put into converting the project to the new syntax.
+During the development of the iOS application, Apple released a new version of the Swift syntax, Swift 1.2. The new syntax was embedded in the Xcode 6.3 IDE version. The problem was that testing the application on the iOS 8.3 version was not possible, unless the new Swift syntax was used. The upgrade produced more than 60 compilation errors in the project. Extra-work was put into converting the project to the new syntax.
 Heroku's pricing change
-	Towards the end of the development period, Heroku (PaaS used for hosting) changed its plan pricing. This affected the allowed uptime of the server per day, from 24 hours to 18 hours, according to the Heroku plan used. In order to keep the server up 24 hours per day, a plan change is necessary which comes with a cost of 7$ monthly. The cost could be lowered if the server would be moved to an instance of Amazon Elastic Compute Cloud.
+Towards the end of the development period, Heroku (PaaS used for hosting) changed its plan pricing. This affected the allowed uptime of the server per day, from 24 hours to 18 hours, according to the Heroku plan used. In order to keep the server up 24 hours per day, a plan change is necessary which comes with a cost of 7$ monthly. The cost could be lowered if the server would be moved to an instance of Amazon Elastic Compute Cloud.
 
 9.3. Monetization
 

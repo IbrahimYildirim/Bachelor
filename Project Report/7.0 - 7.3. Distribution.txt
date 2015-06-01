@@ -1,34 +1,31 @@
 7.0 Distribution
 
-iPhone users download and update their app's thorugh App Store. In order to release app's in the there one would have to enroll in a Apple developer program, and that cost 99$/year. In this case the client had a existing enterprise developer program, so the app was released the clients account. 
+iOS devices users download and update their apps through Apple's AppStore. In order to publish apps in the AppStore, an enrollment in an Apple developer program is needed, which costs 99$ / year. In this project, the client provided the development team with an existing enterprise developer account, which was used for publishing.
 
 [Fig 1 - Apple Distribution Flow]
 
-As it is seen in the in the figure abowe you need access to Apple's member center. In there you handle all the signing of the app, and can create App ID's that that's required in order to release the app later. In there you have a overview of devices, developers, app's that are registered to the account.
-
-The figure below shows the a small part of the interface in member center.
+Access to Apple's Member Center is needed. This is central point for handling app signing and creating an App ID which is required for publishing. An overview of devices, developers and apps registered to the account is available. A preview of the Member Center can be seen below:
 
 [Fig 2 - Member Center]
 
 7.1 Apple Member Center, Certificates & Code Signing
 
-Apple makes a big deal out of code signing. Unlike Android, it's required to sign the code in order to run the app on real devices, whether it be your own, those of clients or for customers on the App Store. If code signing is not used, the app will only will only be able to run on a simulator or a jailbroken device - which is not enough if you want to reach a wide audience. 
+Code signing is a sensitive issue in Apple's ecosystem. Unlike the Android ecosystem, it is required to perform code signing in order to run an application on a physical device. In case code signing is not used, the application will run only on the iOS simulator or a Jailbroken device, which does not allow for a wide audience.
 
-And just as important, to properly test the code a physical device is a must. The simulator (Xcode comes with a built-in simulator) does an excellent job for an initial level of testing, but there three main reasons youn eed to test on an actual device before you ship:
+An important issue is testing on a physical device. The simulator (Xcode comes with a built-in simulator) provides excellent initial testing, but there are 3 main reasons of why testing on a physical device is important, before deploying:
 
 	- A physical device is usually slower
 	- A physical device has far less memory
 	- There some APIs that work only on a physical device
 
-In Xcode versions prior to 5.0 it was necessary to enter Member Center, register your device, create a development certificate and provisioning profile, then download that certificate, and copy it into xCode before testing on a physical device would be possible. 
+In Xcode versions prior to 5.0, it was necessary to enter Member Center, register a device, create a development certificate and provisioning profile, then download that certificate, and copy it into xCode before testing on a physical device would be possible. 
 
-The newer versions of Xcode (5.0+) made it way simpler. If a project doesnt have a certificate, or the device is not added to the device list, it suggest to "fix issue" by automatically adding the device - and create a certificate if none is existing - as long as you are logged in with a valid account in Xcode.
+The newer versions of Xcode (5.0+) made it simpler. If a project doesn't have a certificate, or the device is not added to the device list, it suggests to "fix issue" by automatically adding the device - and create a certificate if none is existing - as long as you are logged in with a valid account in Xcode.
 
 [Fig 3 - Example of issue with provisioning profiles]
 
-"Certificates" bundles of data that represent trust. They are the guarantee that you, the named developer, built this code, that you are a member of the developer program, and that Apple have issued you with a certificate to do so.
 
-It is possible to develop app's without a being enrolled in a developer program. But the only way to run and test the app would be with the simulater. 
+It is possible to develop apps without being enrolled in a developer program, but the only way to run and test the app would be with the iOS simulator. 
 
 7.1.1 Provisioning Profiles & SSL Certificate for push notifications
 A provisioning profile is a combination of
@@ -37,18 +34,18 @@ A provisioning profile is a combination of
 	- The different certificates signed by a developer
 	- List of restricted set of devices it can run on
 
-A provisioning profile accompanies the device by being copied into Xcode and from there onto the device. While in development Xcode can generate a development provisioning profile automatically - as described earlier by "fix issue" - but when it about time to release the app, it is necessary to create a production provisioning profile for the app. 
+A provisioning profile accompanies the device by being copied into Xcode and from there onto the device. While in development Xcode can generate a development provisioning profile automatically - as described earlier by "fix issue" - but at the publishing stage, it is necessary to create a production provisioning profile for the app. 
 
-In order to enable push notifications in an app, it needs to be signed with a provisioning profile that is configured for push. In additions, the server need to sign its communications to Apple's Push Notification Server (APNS) with an SSL certificate. In this project this is automatically handled by parse by uploading the generated certificate to the parse dashboard.
+In order to enable push notifications in an app, it needs to be signed with a provisioning profile that is configured for push. In addition, the server needs to sign its communications to Apple's Push Notification Server (APNS) with a SSL certificate. In this project this is automatically handled by Parse by uploading the generated certificate to the Parse dashboard.
 
-The provisioning profile and SSL certificate are closely tied together and are only valid for a single App ID. This is a protection that ensures only signed servers can send push notifications to instances of an app that matches that profile, and no one else. 
+The provisioning profile and SSL certificate are closely tied together and only valid for a single App ID. This is a protection that ensures only signed servers can send push notifications to instances of an app that matches that profile. 
 
 7.2 Itunes Connect
-When all the code signing and provisioning profiles are done it is about time to get the app in the App Store. Every developer/enterprise in the developer programme, get a iTunes Connect account aswell when they register for the programme.
+When all the code signing and provisioning profile issues are resolved, the app is ready to be published in the AppStore. Every developer or enterprise enrolled in the developer programme gain access to an iTunes account at registration.
 
 [Fig 4 - iTunes Connect]
 
-The iTunes Connect page handles all communication with App Store. Once the App ID is created in the Member Center, it is possible to create the app record and all information of the app such as
+The iTunes Connect page handles all communication with the AppStore. Once the App ID is created in the Member Center, it is possible to create the app record and all information of the app such as
 
 	- Screenshots
 	- Description
@@ -59,16 +56,16 @@ The iTunes Connect page handles all communication with App Store. Once the App I
 	- Territories for the app to be available.
 	- Select build from Xcode
 
-When clicked "Create new App", it is only possible to select the app ID's that are created in Member Center. That is why it is important to do that first, before you are able to create a app record in iTunes Connect.
+When the "Create new App" option is selected,  it is only possible to select the app IDs that are created in Member Center. This step must be performed before creating the app record in iTunes Connect. 
 
 In short Member Center is the place where you handle the technical part of your app, and iTunes connect is the portal that connects your app with the App Store.
 
-When developing apps for iOS it's not possible to get the app in a file and run it on a phone as it is with Android (unless the iPhone is jailbroken). To upload the app to the app record, the build have to be uploaded to iTunes connect from Xcode. That is done by logging in with the same account, as the app is being created by, and then you can archive the product and submit it to the app store. When that is done, it is possible to see all uploaded builds in iTunes Connect, and then it's possible to select the one the one to submit.
+When developing apps for iOS it's not possible to get the app in a file and run it on a phone as it is with Android (unless the iPhone is jailbroken). To upload the app to the app record, the build have to be uploaded to iTunes connect from Xcode. That is done by logging in with the same account, as the app is being created by, and then you can archive the product and submit it to the app store. When that is done, it is possible to see all uploaded builds in iTunes Connect, and then it's possible to select the one to submit.
 
 [Fig 5 Application Uploader Xcode]
 
 7.3 Updates
-The first verion (2.0 - 1.0 was MoveBizz, the app name was changed in the update) of this app was released 1st of March 2015, by the request of the client. The agreement that was made in the beginning included two versions. The first was a basic one, where the user could
+The first version 2.0 (1.0 was MoveBizz, the app name changed in the update) of this app was released 1st of March 2015, date chosen by the client. The app is to be released in two versions. The first was a basic one, where the user could:
 
 	-Create profile & login with existing
 	-Create/join/delete events
@@ -76,7 +73,7 @@ The first verion (2.0 - 1.0 was MoveBizz, the app name was changed in the update
 	-See own profile
 	-Edit profile
 
-The second version (2.1) was released one month after 1st of May 2015 and there was added some new features to the app such as
+The second version (2.1) was released one month after (1st of May 2015) and it benefits from extra functionality:
 
 	-Push Notifications
 	-Chat: with other participants in the same event (only if you attending the event)
@@ -84,10 +81,12 @@ The second version (2.1) was released one month after 1st of May 2015 and there 
 	-Invite other people to events
 	-Public Profile
 
-Unless there is new features added such as Push Notification, in App-Purchase, Game-Center, etc. the update can be made in iTunes connect only. If there is change to the app's functions (as mentioned abowe), it would be necessary to create the certificates in Member Center. For the first version it was necessary to create a new provisioning profile, because the "signer" of the app was not the same one as version 1.0. In the second one it was necesary to create certificates for Push-Notifications. During development, development profiles was used, and before submitting, production profiles were created.
+Unless there are new features added such as Push Notifications, In-App Purchases, Game-Center, etc. the update can be made only in iTunes connect. If there is a change to the app's functions (as mentioned above), it would be necessary to create the certificates in Member Center. For the first version it was necessary to create a new provisioning profile, because the "signer" of the app was not the same one as version 1.0. In the second one it was necessary to create certificates for Push-Notifications. During development, development profiles was used, and before publishing, production profiles were created.
 
 7.4 Sales & Trends
-Because the app have been in App Store for almost two months, there is some data for how much it have been downloaded. The figure below shows number of downloads from 1st February to 25th May 2015.
+
+Since the application is publicly available in the Appstore for a period of 60 days, there is a limited analytics data available. The figure below shows number of downloads from 1st February to 25th May 2015.
+
 
 [Fig 6]
 

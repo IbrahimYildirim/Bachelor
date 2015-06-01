@@ -1,0 +1,46 @@
+3 Analysis
+
+3.1 Requirements
+
+Non-functional
+
+	Application must be an iPhone Application
+	Application must support iOS versions 7.1 - 8.3
+	Application must support all iPhone screen sizes (iPhone 4, 5, 6 & 6 plus)
+
+Functional
+	
+	The user must be able to find sport events close to him
+	The user must be able to see details about any sport event
+	The user must be able to create an event
+	The user must be able to join/leave an event
+	The user must be able to send chat messages to people that have joined the same event
+	The user must be able to invite users to events
+	The user must be able to change his profile information
+	The user must be able to find other users close to him with similar interests
+
+3.2 Domain model
+The Domain Model diagram is a first approximation of the model that will be used for the application. Each
+user will be able to attend multiple events that have a sport associated with them. The user also has a specified sport preference to personalize his experience. 
+[3-Domain-Model]
+
+3.3 Use case diagram
+
+Similarly to the Domain Model, the Use Case diagram below accurately depicts the main use cases available to users of the app. As can be inferred from the diagram, the user first has to register or log in to perform any other use case in the app.
+
+[3-Use-Case]
+
+3.3.1 Actor descriptions
+
+Name : Guest
+Description: This actor represents a user that is not logged in the system. The only actions available to him are to enter the system either by logging in or registering
+
+Name: User
+Description: This actor represents a user that is logged in the system.
+
+3.3.2 Use case descriptions and Activity diagrams
+Use case description and activity diagrams were generated for every Use Case. Here one is shown , for the rest please refer to Appendix [Appendix name]
+[3 Use Case Descriptions.ods -- 1st one]
+
+[3-Activity-register.png]
+

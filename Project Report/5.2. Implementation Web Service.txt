@@ -1,23 +1,23 @@
 5.2 Implementation Web Service
 
-As mentioned in Section 4.3 the Web Service is implemented in the Sails.js framework. It follows the Model View Controller design pattern. The folder structure thus looks like 
+As mentioned in Section 4.3 the Web Service is implemented in the Sails.js framework. It follows the Model View Controller design pattern.
 [5.2-Folder-structure].
 
-As shown in Domain Model each model is added in the project solution under the Model folder and default CRUD functions are added
+As shown in Domain Model, each model is added in the project solution under the Model folder and default CRUD functions are added
 into separate Controllers under the Controller folder e.g. User.js model will have corresponding UserController.js which will provide the default
 CRUD actions and any custom action that is required.
 
 The URL mapping from requests to controller actions is part of the Sails.js framework. 
 A HTTP GET request to https://<api_url>/event/1 will be automatically bound to the function findOne() in EventController with the request parameter id set to 1.
-A HTTP request to https://<api_url>/AppleController/juiced will execute the function juiced in AppleController
+A HTTP request to https://<api_url>/AppleController/juiced will execute the function juiced in AppleController.
 Custom mapping in the configuration file config/routes.js can also be added to map requests like https://<api_url>/register to the function register in Authcontroller.
 
 
 5.2.1 User Authentication
 
-As can be seen from the Use Case diagram, the user has to be logged in to perform any action. The only exceptions are login and registering. Furthermore there are two ways for both. The user can either register with a username and a password or his Facebook account. The same holds true for logging in.
+As it can be seen from the Use Case diagram, the user has to be logged in to perform any action. The only exceptions are login and registering. Furthermore there are two ways for both. The user can either register with a user name and a password or his Facebook account. The same holds true for logging in.
 
-For checking the user's state(logged in/logged out) on a stateless protocol like HTTP we utilize the concept of a webToken. When a use is registered a token is generated, which is simply a string guaranteed to be unique. This token is saved to the database together with the rest of the user information. It is also returned to the client. It is a responsibility of the client to maintain the token and include it with the header or as an extra parameter in any authenticated request.
+For checking the user's state(logged in/logged out) on a stateless protocol like HTTP we utilize the concept of a webToken. When a user is registered a token is generated, which is simply a string guaranteed to be unique. This token is saved to the database together with the rest of the user information. It is also returned to the client. It is a responsibility of the client to maintain the token and include it with the header or as an extra parameter in any authenticated request.
 
 For every request that a user has to be logged in, the user is fetched from the database using the token as an identifier. If no user is found or if no token is provided  a HTTP response with 401(Unauthorized) error code is returned. Otherwise, the request is routed to the correct function with the user variable now set. Sails.js makes it possible to abstract this behaviour by using policies. The above logic is simply defined in a policy file and controllers which are affected by this policy are specified.
 
@@ -25,20 +25,20 @@ The mechanics can be seen from the following diagrams.
 [5.2-Registration]
 [5.2-Authorized-unathorized]
 
-A login functionality is also provided. Altough a user token is issued directly when a user is registered, thus the user is considered logged in right away, in case the user switches to a new device there has to be a way to connect to his old account. Thus the login functionality.
-For logging in the client sends along the user's username and password and the token is fetched from the database and returned as long as the passwords match.
+A login functionality is also provided. Although a user token is issued directly when a user is registered, thus the user is considered logged in right away, in case the user switches to a new device there has to be a way to connect to his old account. Thus the login functionality.
+For logging in the client sends along the user's name and password and the token is fetched from the database and returned as long as the passwords match.
 
-Of course the users' password is not stored in plain text! This is generally considered very unsecured, if the database were to be compromised the attacker would get a list of all the users' passwords that he could use to log in as them and if they reuse their password across different websites possibly gain access to the as well.
+Of course the user's password is not stored in plain text. This is generally considered very insecure, if the database were to be compromised the attacker would get a list of all the user passwords that he could use to log in as them and if they reuse their password across different websites possibly gain access to them as well.
 
-Thus the user password is hashed using the bcrypt algorithm [Reference http://en.wikipedia.org/wiki/Bcrypt] before it is stored in the database. Naturally a third party library is used as it is considered wrong to implement your own crypto algorithm. 
+Thus the user password is hashed using the bcrypt algorithm [Reference http://en.wikipedia.org/wiki/Bcrypt] before it is stored in the database. Naturally a third party library is used as it is considered wrong to implement your own cryptography algorithm. 
 
-5.2.1 Image upload
+5.2.2 Image upload
 
-Image uploading is usually a very simple thing on any web server. However because of the way Heroku works does not allow to simply store any files on their filesystem. The only files that can be stored are those that are included in version control, dependency packages that are automatically installed and a temporary folder that is deleted between each app restarts. It is therefore impossible to directly and persistently store uploaded files inside Heroku.
+Image uploading is usually a very simple thing on any web server. However because of the way Heroku works, it does not allow to simply store any files on their file system. The only files that can be stored are those that are included in version control, dependency packages that are automatically installed and a temporary folder that is deleted between each app restarts. It is therefore impossible to directly and persistently store uploaded files inside Heroku.
 
-However, luckily it is very easy to integrate Amazon Web Services Simple Storage Service (AWS S3) to store the uploaded files. There are 2 use cases where a user needs to upload an image in our requirements and they are sligthly different. There is a profile image uploading, and event cover image uploading. The difference is that for a profile image a miniature version also must be generated. For an event image only the image itself is needed. 
+However, luckily it is very easy to integrate Amazon Web Services Simple Storage Service (AWS S3) to store the uploaded files. There are 2 use cases where a user needs to upload an image in the requirements and they are slightly different. There is a profile image uploading, and event cover image uploading. The difference is that for a profile image a miniature version also must be generated. For an event image only the image itself is needed. 
 
-The image upload sequence diagram can be seen below
+The image upload sequence diagram can be seen below:
 
 [5.2 - Image - upload resize.png]
 [5.2-Image-upload-direct.png]

@@ -1,8 +1,8 @@
 5.1 Implementation iOS
-The implementation of the application have been made in Xcode which is a developer tool from Apple to create applications for Mac OS/iOS. This section will not cover the entire implementation of the app, but the parts that would require some specialized knowledge. It has been a priotity to keep the code clean and easy to read, modularized, reusable and above all efficient.
+The implementation of the application has been made in Xcode (Apple's IDE for developing MacOS / iOS applications). This section will not cover the entire implementation of the app, but the parts that would require specialized knowledge. It has been a priority to keep the code clean and easy to read, modularized, reusable and above all efficient.
 
-5.1.1 BaseViewController & Supporting different OS Versions
-In the contract that was made with the client it was agreed that the app should work on iOS 7+. 80% of iPhone users have iOS 8 installed already, and the client wanted the other 17% to be able to get the app aswell.
+5.1.1 BaseViewController & Supporting different OS Versions 
+One of the non-functional requirements was to support iOS 7+.
 
 In order to not rewrite the same code over and over, there was deviced that every ViewController that was used in the app should inherit `BaseViewController`. In this class there would be controls that automaticly handles the OS Version handling. 
 
@@ -15,30 +15,28 @@ Below is a example of how this is used in the ProfileViewController. The self.sh
 [Fig 2 - Use of BaseViewController methods]
 
 5.1.2 Supporting different iPhone Screen sizes
-In september 2014 Apple announced iPhone 6 & iPhone 6 Plus. For developers this meant that suddenly there was twice the ammount of screen sizes your app have to support. But at the same time they introduced Size Classes & autolayout. 
+In September 2014, Apple announced iPhone 6 & iPhone 6 Plus. For developers this meant that suddenly there was twice the amount of screen sizes the apps need to support. But at the same time they introduced Size Classes. 
 
-Auto Layout is a system that lets you lay out your app’s user interface by creating a mathematical description of the relationships between the elements. You define these relationships in terms of constraints either on individual elements, or between sets of elements.
+Size classes are Apple's solution to the question "How can I easily work with so many different screen sizes and device orientations?" They also enable the condensing of universal apps into one storyboard file. Combined with the new adaptive view controllers, it's easier than ever to rely on Interface Builder, rather than fight with it, to simplify the creation of the app layouts.
 
-Size classes are Apple's solution to the question "How can I easily work with so many different screen sizes and device orientations?" They also enable the condensing of universal apps into one storyboard file. Combined with the new adaptive view controllers, it's easier then ever to rely on interface builder, rather than fight with it, to simplify the creation of your app layouts.
-
-Every view controller in the app gets a trait collection object. This trait collection object has 2 size classes, a horizontal size class and a vertical size class. And each of these classes has 3 possible values: compact, regular, or any. These values can change based on the device and its orientation. The app will layout its interface for each view controller based on the current size classes. Apple uses a grid to let the user choose which configuration to work in, so here's that same grid but with each device+orientation highlighted in its corresponding size class combo
+Every view controller in the app gets a trait collection object. This trait collection object has 2 size classes, a horizontal size class and a vertical size class. And each of these classes has 3 possible values: compact, regular, or any. These values can change based on the device and its orientation. The app will layout its interface for each View Controller based on the current size classes. Apple uses a grid to let the user choose which configuration to work in, so here's that same grid but with each device + orientation highlighted in its corresponding size class combo.
 
 [Fig 4 - Overview of sizeclasses]
 
-At the bottom of the Interface Builder window, there’s now a control that allows you to switch between each combination
+At the bottom of the Interface Builder window, there’s now a control that allows switching between each combination.
 
 [Fig 3 - Example of size class]
 
-In the project the size class Compact Width X Any Height was used. This made sure that the design made in Interface Builder could be supported with all iPhones in Portrait mode - the client didn't want landscape mode support - as long as the views were made with constraints. 
+In the project the size class Compact Width X Any Height was used. This made sure that the design made in Interface Builder could be supported with all iPhones in Portrait mode (landscape orientation will not be supported) as long as the views were made with constraints. 
 
 5.1.3 MapKit
-Apple provides a MapKit framework that lets developers embed a fully functional map interface in any app. To use it one would have to unterstand the map geometry, including how latitude and longitude works.
+Apple provides a MapKit framework that lets developers embed a fully functional map interface in any app. To use it one would have to understand the map geometry, including how latitude and longitude works.
 
-The map was used in the "Search Events" tab, where it shows pins on locations where users have created events, and in "Select on Map" feature where you can select the location of the map in the map. In order to work with the MapKit, it is necessary to set the delegate of the mapview to self in the view controller where the map is used.
+The map was used in the "Search Events" tab, where it shows pins on locations where users have created events and in the "Select on Map" feature where one can select the location in the map. In order to work with the MapKit, it is necessary to set the delegate of the MapView to self in the View Controller where the map is used.
 
 [Fig 1 - Example of MKMapView] 
 
-The following MKMapViewDelegate methods was used in "Search Events"
+The following MKMapViewDelegate methods were used in "Search Events".
 
 [Fig 2 - MKMapViewDelegate Methods]
 
@@ -46,35 +44,35 @@ The following figure shows the example of use with mapView(: regionWillChangeAni
 
 [Fig 3 - mapview:regionWillChangeAnimated]
 
-This methods gets fired everyime the view region of the map changes. Wheather it is by the interaction of the user or when programmatically moving the region. In this case the code checks if the event info view is shown to the user. If it is, it will fade it away. This is made to provide a good UX and not keep showing event info (after you click on a pin) when the user moves the map. the `vwClusterInfo` is basicly the same, but is a view that gets shown instead of `vwEventInfo` when there's is more events at the same location (show a list of events instead of just one). 
+This methods gets fired every time the view region of the map changes. Whether it is by the interaction of the user or when programmatically moving the region. In this case the code checks if the event info view is shown to the user. If it is, it will fade it away. This is made to provide a good UX and not keep showing event info (after you click on a pin) when the user moves the map. The `vwClusterInfo` is basically the same, but is a view that gets shown instead of `vwEventInfo` when there are more events at the same location (show a list of events instead of just one). 
 
 5.1.4 Reusable Views
-In order to provide a good UX it is a commom rule to make different views look the same. In this case the textfields for inputting information from the user was used multiple times in the project flow. A bad case would be to design all those textfields over and over again. A good practice would be to make a view component that is reusable. So in the future if the client would choose to change the design, it would be easier to change it only in one place instead of all the places the view was used.
+In order to provide a good UX it is a common rule to make different views look the same. In this case the text fields for inputting information from the user were used multiple times in the project flow. A bad case would be to design all those text fields over and over again. A good practice would be to make a view component that is reusable. So in the future if there would be a need to change the design, it would be easier to change it only in one place instead of all the places the view was used.
 
-Xcode and iOS doesn't come with a out of the box way to make custom views. One way to is make the view programmatically, the other way is to create a view (.xib) file, and assosiate with a implementation file. It is then possible to add custom controls through the views implementation file.
+Xcode and iOS doesn't come with an out of the box way to make custom views. One way to is make the view programmatically, the other way is to create a view (.xib) file, and associate it with an implementation file. It is then possible to add custom controls through the view's implementation file.
 
-Below is a example of a screen where the same components was used multiple times.
+Below is a example of a screen where the same components were used multiple times.
 
-[Fig 4 - Create Event screenshot]
+[Fig 4 - Create Event screen shot]
 
-The view consist of a textfield and a imageview. So when implementing this view, it had to be somehow generic.
+The view consist of a text field and an image view. So when implementing this view, it had to be somehow generic.
 
-In the figure below you see the implementation file of `SLInputView`. It have 3 variables the view it self, a imageview and a textfield.
+In the figure below the implementation file of `SLInputView` can be seen. It have 3 variables the view it self, a imageview and a textfield.
 
 [Fig 5 - SLInputView]
 
-In the init file it is seen that it loads a view from a .xib file named: SLInputView. Afterwards the methods awakeFromNib() is called, which setup the colors of the view.
+The 'init' method loads a view from a .xib file named SLInputView. Afterwards, the method 'awakeFromNib()' is called, which setups the colors used in the view.
 
-In the Interface Builder (IB) it is now possible to draw a UIView and set its class to `SLInputView`. When creating this instance of the view in the implementation (.swift) file, the method `setTextField(placeHolder:, keyboardType:, image:, returnKey:)` can be called and thereforecustomize the view according to the placeholder, image keyboardtype etc.
+In the Interface Builder (IB) it is now possible to draw a UIView and set its class to `SLInputView`. When creating this instance of the view in the implementation (.swift) file, the method `setTextField(placeHolder:, keyboardType:, image:, returnKey:)` can be called and therefore customize the view according to the placeholder, image keyboard type etc.
 
 [Fig 6 - Setting Custom class in Interface Builder]
 
-Not it is easy to setup the imageview and placeholder for each of the custom inputfields. In the `viewDidLoad()` method the setupLayout() function is called
+Not it is easy to setup the image view and placeholder for each of the custom input fields. In the `viewDidLoad()` method the setupLayout() function is called
 
 [Fig 7 - Example of setTextField used in addEventViewController]
 
 5.1.5 Open Source Components
-A lot of open source components was used in SportLook. Here is a complete list of all the open source components used
+The following is a complete list of open source components used for speeding up the development of the iOS application:
 
 	- pop
 		Pop is an extensible animation engine for iOS and OS X. In addition to basic static animations, it supports spring and decay dynamic animations, making it useful for building realistic, physics-based interactions. Pop is build in Objective-C, so in order to use it in swift, it had to be included in the Bridge.h file
@@ -85,21 +83,19 @@ A lot of open source components was used in SportLook. Here is a complete list o
 	- SwiftSpinner
 		The loadingscreen that was used for iOS 8
 	- kingpin
-		Clustering engine for MKAnnotation in MapKit. When zooming out in the mapview kingpin clusters the pins. By overwriting the delegate methods of kingpin it was possible to show insert different images for the pins depending on how many pins the cluster had included. 
+		Clustering engine for MKAnnotation in MapKit. When zooming out in the map view kingpin clusters the pins. By overwriting the delegate methods of kingpin it was possible to show different images for the pins depending on how many pins the cluster had included. 
 	- HUMSlider
 		The slider used in the discovery page when the user selects the radius of discover. Provides a nice animation when sliding the slider.
 	- SDWebImage
 		Open source library to load images from url links asyncroniously, and cache then if it's set to. In cases where there is list it's a good practice to cache the images because the cell gets destryed everytime it leaves the screen and gets recreated when it enters. By caching the images it wont have to load it again.
 	- JSQMessagesViewController
 		An open source ViewController to create a nice message layout. Was used in the chat function in the event. 
-	- Bolts
-		Bolts is a collection of low-level libraries designed to make developing mobile apps easier. Bolts was designed by Parse and Facebook for our own internal use, and we have decided to open source these libraries to make them available to others.
 	- Facebook-iOS-SDK
 		Facebook's SDK to integrate "Login with facebook" feature. In order to use this open component, it is required to have a facebook developer account, and create a app in facebook that it can communicate with. In this case the app in facebook is named SportLook. In the developer panel it is possible to see who's logged in using their facebook account.
 	- SwiftyJSON
-		SwiftyJSON makes it easy to deal with JSON data in Swift. It becomes really handy when parsing json data to swift objects.
+		SwiftyJSON makes it easy to deal with JSON data in Swift. It becomes really handy when parsing JSON data to Swift objects.
 	- KeychainAccess
-		KeychainAccess is a simple Swift wrapper for Keychain that works on iOS and OS. Makes using Keychain APIs exremely easy and much more palatable to use in Swift. The access token for the user is saved in the phones keychain, making sure that the token is not easily accessable for everyone.
+		KeychainAccess is a simple Swift wrapper for Keychain that works on iOS and MacOS. Makes using Keychain APIs extremely easy and much more palatable to use in Swift. The access token for the user is saved in the phones keychain, making sure that the token is not easily accessable for everyone.
 	- Alamofire
 		Alamofire is an HTTP networking library written in Swift. 
 	- SCLAlertView

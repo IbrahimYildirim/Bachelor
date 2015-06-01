@@ -1,0 +1,75 @@
+4.3 Web Service design
+
+4.3.1 Messaging protocol
+
+The application requires sharing of data between the server and the client application. Additionally the server has to support both iOs and Android. The communication between the server and the client application has to be agnostic.
+
+The standard way to acomplish that is to create SOAP or REST api.
+
+SOAP (Simple object access protocol) is XML based protocol consisting of three parts:
+	an envelope, which defines the message structure and how to process it
+	a set of encoding rules for expressing instances of application-defined datatypes
+	a convention for representing procedure calls and responses
+
+REST (Representational state transfer) Web Services are defined with the following aspects:
+	base URI, such as http://ourapp.com/api/
+	an Internet media type for the data exchanged. This is usually JSON
+	standard HTTP methods (GET, PUT, POST, or DELETE)
+
+It was decided to go with REST because it is more lightweight, more suited for the basic create, reade, update, delete (CRUD) use case that is necessary for this Web Service. 
+
+4.3.2 Deployment
+
+To deploy the Web Service on a server with public URL it was decided to use Heroku. Heroku is a plattform as a service that supports code written in Node.js among other languages. It allows to deploy the Web Service easily by simply pushing the source source code through the chosen version control software (Git):
+	
+	git push heroku master
+
+Heroku then locates the dependency file package.json which is part of every Node.js application, installs the dependencies using Node Package Manager (npm) and builds the binary. The only separate instruction we need to provide to heroku is file named Procfile which specifies how to run our application.
+This is how the Procfile looks. It specifies to run the command "sails lift" to start a web process.
+
+   web: sails lift
+
+Heroku thus handles compiling and building the source code, installing the dependencies, choosing the hardware to run it on, starting the application, exposing it publicly and restarts it if it crashes. It also makes it easy to scale the application up in the case it starts to get too many requests or using too many resources. All the developers need to focus on is the application logic.
+
+The downside is that as the application grows it will be required to pay a monthly fee for using Heroku. It was consulted this with the client and was deemed acceptable, opting to focus developers' time on application logic not deployment infrastructure.
+Another downside is that Heroku does not allow storing files directly on their file system, which are not part of the git repository. The Web Service however required an image uploading functionality. We decided to use a third party service for that (More information available in the 3.4 section)
+
+4.3.3 Framework 
+
+The Web Service is implemented in Sails.js framework running on top of Node.js plattform.
+
+We chose Node.js for the following reasons:
+	Fast performance and data processing
+	Relatively easy to set up load balancing, clusters and scale up if the need arises
+	Open source and a heatlhy ecosystem of open source packages
+	Developers were already familiar with it
+
+Sails.js makes it easy to build custom, enterprise-grade Node.js apps. It is designed to emulate the familiar MVC pattern of frameworks like Ruby on Rails, but with support for the requirements of modern apps: data-driven APIs with a scalable, service-oriented architecture.
+
+The decision to use Sails.js was made to abstract away most of the boiler-plate code that would otherwise be required. It also has a very steep learning curve.
+
+4.3.4 Database
+
+Sails.js allows developers to utilize powerful data access layer with Object Relation Mapping (ORM) called Waterline which works with multiple databases. To use Waterline properly we define model entities together with relationships and database-adapter for it to use such as in [code sample 1]. Waterline constructs the underlying table/document structure from the model in case it doesn't exist yet.
+
+Event model
+[4.3-Code-sample-Event.js]
+
+User model
+[4.3-Code-sample-User.js]
+
+The ER diagram for our database looks like the following:
+
+[4.3 ER diagram]
+
+Waterline allows to specify which database to use simply by specifying a database adapter. The ORM interface stays the same regardless of the chosen database. 
+
+The biggest choice concerning database choice was whether to use a traditional relational database such as MySQL or PostgreSQL or an object database (noSQL) such as MongoDB. After analyzing our data model it was decided to go with a relational database.
+Some other important requirements for our database were:
+
+	It is easy to set up with Node.js
+	It is open source and free to use
+	It has good community behind it to help us solve any issues we run into
+	It is supported by Heroku
+
+Both MySQL and PostgreSQL were seriously considered. Both of them fulfilled requirements 1-3 but in the end PostgreSQL was chosen because of it is supported by Heroku.

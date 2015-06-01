@@ -34,7 +34,7 @@ Name: User
 Description: This actor represents a user that is logged in the system.
 
 3.3.3 Use case descriptions and Activity diagrams
-Use case description and activity diagrams were generated for every Use Case. One is presented in the report, while others can be found in the Appendices.
+Use case description and activity diagrams were generated for every Use Case. One is presented in the report, while others can be found in the Appendices section.
 [3 Use Case Descriptions.ods -- 1st one]
 
 [3-Activity-register.png]

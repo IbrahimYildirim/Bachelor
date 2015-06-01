@@ -22,7 +22,7 @@
  - GitHub. GitHub is a web-based Git repository hosting service used for code hosting. Although not directly a component of the system, it's mentioned due to its heavy use.
 
 
-4.2. Technology
+4.2. iOS application
 
 A major decision that needs to be taken at the start of developing an iOS mobile application is to decide which technology should be used.
 There are 4 ways that emerged for iOS mobile development, as explained below:
@@ -69,7 +69,7 @@ The decision to use Swift was taken due to several factors:
 [INSERT FIGURE 4.2.1. Objective C comparison Figure 2]
 [INSERT FIGURE 4.2.1. Swift comparison Figure 3]
 
-4.2.1.1. iOS SDK
+4.2.2. iOS SDK
 
 The development tool used is Apple's IDE, Xcode. The IDE has helpful features such as an interface builder, debugging and source editor. The iOS SDK is included in Xcode.
 At the highest level, iOS acts as an intermediary between the underlying hardware and the application created. The application does not talk to the underlying hardware directly. Instead, it communicates with the hardware through a set of well-defined system interfaces. These interfaces make it easy for the application to run consistently on devices having different hardware capabilities.
@@ -81,7 +81,7 @@ Elements from all 4 layers were used in the app development, as follows:
 - Core Services: collections, networking, core location, preferences
 - Core OS: Keychain access
 
-4.2.2. Application architecture
+4.2.3. Application architecture
 
 The application makes use of the following architecture:
 [INSERT FIGURE 4.2.2. Application architecture - Fig. 1]
@@ -99,7 +99,7 @@ The application makes use of the following architecture:
 - Frameworks. Contains Apple frameworks and open source frameworks used for development.
 - Pods. Contains open source libraries used for development. 
 
-4.2.3. Design patterns
+4.2.4. Design patterns
 
 The Model-View-Controller (MVC) pattern is the skeleton of every iOS app. MVC categorizes the objects of an app in one of the 3 roles: model, view or controller. The models keep track of the app's data, views display the user interface and make up the content of an app, and controller manage the views. By responding to user actions and populating views with content from the data model, controllers serve as a gateway for communication between the model and views.
 [INSERT FIGURE 4.2.3. MVC pattern - Fig 0]
@@ -124,7 +124,7 @@ Another important concept is that each Controller managing a View has life cycle
 - viewDidAppear - Used for customization after the view appeared, such as triggering animations.
 - viewWillDissapear - Called right before the view disappears. Used when logic needs to be performed before switching to another view. 
 
-4.2.4. Persistent data
+4.2.5. Persistent data
 
 It was defined in the project's limitations that there will be no persistent data saved in the app : 
 {italic} There will be no cache support in the mobile app, the app relying on an Internet connection for being functional.
@@ -137,7 +137,7 @@ Although this information is not exactly what the Keychain is designed to hold, 
 The following is an example of user information that is persistent in the iOS app, as a JSON model received from the server.
 [INSERT FIGURE 4.2.4. JSON user info - Fig. 1]
 
-4.2.5. Graphical User Interface
+4.2.6. Graphical User Interface
 
 The graphical user interface was built to support the following iOS devices: iPhone 4(640x960 px), iPhone 4S(640x960 px), iPhone 5(640×1136 px), iPhone 5S(640×1136 px), iPhone 6(750×1334 px), iPhone 6 Plus(1242×2208 px). There is no support for other iOS devices, as stated in the scope of the project. Also, only the portrait device orientation is supported. This minimizes the development work, due to removing the need to adapt the user interface for the landscape orientation.
 Another important issue is deciding which iOS versions to support, since the UI components (provided by the Cocoa Touch framework) can have design differences in different iOS versions. The following figure (statistics provided by Apple) shows that only 2% of the devices are running an iOS version lower than 7, therefore the minimum supported version is iOS 7.0 and the latest is 8.3. As there are no major differences between versions 7 and 8, it was decided to support version 7, even though only 16% of the devices are running it. 
@@ -163,7 +163,7 @@ The following is an example of the first 3 screen of the application, from the w
 [INSERT FIGURE 4.2.5. Wireframes UI - Fig. 6]
 [INSERT FIGURE 4.2.5. Digital design UI - Fig. 7]
 
-4.2.5.1. Storyboards, views and code
+4.2.6.1. Storyboards, views and code
 
 A very important decision at the beginning of implementing an iOS application is how should the user interface be implemented. There are 3 ways of achieving this task:
 {BULLET POINTS LIST}

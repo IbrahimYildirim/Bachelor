@@ -20,6 +20,7 @@ http://www.infoworld.com/article/2920333/mobile-development/swift-vs-objective-c
 http://mobileoop.com/the-comparison-between-swift-and-objective-c-programming-language
 https://developer.apple.com/library/prerelease/ios/documentation/Miscellaneous/Conceptual/iPhoneOSTechOverview/Introduction/Introduction.html
 https://itunes.apple.com/bj/course/developing-ios-8-apps-swift/id961180099
+
 https://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapiOS/DesignPatterns.html
 https://rdkw.wordpress.com/2013/02/24/ios-uiviewcontroller-lifecycle/
 http://www.paintcodeapp.com/news/ultimate-guide-to-iphone-resolutions
@@ -35,4 +36,6 @@ https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/
 http://appium.io/
 http://en.wikipedia.org/wiki/Continuous_integration
 http://thinkapps.com/blog/post-launch/monetize-apps-paid-apps-vs-app-purchases-vs-freemium-vs-subscription/
+https://devcenter.heroku.com/articles/read-only-filesystem
+http://en.wikipedia.org/wiki/Bcrypt
 
