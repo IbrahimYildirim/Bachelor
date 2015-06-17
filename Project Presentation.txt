@@ -1,0 +1,19 @@
+Project Presentation
+
+1. Intro
+	- Name
+	- Context
+	- Group Members
+. System Overview
+	- Diagram with the system
+. Process
+	- The process is a lie/fake scrum
+. App Development Cycle
+. Suggested improvements
+. Demo
+. Technology Choices
+. Reflections
+	- Challenges
+	- What would we have done different with more time/resources
+. Learning outcomes
+	- The F did we learn
